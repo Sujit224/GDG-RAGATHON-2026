@@ -78,7 +78,7 @@ Your PR description must include:
 - **Tech Stack:** List the LLMs (e.g., GPT-4o, Gemini), Vector DBs (e.g., ChromaDB), and Regression libraries (e.g., Scikit-learn) used.
 
 ### 🔗 The Final Link 
-After hitting the PR, you must copy the **URL of your Pull Request** and paste it into the **Official Submission Google Form**. * **Deadline:** April 12th, 11:59 PM (Both PR and Form must be submitted).
+After hitting the PR, you must copy the **URL of your Pull Request** and paste it into the **Official Submission Google Form**. * **Deadline:** April 9th, 11:59 PM (Both PR and Form must be submitted).
 
 > [!CAUTION] > **Submissions without a corresponding Google Form entry will not be evaluated.**
 ---
