@@ -106,7 +106,7 @@ Once you have created your Pull Request on GitHub, you **must** submit the URL o
 
 ## 📞 Support & Contact
 
-For technical hurdles or clarifications, contact the GDG ML Wing leads:
+For technical hurdles or clarifications, contact the GDG ML Wing members:
 
 - **C Sai Sujit:** +91 81056 26006
     
