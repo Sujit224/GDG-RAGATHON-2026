@@ -1,0 +1,25 @@
+# Environments
+.env
+.env.local
+.venv
+venv/
+ENV/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+dist/
+build/
+*.egg-info/
+
+# Data and VectorDB
+uploads/
+faiss_index/
+*.sqlite3
+*.db
+
+# macOS
+.DS_Store
