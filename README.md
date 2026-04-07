@@ -2,7 +2,7 @@
 
 **Organized by GDG ML Wing, IIIT Lucknow** | **April 7th – April 9th, 2026**
 
-Welcome to the official repository for **RAGATHON 2026**. This 5-day challenge is designed to push your limits in **Retrieval-Augmented Generation (RAG)**, **Vector Databases**, and **Predictive ML Integration**.
+Welcome to the official repository for **RAGATHON 2026**. This 3-day challenge is designed to push your limits in **Retrieval-Augmented Generation (RAG)**, **Vector Databases**, and **Predictive ML Integration**.
 
 ---
 
