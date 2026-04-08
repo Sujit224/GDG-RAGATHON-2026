@@ -1,11 +1,32 @@
-name,location,cuisine,rating,price_for_two
-Tunday Kababi,Chowk,Biryani,4.5,300
-Dastarkhwan,Gomti Nagar,Mughlai,4.4,500
-Royal Cafe,Hazratganj,North Indian,4.2,600
-Idris Biryani,Chowk,Biryani,4.6,250
-Barbeque Nation,Gomti Nagar,Buffet,4.3,1200
-The Urban Terrace,Gomti Nagar,Continental,4.1,800
-Moti Mahal,Hazratganj,North Indian,4.0,700
-Spice Caves,Indira Nagar,Chinese,3.9,400
-Cafe Repertwahr,Gomti Nagar,Cafe,4.2,500
-Aryan Family Delight,Aliganj,Fast Food,3.8,300
+name,location,cuisine,rating,price_for_two,signature_dish,veg_nonveg,vibe
+Tunday Kababi,Chowk,Mughlai,4.5,300,Gilauti Kebab,Non-Veg,Casual
+Idris Biryani,Chowk,Biryani,4.6,250,Mutton Biryani,Non-Veg,Street
+Dastarkhwan,Gomti Nagar,Mughlai,4.4,500,Mutton Biryani,Non-Veg,Family
+Royal Cafe,Hazratganj,North Indian,4.2,600,Basket Chaat,Veg,Casual
+Moti Mahal,Hazratganj,North Indian,4.0,700,Butter Chicken,Non-Veg,Family
+Barbeque Nation,Gomti Nagar,Buffet,4.3,1200,Grill Buffet,Both,Premium
+The Urban Terrace,Gomti Nagar,Continental,4.1,800,Pasta,Both,Rooftop
+Cafe Repertwahr,Gomti Nagar,Cafe,4.2,500,Coffee,Veg,Cafe
+Sky Glass Brewing,Gomti Nagar,Brewery,4.3,1500,Craft Beer,Both,Premium
+Phoenix Cafe,Gomti Nagar,Cafe,4.1,700,Sandwich,Veg,Cafe
+Spice Caves,Indira Nagar,Chinese,3.9,400,Noodles,Both,Casual
+Aryan Family Delight,Aliganj,Fast Food,3.8,300,Burger,Both,Casual
+Capoor & Sons,Hazratganj,Cafe,4.3,900,Pizza,Both,Cafe
+The Hazelnut Factory,Gomti Nagar,Desserts,4.5,800,Pastries,Veg,Cafe
+Cherry Tree Cafe,Gomti Nagar,Cafe,4.2,700,Pancakes,Veg,Cafe
+Cappuccino Blast,Gomti Nagar,Cafe,4.0,600,Coffee,Veg,Cafe
+Pirates of Grill,Gomti Nagar,Buffet,4.2,1300,BBQ,Both,Premium
+Farzi Cafe,Gomti Nagar,Modern Indian,4.3,1500,Fusion Dishes,Both,Premium
+Oudhyana,Taj Lucknow,Mughlai,4.6,3000,Kebabs,Non-Veg,Luxury
+L-14,Taj Lucknow,Multi-cuisine,4.5,2500,Buffet,Both,Luxury
+Kalika Hut,Aliganj,North Indian,4.1,500,Kadhai Paneer,Veg,Family
+Sharma Tea,Chowk,Snacks,4.4,100,Bun Maska,Veg,Street
+Netram Kachori,Hazratganj,Snacks,4.5,150,Kachori,Veg,Street
+Jain Chat Bhandar,Hazratganj,Street Food,4.6,200,Chaat,Veg,Street
+Bombay Pav Bhaji,Indira Nagar,Street Food,4.2,250,Pav Bhaji,Veg,Street
+Rolls Mania,Gomti Nagar,Fast Food,4.0,300,Rolls,Both,Casual
+Burger King,Gomti Nagar,Fast Food,4.1,400,Whopper,Both,Casual
+Dominos Pizza,Gomti Nagar,Fast Food,4.0,500,Pizza,Both,Casual
+Pizza Hut,Gomti Nagar,Fast Food,4.1,600,Pizza,Both,Casual
+Subway,Gomti Nagar,Healthy,4.0,350,Sandwich,Both,Casual
+Wow Momo,Gomti Nagar,Fast Food,4.2,300,Momos,Both,Casual
