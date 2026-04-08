@@ -90,22 +90,26 @@ async def ask_question(query_data: QueryModel):
             raise HTTPException(status_code=500, detail=f"Error loading vectorstore: {str(e)}")
             
     try:
-        groq_api_key = os.getenv("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")
+        groq_api_key = os.getenv("GROQ_API_KEY")
         if not groq_api_key:
-            raise HTTPException(status_code=500, detail="GROQ_API_KEY not set.")
+            raise ValueError("GROQ_API_KEY not set")
+            
+        print("GROQ_API_KEY:", "***" if groq_api_key else "None") # Redacted for safety in logs
+        print("Vectorstore initialized:", vectorstore is not None)
             
         llm = ChatGroq(
             groq_api_key=groq_api_key,
-            model_name="llama3-8b-8192",
+            model_name="llama-3.1-8b-instant",
             temperature=0
         )
         
         # Define JSON parser
         parser = JsonOutputParser(pydantic_object=AskResponse)
         
-        # Prompt: Answer ONLY from document, simplify legal language, output JSON.
-        prompt = ChatPromptTemplate.from_messages([
-            ("system", """You are an expert insurance policy interpreter. Your job is to help users understand their insurance coverage based ONLY on the provided document context.
+        from langchain_classic.chains import RetrievalQA
+        from langchain_core.prompts import PromptTemplate
+        
+        prompt_template = """You are an expert insurance policy interpreter. Your job is to help users understand their insurance coverage based ONLY on the provided document context.
             
 You MUST return your answer in valid JSON format.
 You MUST extract the answer strictly from the document. If it is NOT in the document, state that it is not found.
@@ -124,30 +128,41 @@ Rules for is_covered:
 - If it is covered but requires prior authorization, has deductibles, limits, or specific conditions, use '⚠️ Conditions'.
 
 Context:
-{context}"""),
-            ("human", "{input}\n\nFormat instructions: {format_instructions}")
-        ])
+{context}
+
+Question: {question}"""
         
-        # Use LCEL instead of legacy chains
-        from langchain_core.runnables import RunnablePassthrough
-        
-        def format_docs(docs):
-            return "\n\n".join(doc.page_content for doc in docs)
-            
-        custom_chain = (
-            {
-                "context": retriever | format_docs, 
-                "input": RunnablePassthrough(),
-                "format_instructions": lambda _: parser.get_format_instructions()
-            }
-            | prompt
-            | llm
-            | parser
+        prompt = PromptTemplate(
+            template=prompt_template,
+            input_variables=["context", "question"]
         )
         
-        parsed_answer = custom_chain.invoke(query_data.query)
+        qa = RetrievalQA.from_chain_type(
+            llm=llm,
+            chain_type="stuff",
+            retriever=vectorstore.as_retriever(),
+            chain_type_kwargs={"prompt": prompt, "document_variable_name": "context"}
+        )
         
-        return AskResponse(**parsed_answer)
+        try:
+            result = qa.run(query_data.query)
+            try:
+                import json
+                parsed_answer = json.loads(result)
+                return AskResponse(**parsed_answer)
+            except Exception as parse_e:
+                print(f"Error parsing JSON: {parse_e}\nRaw output: {result}")
+                return AskResponse(
+                    explanation=result,
+                    highlight="Answer",
+                    is_covered="⚠️ Conditions"
+                )
+        except Exception as e:
+            return AskResponse(
+                explanation=f"Error executing QA chain: {str(e)}",
+                highlight="Error",
+                is_covered="❌ Not Covered"
+            )
         
     except Exception as e:
         print(f"Error answering question: {e}")
