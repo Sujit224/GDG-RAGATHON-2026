@@ -12,12 +12,12 @@ def initialize_vector_db():
     
     documents = []
     for item in data:
-        # HUMANIZED LOGIC: We combine fields into a 'story' for better semantic matching
+      
         content = (f"{item['name']} is located in {item['location']}. "
                    f"It has a {item['vibe']} vibe and is famous for {item['signature_dish']}. "
                    f"The budget is {item['budget']} with an average price of ₹{item['avg_price']}.")
         
-        # Metadata is CRITICAL for Member 1's filtering logic
+      
         doc = Document(
             page_content=content,
             metadata={
