@@ -90,7 +90,7 @@ async def ask_question(query_data: QueryModel):
             raise HTTPException(status_code=500, detail=f"Error loading vectorstore: {str(e)}")
             
     try:
-        groq_api_key = os.getenv("GROQ_API_KEY")
+        groq_api_key = os.getenv("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")
         if not groq_api_key:
             raise ValueError("GROQ_API_KEY not set")
             

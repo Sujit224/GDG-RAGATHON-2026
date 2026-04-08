@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+anthropic
+scikit-learn
+pandas
+numpy
+faiss-cpu
+sentence-transformers
+pymupdf
+python-multipart
+pydantic
+joblib
+python-dotenv
