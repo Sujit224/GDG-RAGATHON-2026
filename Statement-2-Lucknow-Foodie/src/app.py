@@ -1,5 +1,5 @@
 from data_loader import load_data
-from keyword_search import keyword_search
+from semantic_search import semantic_search
 
 def main():
     df = load_data("../dataset/restaurants.csv")
@@ -7,7 +7,7 @@ def main():
     if df is None:
         return
 
-    print("🍽️ Lucknow Foodie (Keyword Search)\n")
+    print("🧠 Lucknow Foodie (Semantic Search)\n")
 
     while True:
         query = input("Enter your query (or 'exit'): ")
@@ -15,15 +15,12 @@ def main():
         if query.lower() == "exit":
             break
 
-        results = keyword_search(df, query)
+        results = semantic_search(df, query)
 
-        if results.empty:
-            print("❌ No results found\n")
-        else:
-            print("\nTop Results:\n")
-            for _, row in results.iterrows():
-                print(f"{row['name']} | {row['location']} | ⭐ {row['rating']} | ₹{row['price_for_two']}")
-            print()
+        print("\nTop Results:\n")
+        for _, row in results.head(5).iterrows():
+            print(f"{row['name']} | {row['location']} | ⭐ {row['rating']} | ₹{row['price_for_two']}")
+        print()
 
 if __name__ == "__main__":
     main()
