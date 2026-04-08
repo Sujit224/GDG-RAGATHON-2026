@@ -38,8 +38,16 @@ USAGE GUIDE-
 Step 1: Ingest the Policy
 Before you can ask questions, the system must "read" the insurance policy and build the vector index.
 
-Step 2: Query the Decoder
-Once the ingestion is complete, start the interactive session.
+bash
+python3 decoder.py ingest
+
+
+5. Start the Application Server: Launch the FastAPI Web UI:
+
+bash
+python3 decoder.py serve
+Open http://localhost:8000 in your browser to start decoding!
+
 
 
 FOLDER STRUCTURE-
@@ -51,7 +59,15 @@ RAGATHON/
     │   ├── Green_bank_Credit_Card_Agreement.txt
     │   ├── Sunset_Apartments_Rental_Contract.txt
     │   └── Titan_Secure_Health_Insurance_Policy.txt
-    ├── src/                              
+    ├── src/    
+    |-- static
+    |   |--app.js
+    |   |--style.css
+    |   |--index.html                      
     ├── .env                               
     ├── decoder.py                       
     └── README.md                      
+
+6. LINK
+https://youtu.be/WPg9rIoCLvE
+
