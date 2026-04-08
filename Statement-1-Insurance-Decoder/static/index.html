@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asterisk</title>
+    <!-- Modern Tech Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="background-mesh"></div>
+    
+    <main class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">✱</span>
+                <h1><span class="highlight">Asterisk</span></h1>
+            </div>
+            <p class="subtitle">Extracting the truth from complex policies.</p>
+        </header>
+
+        <section class="decoder-section">
+            <div class="search-box">
+                <input type="text" id="queryInput" placeholder="Ask about health insurance, credit card agreement , or rental contract..." autocomplete="off">
+                <button id="decodeBtn">Decode</button>
+            </div>
+            
+            <div class="filter-chips">
+                <span class="chip" data-query="What is the late payment fee?">💳 Green bank Credit Card Agreement</span>
+                <span class="chip" data-query="Can I keep pets in the apartment?">🏠 Sunset Apartments Rental Contract</span>
+                <span class="chip" data-query="Does this policy cover injuries from extreme sports?">🏥 Titan Secure Health Insurance Policy</span>
+            </div>
+        </section>
+
+        <!-- Response Area -->
+        <section id="responseContainer" class="response-container hidden">
+            <div class="loading-state hidden" id="loadingState">
+                <div class="spinner"></div>
+                <p>Retrieving clauses & Simplifying...</p>
+            </div>
+
+            <div class="result-card hidden" id="resultCard">
+                <div class="card-header">
+                    <h3>Simplified Explanation</h3>
+                    <div class="badge">ELI5 Magic ✨</div>
+                </div>
+                
+                <p class="eli5-text" id="eli5Output"></p>
+                
+                <div class="source-block">
+                    <h4>Original Clause Reference</h4>
+                    <p class="original-text" id="originalOutput"></p>
+                    <div class="attribution">
+                        <span class="tag" id="sourceSection"></span>
+                        <span class="tag" id="sourceClause"></span>
+                        <span class="tag" id="sourcePage"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
