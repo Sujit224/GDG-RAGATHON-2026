@@ -6,8 +6,9 @@ import joblib
 import os
 
 def train_and_save_model():
-    data_path = "data/normalized_placement_data.csv"
-    model_dir = "models"
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    data_path = os.path.join(BASE_DIR, "data", "normalized_placement_data.csv")
+    model_dir = os.path.join(BASE_DIR, "models")
     model_path = os.path.join(model_dir, "regressor.pkl")
 
     if not os.path.exists(model_dir):

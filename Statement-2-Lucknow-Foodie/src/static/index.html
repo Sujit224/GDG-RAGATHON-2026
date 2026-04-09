@@ -85,13 +85,10 @@
         .brand-text h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; background: linear-gradient(to right, #fff, var(--accent-secondary)); background-clip: text; -webkit-background-clip: text; color:transparent; }
         .brand-text span { font-size: 0.8rem; color: var(--text-medium); font-weight: 500; }
 
-        .header-controls { display: flex; gap: 12px; }
-        .btn-icon {
-            width: 42px; height: 42px; border-radius: var(--radius-pill); border: 1px solid var(--glass-border);
-            background: rgba(255,255,255,0.05); color: var(--text-high); display: flex; justify-content: center; align-items: center;
-            cursor: pointer; transition: var(--transition); font-size: 18px;
-        }
-        .btn-icon:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); box-shadow: var(--glass-shadow); }
+        .header-controls { display: flex; gap: 12px; align-items: center; }
+        .status-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981; animation: pulse-green 2s infinite; }
+        @keyframes pulse-green { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+        .status-text { font-size: 0.75rem; color: #10b981; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
 
         /* ─── Chat Area ──────────────────────────────────────────── */
         .chat-scroll {
@@ -259,6 +256,15 @@
         .dot:nth-child(3) { animation-delay: 0.4s; }
         @keyframes blink { 0%, 80%, 100% { opacity: 0.2; } 40% { opacity: 1; } }
 
+        /* Card Badge */
+        .card-dist-badge {
+            position: absolute; top: 12px; right: 12px;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+            padding: 4px 10px; border-radius: var(--radius-sm);
+            font-size: 0.75rem; font-weight: 600; color: var(--accent-secondary);
+            border: 1px solid var(--glass-border);
+        }
+
         /* Dashboard grid */
         .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
         .dash-card { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 16px; border-radius: var(--radius-md); }
@@ -283,6 +289,10 @@
                 </div>
             </div>
             <div class="header-controls">
+                <div style="display: flex; align-items: center; gap: 8px; margin-right: 12px; background: rgba(16,185,129,0.1); padding: 4px 12px; border-radius: var(--radius-pill);">
+                    <div class="status-dot"></div>
+                    <span class="status-text">Engine Online</span>
+                </div>
                 <button class="btn-icon" id="browse-btn" title="Browse Grid">🗂️</button>
                 <button class="btn-icon" id="reset-btn" title="New Chat">✨</button>
             </div>
@@ -322,6 +332,7 @@
             <div class="input-box">
                 <input type="text" id="chat-input" placeholder="Type or speak your craving..." autocomplete="off">
                 <div class="input-actions">
+                    <button class="surprise-btn" id="surprise-btn" title="Surprise Me 🎲">🎲</button>
                     <button class="mic-btn" id="mic-btn" title="Voice Search">🎙️</button>
                     <button class="send-btn" id="send-btn">➤</button>
                 </div>
@@ -336,11 +347,31 @@
         const chatInput = document.getElementById('chat-input');
         const sendBtn = document.getElementById('send-btn');
         const micBtn = document.getElementById('mic-btn');
+        const surpriseBtn = document.getElementById('surprise-btn');
         const welcomeView = document.getElementById('welcome-view');
         const customAllergy = document.getElementById('custom-allergy');
 
         const API_BASE = window.location.origin;
         let isWaiting = false;
+
+        // Random queries for "Surprise Me"
+        const surpriseQueries = [
+            "Suggest the best budget biryani near campus",
+            "Where can I find premium fine dining for a special occasion?",
+            "I want some spicy kebabs! Any non-veg recommendations?",
+            "Any good pure veg spots nearby with high ratings?",
+            "What's the closest place to IIIT Lucknow for a quick snack?",
+            "Tell me about Tunday Kababi's signature dishes",
+            "Recommend a couple-friendly cafe in Gomti Nagar",
+            "I'm allergic to nuts, suggest a safe Mughlai spot"
+        ];
+
+        surpriseBtn.onclick = () => {
+            if (isWaiting) return;
+            const query = surpriseQueries[Math.floor(Math.random() * surpriseQueries.length)];
+            chatInput.value = query;
+            sendMessage(query);
+        };
 
         // Dietary Toggles State
         let activeDiets = new Set();
@@ -452,7 +483,10 @@
                         <div class="rest-card" style="animation-delay: ${animDelay}s">
                             <!-- Inner Image Carousel -->
                             <div class="inner-img-carousel">
-                                <div class="rest-img" style="background-image: url('${images[0]}')"><span class="img-indicator">1/3</span></div>
+                                <div class="rest-img" style="background-image: url('${images[0]}')">
+                                    <span class="img-indicator">1/3</span>
+                                    <span class="card-dist-badge">${c.distance} km away</span>
+                                </div>
                                 <div class="rest-img" style="background-image: url('${images[1]}')"><span class="img-indicator">2/3</span></div>
                                 <div class="rest-img" style="background-image: url('${images[2]}')"><span class="img-indicator">3/3</span></div>
                             </div>
