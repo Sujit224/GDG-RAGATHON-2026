@@ -50,12 +50,12 @@ pip install -r requirements.txt
 ### 3. Usage
 **To run the Web Assistant (Recommended):**
 ```bash
-streamlit run src/app.py
+streamlit run Statement-1-Insurance-Decoder/src/app.py
 ```
 
 **To run the Terminal Assistant:**
 ```bash
-python src/decoder.py
+python Statement-1-Insurance-Decoder/src/decoder.py
 ```
 
 ---
