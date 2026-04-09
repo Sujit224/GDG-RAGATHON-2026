@@ -3,10 +3,12 @@ import chromadb
 import re
 import os
 
-pdf_path = "data/INTERVIEW EXPERIENCES.pdf"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+pdf_path = os.path.join(BASE_DIR, "data", "INTERVIEW EXPERIENCES.pdf")
+db_path = os.path.join(BASE_DIR, "chroma_db")
 collection_name = "interview_experiences"
 
-client = chromadb.PersistentClient(path="chroma_db")
+client = chromadb.PersistentClient(path=db_path)
 
 def parse_experiences():
     doc = fitz.open(pdf_path)

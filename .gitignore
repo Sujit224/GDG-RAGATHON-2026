@@ -37,8 +37,12 @@ env/
 ENV/
 
 # RAG specific (Vector DBs & Uploads)
-chroma_db/
-vector_store/
+**/chroma_db/
+**/vector_store/
+**/embeddings/*.pkl
+**/models/*.pkl
+**/models/*.joblib
+
 # Note: You can uncomment the below line if you want to ignore user-uploaded PDFs
 # **/docs/*.pdf
 
@@ -46,6 +50,7 @@ vector_store/
 # Node.js / Frontend / Web
 # ========================
 node_modules/
+**/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -61,3 +66,5 @@ out/
 # Logs
 logs
 *.log
+nohup.out
+.tmp/

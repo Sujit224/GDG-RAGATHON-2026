@@ -19,22 +19,22 @@ Ask questions about **coverage**, **penalties**, or **exclusions**, and get simp
 # Setup sidebar to allow user to add API key if missing
 with st.sidebar:
     st.header("Settings")
-    if not os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY") == "your_openai_api_key_here":
-        st.warning("OpenAI API Key is missing!")
-        api_key_input = st.text_input("Enter your OpenAI API Key:", type="password")
+    if not os.getenv("GROQ_API_KEY") or os.getenv("GROQ_API_KEY") == "your_groq_api_key_here":
+        st.warning("Groq API Key is missing!")
+        api_key_input = st.text_input("Enter your Groq API Key:", type="password")
         if api_key_input:
-            os.environ["OPENAI_API_KEY"] = api_key_input
+            os.environ["GROQ_API_KEY"] = api_key_input
             st.success("API Key loaded temporarily! Now you can run ingest.py to parse your PDF or chat if DB is prepared.")
     else:
-        st.success("OpenAI API Key is configured.")
+        st.success("Groq API Key is configured.")
         
     st.markdown("### Powered by:")
-    st.markdown("- **Langchain** & **OpenAI** (gpt-4o-mini & Text Embedding 3 Small)")
+    st.markdown("- **Langchain** & **Groq** (llama-3.3-70b-versatile)")
     st.markdown("- **ChromaDB** for Vector Search")
     st.markdown("- **PyMuPDF** for Document Parsing")
     st.markdown("---")
     st.markdown("### Database Notice")
-    st.markdown("Please make sure you have run `python src/ingest.py` to index your PDF before chatting. If parsing fails, the bot will notify you.")
+    st.markdown("Please make sure you have run `python src/ingest.py` to index your PDF before chatting.")
 
 # Chat Interface
 if "messages" not in st.session_state:
@@ -48,8 +48,8 @@ if prompt := st.chat_input("E.g., Does this policy cover injuries from extreme s
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # check API Key
-    if not os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY") == "your_openai_api_key_here":
-        error_msg = "🚨 Provide an OpenAI API Key in the sidebar or `.env` file before querying."
+    if not os.getenv("GROQ_API_KEY") or os.getenv("GROQ_API_KEY") == "your_groq_api_key_here":
+        error_msg = "🚨 Provide a Groq API Key in the sidebar or `.env` file before querying."
         st.chat_message("assistant").write(error_msg)
         st.session_state.messages.append({"role": "assistant", "content": error_msg})
         st.stop()

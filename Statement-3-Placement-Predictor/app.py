@@ -14,18 +14,60 @@ st.set_page_config(page_title="Placement Predictor & Mentor", page_icon="🎓", 
 
 st.markdown("""
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+    
     .stApp {
-        background-color: #0E1117;
+        background-color: #050508;
+        background-image: 
+            radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+            radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
         color: #FAFAFA;
+        font-family: 'Outfit', sans-serif !important;
     }
+    
+    /* Global Font Overrides */
+    html, body, [class*="css"], .stMarkdown, .stText, .stChatFloatingInputContainer {
+        font-family: 'Outfit', sans-serif !important;
+    }
+
+    [data-testid="stSidebar"] {
+        background-color: rgba(15, 17, 21, 0.8) !important;
+        backdrop-filter: blur(20px);
+        border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .stChatMessage {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255,255,255,0.05) !important;
+        border-radius: 15px !important;
+        margin-bottom: 1rem !important;
+    }
+
     .score-dial {
-        font-size: 64px;
+        font-size: 72px;
         font-weight: 800;
         text-align: center;
-        background: -webkit-linear-gradient(45deg, #FF6B6B, #4ECDC4);
+        background: linear-gradient(135deg, #8b5cf6, #3b82f6);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         padding: 20px;
+        filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.3));
+    }
+
+    .stExpander {
+        background-color: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255,255,255,0.05) !important;
+        border-radius: 10px !important;
+    }
+
+    /* Button and Input Polish */
+    .stButton>button {
+        background: linear-gradient(135deg, #8b5cf6, #3b82f6) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 10px !important;
+        padding: 0.5rem 1rem !important;
+        font-weight: 600 !important;
     }
     </style>
 """, unsafe_allow_html=True)

@@ -1,7 +1,7 @@
 import os
 import fitz  # PyMuPDF
-from google import genai
-from google.genai import types
+from langchain_groq import ChatGroq
+from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 import json
 
@@ -18,13 +18,14 @@ class StudentProfile(BaseModel):
 
 def extract_profile_from_text(context_text: str) -> dict:
     """
-    Uses Gemini to extract the 7 feature scores from a text.
+    Uses Groq to extract the 7 feature scores from a text using structured output.
     """
-    api_key = os.getenv("GEMINI_API_KEY")
+    api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
-        raise ValueError("GEMINI_API_KEY not found in environment. Please set it in the .env file.")
+        raise ValueError("GROQ_API_KEY not found in environment. Please set it in the .env file.")
     
-    client = genai.Client(api_key=api_key)
+    llm = ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0)
+    structured_llm = llm.with_structured_output(StudentProfile)
     
     prompt = f"""
     You are an expert tech recruiter and placement mentor. 
@@ -37,17 +38,10 @@ def extract_profile_from_text(context_text: str) -> dict:
     {context_text}
     """
     
-    response = client.models.generate_content(
-        model='gemini-2.5-flash',
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=StudentProfile,
-            temperature=0.2
-        ),
-    )
+    profile = structured_llm.invoke(prompt)
     
-    return json.loads(response.text)
+    # Return as dict for the rest of the app to consume
+    return profile.model_dump()
 
 def parse_pdf_resume(file_path: str) -> str:
     """Read text from a PDF resume"""
@@ -56,3 +50,4 @@ def parse_pdf_resume(file_path: str) -> str:
     for page in doc:
         text += page.get_text() + "\n"
     return text
+    doc.close()

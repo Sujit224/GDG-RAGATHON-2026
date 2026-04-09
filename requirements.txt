@@ -1,13 +1,33 @@
+# ─── GDG RAGATHON 2026 - Master Requirements ──────────
+
+# Core Frameworks
+fastapi
+uvicorn[standard]
 streamlit
+httpx
+
+# AI & RAG Orchestration
 langchain
 langchain-groq
 langchain-huggingface
 langchain-community
+langchain-chroma
 sentence-transformers
 chromadb
+groq
+
+# Deep Learning (Explicitly for local embeddings)
+torch
+transformers
+
+# Data & Math
+numpy
+pandas
+scipy
+scikit-learn
+pydantic
+
+# Utilities
 pymupdf
 python-dotenv
-fastapi
-uvicorn
-pydantic
 python-multipart

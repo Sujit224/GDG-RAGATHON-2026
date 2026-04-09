@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucknow Foodie Guide 🍽️ | Premium RAG Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        /* ─── CSS Reset & Modern Variables ──────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg-base: #050505;
+            --glass-bg: rgba(20, 20, 25, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            
+            --accent-main: #ff7e5f;
+            --accent-secondary: #feb47b;
+            --accent-glow: rgba(255, 126, 95, 0.3);
+
+            --text-high: #ffffff;
+            --text-medium: #b3b3b8;
+            --text-low: #6c6c75;
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-pill: 100px;
+            
+            --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-high);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+        }
+
+        /* ─── Ambient Background ────────────────────────────── */
+        .ambient-mesh {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0; overflow: hidden; pointer-events: none;
+        }
+        .orb {
+            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4;
+            animation: float 20s infinite ease-in-out alternate;
+        }
+        .orb-1 { width: 40vw; height: 40vw; background: radial-gradient(circle, var(--accent-main), transparent 70%); top: -10%; left: -10%; }
+        .orb-2 { width: 50vw; height: 50vw; background: radial-gradient(circle, var(--accent-secondary), transparent 70%); bottom: -20%; right: -10%; animation-delay: -5s; }
+        .orb-3 { width: 30vw; height: 30vw; background: radial-gradient(circle, #ff5e62, transparent 70%); top: 40%; left: 60%; animation-delay: -10s; }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 5%) scale(1.1); }
+            100% { transform: translate(-5%, -5%) scale(0.95); }
+        }
+
+        /* ─── App Wrapper & Header ──────────────────────────────── */
+        .app-wrapper {
+            position: relative; z-index: 10;
+            display: flex; flex-direction: column;
+            height: 100%; width: 100%; max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;
+            background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border); border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        }
+
+        .brand { display: flex; gap: 16px; align-items: center; }
+        .logo-box {
+            width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-main), var(--accent-secondary));
+            border-radius: var(--radius-md); display: flex; justify-content: center; align-items: center;
+            font-size: 24px; box-shadow: var(--glass-shadow);
+        }
+        .brand-text h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; background: linear-gradient(to right, #fff, var(--accent-secondary)); background-clip: text; -webkit-background-clip: text; color:transparent; }
+        .brand-text span { font-size: 0.8rem; color: var(--text-medium); font-weight: 500; }
+
+        .header-controls { display: flex; gap: 12px; align-items: center; }
+        .status-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981; animation: pulse-green 2s infinite; }
+        @keyframes pulse-green { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+        .status-text { font-size: 0.75rem; color: #10b981; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* ─── Chat Area ──────────────────────────────────────────── */
+        .chat-scroll {
+            flex: 1; overflow-y: auto; padding: 30px 20px; scroll-behavior: smooth;
+        }
+        .chat-scroll::-webkit-scrollbar { width: 6px; }
+        .chat-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .chat-feed { display: flex; flex-direction: column; gap: 24px; padding-bottom: 20px; }
+
+        /* Welcome UI */
+        .hero-welcome { text-align: center; padding: 60px 20px; animation: fadeUp 1s ease-out; }
+        .hero-welcome h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 16px; font-weight: 700; }
+        .hero-welcome p { color: var(--text-medium); max-width: 500px; margin: 0 auto 32px; line-height: 1.6; }
+        
+        .quick-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .action-chip {
+            padding: 12px 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-pill);
+            color: var(--text-high); cursor: pointer; transition: var(--transition); backdrop-filter: blur(10px);
+        }
+        .action-chip:hover { background: var(--accent-glow); border-color: var(--accent-main); transform: scale(1.05); }
+
+        /* ─── Messages ───────────────────────────────────────────── */
+        .message-row { display: flex; gap: 16px; animation: slideIn 0.4s ease-out; max-width: 100%; }
+        .message-row.user-row { flex-direction: row-reverse; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .av {
+            width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 20px; flex-shrink: 0; background: var(--glass-bg); border: 1px solid var(--glass-border);
+        }
+        .user-row .av { background: rgba(255, 255, 255, 0.1); }
+        .bot-row .av { background: linear-gradient(135deg, var(--accent-main), var(--accent-secondary)); border: none; }
+
+        .bubble {
+            max-width: 85%; padding: 16px 20px; border-radius: var(--radius-lg); font-size: 1rem; line-height: 1.6;
+            backdrop-filter: blur(10px); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-medium);
+        }
+        .user-row .bubble { background: var(--text-high); color: var(--bg-base); border-bottom-right-radius: 4px; font-weight: 500; }
+        .bot-row .bubble { border-bottom-left-radius: 4px; }
+        .bot-row .bubble strong { color: var(--text-high); }
+
+        /* ─── Cards & Multiple Images (Image Carousel inside Card) ────── */
+        @keyframes cardEntrance {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cards-carousel {
+            display: flex; overflow-x: auto; gap: 16px; padding: 10px 0; margin-top: 12px;
+            scroll-snap-type: x mandatory; scroll-behavior: smooth;
+        }
+        .cards-carousel::-webkit-scrollbar { height: 6px; }
+        .cards-carousel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+        .rest-card {
+            min-width: 290px; max-width: 330px; background: rgba(30, 30, 35, 0.8);
+            border: 1px solid var(--glass-border); border-top: 2px solid rgba(255,255,255,0.2); border-radius: var(--radius-md); overflow: hidden;
+            scroll-snap-align: start; flex-shrink: 0; transition: var(--transition); display: flex; flex-direction: column;
+            opacity: 0; transform: translateY(20px);
+        }
+        .rest-card.animated {
+            animation: cardEntrance 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        .rest-card:hover { transform: translateY(-5px); border-color: var(--accent-main); box-shadow: 0 10px 40px rgba(255, 126, 95, 0.3); }
+
+        /* Inner Image Carousel */
+        .inner-img-carousel {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory; height: 180px; width: 100%;
+            scrollbar-width: none; /* Firefox */
+        }
+        .inner-img-carousel::-webkit-scrollbar { display: none; } /* Chrome */
+        .rest-img {
+            width: 100%; height: 180px; flex-shrink: 0; scroll-snap-align: start;
+            background-color: #2a2a30; background-size: cover; background-position: center; position: relative;
+        }
+        .img-indicator {
+            position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6);
+            padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; color: #fff;
+        }
+
+        .rest-info { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+        .rest-name { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .rest-cuisine { font-size: 0.85rem; color: var(--accent-secondary); margin-bottom: 12px; }
+        .rest-stats { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .stat-pill { background: rgba(255,255,255,0.08); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; color: #fff; }
+        
+        .rest-actions {
+            margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap;
+        }
+        .rest-action {
+            flex: 1; text-align: center; border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 600; 
+            text-decoration: none; padding: 8px 10px; transition: var(--transition); color: #fff;
+        }
+        .map-btn { background: rgba(255,255,255,0.1); }
+        .map-btn:hover { background: rgba(255,255,255,0.2); }
+        
+        .swiggy-btn { background: linear-gradient(135deg, #fc8019, #fd9945); }
+        .swiggy-btn:hover { box-shadow: 0 4px 15px rgba(252, 128, 25, 0.4); transform: translateY(-2px); }
+        
+        .zomato-btn { background: linear-gradient(135deg, #e23744, #f05c67); }
+        .zomato-btn:hover { box-shadow: 0 4px 15px rgba(226, 55, 68, 0.4); transform: translateY(-2px); }
+
+        /* ─── Dietary Settings Tray ──────────────────────────────── */
+        .diet-tray {
+            padding: 0 24px;
+            margin-top: auto;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+
+        .diet-toggles {
+            display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
+        }
+        .diet-toggles::-webkit-scrollbar { display: none; }
+
+        .diet-btn {
+            background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            padding: 6px 14px; border-radius: var(--radius-pill); color: var(--text-medium);
+            font-size: 0.85rem; cursor: pointer; transition: 0.2s; white-space: nowrap;
+        }
+        .diet-btn.active {
+            background: var(--accent-glow); border-color: var(--accent-main); color: #fff;
+        }
+
+        .custom-diet-box {
+            display: flex; gap: 8px; align-items: center;
+        }
+        .custom-diet-input {
+            flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            padding: 8px 14px; border-radius: var(--radius-md); color: #fff; font-family: 'Outfit'; font-size: 0.85rem;
+            outline: none;
+        }
+        .custom-diet-input:focus { border-color: var(--accent-secondary); }
+
+        /* ─── Input Area ─────────────────────────────────────────── */
+        .input-region {
+            padding: 16px 24px 30px; background: linear-gradient(to top, var(--bg-base) 80%, transparent);
+            position: relative; z-index: 10;
+        }
+
+        .input-box {
+            display: flex; align-items: center; background: rgba(20,20,25, 0.7);
+            border: 1px solid var(--glass-border); border-radius: var(--radius-pill);
+            padding: 6px 6px 6px 20px; backdrop-filter: blur(20px); box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: var(--transition);
+        }
+        .input-box:focus-within { border-color: var(--accent-main); box-shadow: 0 4px 20px var(--accent-glow); }
+        .input-box input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: 1rem; padding: 12px 0; }
+        .input-box input::placeholder { color: var(--text-low); }
+
+        .input-actions { display: flex; gap: 8px; }
+        .mic-btn, .send-btn {
+            width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer;
+            display: flex; justify-content: center; align-items: center; font-size: 18px; transition: 0.2s;
+        }
+        .mic-btn { background: rgba(255,255,255,0.1); color: #fff; }
+        .mic-btn.listening { background: #ef4444; animation: pulse-red 1.5s infinite; }
+        @keyframes pulse-red { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); } }
+        .send-btn { background: linear-gradient(135deg, var(--accent-main), var(--accent-secondary)); color: #000; }
+        .send-btn:hover { transform: scale(1.05); }
+
+        /* typing dots */
+        .typing { display: flex; gap: 4px; padding: 10px; }
+        .dot { width: 6px; height: 6px; background: #fff; border-radius: 50%; animation: blink 1.4s infinite both; }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes blink { 0%, 80%, 100% { opacity: 0.2; } 40% { opacity: 1; } }
+
+        /* Card Badge */
+        .card-dist-badge {
+            position: absolute; top: 12px; right: 12px;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+            padding: 4px 10px; border-radius: var(--radius-sm);
+            font-size: 0.75rem; font-weight: 600; color: var(--accent-secondary);
+            border: 1px solid var(--glass-border);
+        }
+
+        /* Dashboard grid */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
+        .dash-card { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 16px; border-radius: var(--radius-md); }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div class="ambient-mesh">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="app-wrapper">
+        <header class="header">
+            <div class="brand">
+                <div class="logo-box">🍽️</div>
+                <div class="brand-text">
+                    <h1>Lucknow Foodie</h1>
+                    <span>Smart Recommendations</span>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div style="display: flex; align-items: center; gap: 8px; margin-right: 12px; background: rgba(16,185,129,0.1); padding: 4px 12px; border-radius: var(--radius-pill);">
+                    <div class="status-dot"></div>
+                    <span class="status-text">Engine Online</span>
+                </div>
+                <button class="btn-icon" id="browse-btn" title="Browse Grid">🗂️</button>
+                <button class="btn-icon" id="reset-btn" title="New Chat">✨</button>
+            </div>
+        </header>
+
+        <div class="chat-scroll" id="chat-container">
+            <div class="chat-feed" id="chat-feed">
+                <!-- Welcome UI -->
+                <div class="hero-welcome" id="welcome-view">
+                    <h2>Welcome, Foodie! 👋</h2>
+                    <p>Experience the ultimate food guide for IIIT Lucknow. Complete with strict dietary filtering, voice search, and rich visual carousels.</p>
+                    <div class="quick-actions">
+                        <button class="action-chip" data-q="Strict visual check for Date Night">🍷 Premium Dining</button>
+                        <button class="action-chip" data-q="Best authentic Awadhi biryani">🔥 Awadhi Cuisine</button>
+                        <button class="action-chip" data-q="Find the nearest fast food joint">🍔 Fast Food</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings / Dietary Filters -->
+        <div class="diet-tray">
+            <div class="diet-toggles" id="diet-filters">
+                <button class="diet-btn" data-val="Vegan">🌱 Vegan</button>
+                <button class="diet-btn" data-val="Pure Veg">🥗 Pure Veg</button>
+                <button class="diet-btn" data-val="Jain">🙏 Jain</button>
+                <button class="diet-btn" data-val="Halal">🍖 Halal</button>
+                <button class="diet-btn" data-val="Gluten-Free">🌾 Gluten-Free</button>
+            </div>
+            <div class="custom-diet-box">
+                <input type="text" id="custom-allergy" class="custom-diet-input" placeholder="Any specific allergies or restrictions? (e.g. no peanuts)">
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="input-region">
+            <div class="input-box">
+                <input type="text" id="chat-input" placeholder="Type or speak your craving..." autocomplete="off">
+                <div class="input-actions">
+                    <button class="surprise-btn" id="surprise-btn" title="Surprise Me 🎲">🎲</button>
+                    <button class="mic-btn" id="mic-btn" title="Voice Search">🎙️</button>
+                    <button class="send-btn" id="send-btn">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Script ────────────────────────────────────────────── -->
+    <script>
+        const chatFeed = document.getElementById('chat-feed');
+        const chatContainer = document.getElementById('chat-container');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        const micBtn = document.getElementById('mic-btn');
+        const surpriseBtn = document.getElementById('surprise-btn');
+        const welcomeView = document.getElementById('welcome-view');
+        const customAllergy = document.getElementById('custom-allergy');
+
+        const API_BASE = window.location.origin;
+        let isWaiting = false;
+
+        // Random queries for "Surprise Me"
+        const surpriseQueries = [
+            "Suggest the best budget biryani near campus",
+            "Where can I find premium fine dining for a special occasion?",
+            "I want some spicy kebabs! Any non-veg recommendations?",
+            "Any good pure veg spots nearby with high ratings?",
+            "What's the closest place to IIIT Lucknow for a quick snack?",
+            "Tell me about Tunday Kababi's signature dishes",
+            "Recommend a couple-friendly cafe in Gomti Nagar",
+            "I'm allergic to nuts, suggest a safe Mughlai spot"
+        ];
+
+        surpriseBtn.onclick = () => {
+            if (isWaiting) return;
+            const query = surpriseQueries[Math.floor(Math.random() * surpriseQueries.length)];
+            chatInput.value = query;
+            sendMessage(query);
+        };
+
+        // Dietary Toggles State
+        let activeDiets = new Set();
+        document.querySelectorAll('.diet-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const val = btn.dataset.val;
+                if(activeDiets.has(val)) {
+                    activeDiets.delete(val);
+                    btn.classList.remove('active');
+                } else {
+                    activeDiets.add(val);
+                    btn.classList.add('active');
+                }
+            });
+        });
+
+        // Voice Input setup
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'en-IN';
+            recognition.onstart = () => { micBtn.classList.add('listening'); chatInput.placeholder = "Listening..."; };
+            recognition.onresult = (e) => { chatInput.value = e.results[0][0].transcript; sendMessage(chatInput.value); };
+            recognition.onend = () => { micBtn.classList.remove('listening'); chatInput.placeholder = "Type or speak your craving..."; };
+            micBtn.addEventListener('click', () => { micBtn.classList.contains('listening') ? recognition.stop() : recognition.start(); });
+        } else {
+            micBtn.style.display = 'none';
+        }
+
+        async function sendMessage(text) {
+            if (isWaiting || !text.trim()) return;
+            if (welcomeView) welcomeView.style.display = 'none';
+
+            addMessage('user', text);
+            chatInput.value = '';
+            
+            const typingIndicator = showTyping();
+            isWaiting = true;
+
+            // Gather dependencies
+            const reqBody = {
+                message: text,
+                diet: Array.from(activeDiets),
+                allergies: customAllergy.value.trim()
+            };
+
+            try {
+                const res = await fetch(`${API_BASE}/chat`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(reqBody)
+                });
+                const data = await res.json();
+                typingIndicator.remove();
+                addMessage('bot', data.reply);
+            } catch(e) {
+                typingIndicator.remove();
+                addMessage('bot', `⚠️ Server error.`);
+            } finally {
+                isWaiting = false;
+            }
+        }
+
+        // Premium Image Dictionary (Solves deprecated unsplash source API breaking)
+        const PRESET_IMAGES = {
+            biryani: ['https://images.unsplash.com/photo-1589302168068-964664d93cb0?w=600&q=80', 'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=600&q=80', 'https://images.unsplash.com/photo-1633940274404-7b196881c1c7?w=600&q=80'],
+            indian: ['https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80', 'https://images.unsplash.com/photo-1618449840665-9ed506d73a34?w=600&q=80', 'https://images.unsplash.com/photo-1505253758473-b67a49e012bf?w=600&q=80'],
+            cafe: ['https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80', 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=600&q=80'],
+            fastfood: ['https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80', 'https://images.unsplash.com/photo-1610440042657-612c34d95e9f?w=600&q=80', 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80'],
+            default: ['https://images.unsplash.com/photo-1544025162-811114cd144e?w=600&q=80', 'https://images.unsplash.com/photo-1414235077428-33898dd14582?w=600&q=80', 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80']
+        };
+
+        // Generate an array of 3 image URLs based on cuisine
+        function getCarouselImages(cuisineStr) {
+            const kw = cuisineStr.toLowerCase();
+            if (kw.includes('biryani') || kw.includes('mughlai')) return PRESET_IMAGES.biryani;
+            if (kw.includes('cafe') || kw.includes('coffee') || kw.includes('bakery')) return PRESET_IMAGES.cafe;
+            if (kw.includes('burger') || kw.includes('pizza') || kw.includes('fast')) return PRESET_IMAGES.fastfood;
+            if (kw.includes('indian') || kw.includes('street') || kw.includes('chaat')) return PRESET_IMAGES.indian;
+            return PRESET_IMAGES.default;
+        }
+
+        function parseCardsAndText(rawText) {
+            const cardRegex = /\[CARD:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\]/g;
+            let htmlText = rawText;
+            const cards = [];
+
+            let match;
+            while ((match = cardRegex.exec(rawText)) !== null) {
+                cards.push({
+                    name: match[1], cuisine: match[2], price: match[3],
+                    rating: match[4], distance: match[5], link: match[6]
+                });
+            }
+
+            htmlText = htmlText.replace(cardRegex, '').trim();
+            htmlText = htmlText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            let finalHtml = `<div class="msg-text">${htmlText}</div>`;
+
+            if (cards.length > 0) {
+                // Outer Carousel
+                let carouselHtml = `<div class="cards-carousel">`;
+                cards.forEach((c, index) => {
+                    const images = getCarouselImages(c.cuisine);
+                    const animDelay = index * 0.15;
+                    
+                    // Single Card
+                    carouselHtml += `
+                        <div class="rest-card" style="animation-delay: ${animDelay}s">
+                            <!-- Inner Image Carousel -->
+                            <div class="inner-img-carousel">
+                                <div class="rest-img" style="background-image: url('${images[0]}')">
+                                    <span class="img-indicator">1/3</span>
+                                    <span class="card-dist-badge">${c.distance} km away</span>
+                                </div>
+                                <div class="rest-img" style="background-image: url('${images[1]}')"><span class="img-indicator">2/3</span></div>
+                                <div class="rest-img" style="background-image: url('${images[2]}')"><span class="img-indicator">3/3</span></div>
+                            </div>
+                            <!-- Card Info -->
+                            <div class="rest-info">
+                                <div class="rest-name">${c.name}</div>
+                                <div class="rest-cuisine">${c.cuisine}</div>
+                                <div class="rest-stats">
+                                    <span class="stat-pill">💰 ${c.price}</span>
+                                    <span class="stat-pill">⭐ ${c.rating}</span>
+                                    <span class="stat-pill">📍 ${c.distance} km</span>
+                                </div>
+                                <div class="rest-actions">
+                                    <a href="${c.link}" target="_blank" class="rest-action map-btn">📍 Maps</a>
+                                    <a href="https://www.swiggy.com/city/lucknow/search?query=${encodeURIComponent(c.name)}" target="_blank" class="rest-action swiggy-btn">⚡ Swiggy</a>
+                                    <a href="https://www.zomato.com/lucknow/restaurants?search=${encodeURIComponent(c.name)}" target="_blank" class="rest-action zomato-btn">🍽️ Zomato</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                carouselHtml += `</div><div style="font-size:0.75rem; color:var(--text-low); margin-top:8px;">☝️ Swipe left/right on photos and cards!</div>`;
+                finalHtml += carouselHtml;
+            }
+
+            return finalHtml;
+        }
+
+        async function typeWriter(element, text, speed = 8) {
+            let i = 0;
+            element.innerHTML = "";
+            return new Promise(resolve => {
+                function type() {
+                    if (i < text.length) {
+                        if (text.substr(i, 4) === "<br>") {
+                            element.innerHTML += "<br>";
+                            i += 4;
+                        } else if (text[i] === "<") {
+                            // Quick skip tags like <strong>
+                            let tagEnd = text.indexOf(">", i);
+                            element.innerHTML += text.substring(i, tagEnd + 1);
+                            i = tagEnd + 1;
+                        } else {
+                            element.innerHTML += text.charAt(i);
+                            i++;
+                        }
+                        setTimeout(type, speed);
+                    } else {
+                        resolve();
+                    }
+                }
+                type();
+            });
+        }
+
+        async function addMessage(role, text) {
+            const row = document.createElement('div');
+            row.className = `message-row ${role}-row`;
+            row.innerHTML = `
+                <div class="av">${role === 'bot' ? '🍽️' : '😎'}</div>
+                <div class="bubble"></div>
+            `;
+            const bubble = row.querySelector('.bubble');
+            chatFeed.appendChild(row);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            if (role === 'user') {
+                bubble.textContent = text;
+            } else {
+                const htmlContent = parseCardsAndText(text);
+                // Extract text and card html
+                const temp = document.createElement('div');
+                temp.innerHTML = htmlContent;
+                const textPart = temp.querySelector('.msg-text')?.innerHTML || "";
+                const carouselPart = temp.querySelector('.cards-carousel');
+                const footerPart = temp.querySelector('div[style*="font-size: 0.75rem"]') || temp.querySelector('div[style*="font-size:0.75rem"]');
+
+                // Type the text part
+                if (textPart) {
+                    const textContainer = document.createElement('div');
+                    textContainer.className = "msg-text";
+                    bubble.appendChild(textContainer);
+                    await typeWriter(textContainer, textPart);
+                }
+
+                // Append the carousel if exists
+                if (carouselPart) {
+                    bubble.appendChild(carouselPart);
+                    // Add animation class after small delay
+                    setTimeout(() => {
+                        carouselPart.querySelectorAll('.rest-card').forEach(card => card.classList.add('animated'));
+                    }, 100);
+                }
+
+                if (footerPart) bubble.appendChild(footerPart);
+            }
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function showTyping() {
+            const row = document.createElement('div');
+            row.className = 'message-row bot-row';
+            row.innerHTML = `<div class="av">🍽️</div><div class="bubble"><div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>`;
+            chatFeed.appendChild(row);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            return row;
+        }
+
+        document.querySelectorAll('.action-chip').forEach(btn => btn.addEventListener('click', () => sendMessage(btn.dataset.q)));
+        sendBtn.addEventListener('click', () => sendMessage(chatInput.value));
+        chatInput.addEventListener('keypress', e => { if(e.key === 'Enter') sendMessage(chatInput.value); });
+
+        document.getElementById('reset-btn').addEventListener('click', () => {
+            fetch(`${API_BASE}/reset`, {method: 'POST'}).catch(()=>{});
+            chatFeed.innerHTML = ''; chatFeed.appendChild(welcomeView); welcomeView.style.display = 'block';
+        });
+
+        document.getElementById('browse-btn').addEventListener('click', async () => {
+            if (isWaiting) return;
+            if (welcomeView) welcomeView.style.display = 'none';
+            addMessage('user', 'Show Dashboard');
+            const ind = showTyping();
+            
+            try {
+                const res = await fetch(`${API_BASE}/restaurants`);
+                const data = await res.json();
+                ind.remove();
+
+                let dashHtml = `<div class="msg-text"><strong>📋 Database Overview (${data.length} eateries)</strong></div>`;
+                dashHtml += `<div class="dashboard-grid">`;
+                data.forEach(r => {
+                    const vIcon = r.veg_nonveg === 'Veg' ? '🟢' : '🔴';
+                    dashHtml += `<div class="dash-card">
+                        <div style="font-weight:700; color:#fff; margin-bottom:4px;">${r.name}</div>
+                        <div style="font-size:0.8rem; color:#ff7e5f;">${r.area}</div>
+                        <div style="margin-top:10px; display:flex; gap:8px; font-size:0.8rem;">
+                            <span>${vIcon}</span><span>⭐ ${r.rating}</span><span>${r.price_range}</span>
+                        </div>
+                    </div>`;
+                });
+                dashHtml += `</div>`;
+
+                const row = document.createElement('div'); row.className = 'message-row bot-row';
+                row.innerHTML = `<div class="av">🍽️</div><div class="bubble" style="max-width:100%; width:100%;">${dashHtml}</div>`;
+                chatFeed.appendChild(row); chatContainer.scrollTop = chatContainer.scrollHeight;
+            } catch(e) { ind.remove(); addMessage('bot', '⚠️ Failed to load database.'); }
+        });
+    </script>
+</body>
+</html>
