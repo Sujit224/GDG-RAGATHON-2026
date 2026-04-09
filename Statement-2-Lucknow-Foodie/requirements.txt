@@ -1,9 +1,0 @@
-pandas
-scikit-learn
-sentence-transformers
-streamlit
-numpy
-openai
-python-dotenv
-transformers
-torch
