@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import './ChatBox.css';
 
-const API_CHAT = 'http://localhost:8000/api/chat';
-const API_UPLOAD = 'http://localhost:8000/api/upload';
+const API_CHAT = 'http://localhost:8001/api/chat';
+const API_UPLOAD = 'http://localhost:8001/api/upload';
 
 export default function ChatBox() {
   const [messages, setMessages] = useState([
