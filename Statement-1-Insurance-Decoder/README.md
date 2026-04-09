@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 2. Create a `.env` file in the root directory (use `.env.example` as a template) and add your OpenAI API Key:
 ```env
-GROQ_API_KEY=your_key_here
+OPENAI_API_KEY=your_key_here
 ```
 
 3. Run the data ingestion script to format the PDF and build your Chroma database:
