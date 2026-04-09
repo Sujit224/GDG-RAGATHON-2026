@@ -1,0 +1,1294 @@
+[
+  {
+    "id": 1,
+    "text": "Metadata: Google | Software Engineer | L3 | Medium\nSkills: Java, Data Structures, Graphs, Complexity Analysis\nFocus: Algorithmic Efficiency & Edge Case Handling",
+    "company": "Google",
+    "tech_stack": [
+      "complexity analysis",
+      "data structures",
+      "graphs",
+      "java"
+    ],
+    "raw_chunk": "Metadata: Google | Software Engineer | L3 | Medium\nSkills: Java, Data Structures, Graphs, Complexity Analysis\nFocus: Algorithmic Efficiency & Edge Case Handling",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 2,
+    "text": "The process began with a 45-minute phone screen featuring a string manipulation problem that\nevolved into a sliding window challenge. The onsite consisted of four technical rounds and one\n\"Googliness\" round. The technical problems were heavily focused on graphs\u2014specifically\nfinding the shortest path in a 2D grid with obstacles and implementing a custom iterator for a\nnested list. One round pushed for a O(N) solution where a O(N log N) sorting approach\nseemed obvious, forcing me to think about frequency arrays. Takeaway: Communication is as\nvital as the code. Google interviewers want to see how you react to constraints like \"What if the\ndata is too large for memory?\" Be vocal about your trade-offs between time and space\ncomplexity, and always dry-run your code with edge cases before saying you're finished.\n2. Google Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "react"
+    ],
+    "raw_chunk": "The process began with a 45-minute phone screen featuring a string manipulation problem that\nevolved into a sliding window challenge. The onsite consisted of four technical rounds and one\n\"Googliness\" round. The technical problems were heavily focused on graphs\u2014specifically\nfinding the shortest path in a 2D grid with obstacles and implementing a custom iterator for a\nnested list. One round pushed for a O(N) solution where a O(N log N) sorting approach\nseemed obvious, forcing me to think about frequency arrays. Takeaway: Communication is as\nvital as the code. Google interviewers want to see how you react to constraints like \"What if the\ndata is too large for memory?\" Be vocal about your trade-offs between time and space\ncomplexity, and always dry-run your code with edge cases before saying you're finished.\n2. Google Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 3,
+    "text": "Metadata: Google | Backend Engineer | L4 | Hard\nSkills: Go, Distributed Systems, gRPC, Multithreading\nFocus: Scalability & Concurrency",
+    "company": "Google",
+    "tech_stack": [
+      "concurrency",
+      "distributed systems",
+      "go",
+      "grpc",
+      "multithreading"
+    ],
+    "raw_chunk": "Metadata: Google | Backend Engineer | L4 | Hard\nSkills: Go, Distributed Systems, gRPC, Multithreading\nFocus: Scalability & Concurrency",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 4,
+    "text": "Beyond the standard DSA rounds, there was a heavy emphasis on backend architecture. I was\nasked to design a globally distributed rate-limiting service. We spent significant time discussing\nthe trade-offs between using a centralized Redis store versus local in-memory caching to\nreduce latency. The coding rounds used Go and focused on concurrency primitives like\nchannels and mutexes to build a thread-safe task scheduler. The interviewer pushed me on\n\"thundering herd\" problems and ensuring graceful shutdowns of worker pools. Takeaway:\nFocus on low-level system concepts and how they scale. Knowing how a database handles\nlocking under high load or how gRPC handles streaming was a recurring theme. Don't just\nprovide a working solution; provide the most optimized one for a billion users.\n3. Google Data Scientist",
+    "company": "Unknown",
+    "tech_stack": [
+      "concurrency",
+      "go",
+      "grpc",
+      "redis"
+    ],
+    "raw_chunk": "Beyond the standard DSA rounds, there was a heavy emphasis on backend architecture. I was\nasked to design a globally distributed rate-limiting service. We spent significant time discussing\nthe trade-offs between using a centralized Redis store versus local in-memory caching to\nreduce latency. The coding rounds used Go and focused on concurrency primitives like\nchannels and mutexes to build a thread-safe task scheduler. The interviewer pushed me on\n\"thundering herd\" problems and ensuring graceful shutdowns of worker pools. Takeaway:\nFocus on low-level system concepts and how they scale. Knowing how a database handles\nlocking under high load or how gRPC handles streaming was a recurring theme. Don't just\nprovide a working solution; provide the most optimized one for a billion users.\n3. Google Data Scientist",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 5,
+    "text": "Metadata: Google | Data Scientist | University Grad | Medium\nSkills: Python, Statistics, SQL, ML Theory\nFocus: Experimental Design & Hypothesis Testing",
+    "company": "Google",
+    "tech_stack": [
+      "ml theory",
+      "python",
+      "sql",
+      "statistics"
+    ],
+    "raw_chunk": "Metadata: Google | Data Scientist | University Grad | Medium\nSkills: Python, Statistics, SQL, ML Theory\nFocus: Experimental Design & Hypothesis Testing",
+    "role": "Data Scientist"
+  },
+  {
+    "id": 6,
+    "text": "The interview consisted of a technical screen followed by five onsite rounds. It wasn't just about\nbuilding models; there was a massive focus on A/B testing and product intuition. I was asked to\nexplain how to measure the success of a new UI feature in Search using specific metrics like\nCTR and session length. Technical rounds covered the math behind Bayes' Theorem, linear\nregression assumptions, and a SQL round with complex joins and window functions to find the\n\"Top N users per category.\" Takeaway: Don't neglect basic stats and the \"Why\" behind the\nmath. Being able to explain P-values or the bias-variance tradeoff to a non-technical\nstakeholder is a common behavioral-technical hybrid check.\n4. Amazon SDE",
+    "company": "Unknown",
+    "tech_stack": [
+      "sql"
+    ],
+    "raw_chunk": "The interview consisted of a technical screen followed by five onsite rounds. It wasn't just about\nbuilding models; there was a massive focus on A/B testing and product intuition. I was asked to\nexplain how to measure the success of a new UI feature in Search using specific metrics like\nCTR and session length. Technical rounds covered the math behind Bayes' Theorem, linear\nregression assumptions, and a SQL round with complex joins and window functions to find the\n\"Top N users per category.\" Takeaway: Don't neglect basic stats and the \"Why\" behind the\nmath. Being able to explain P-values or the bias-variance tradeoff to a non-technical\nstakeholder is a common behavioral-technical hybrid check.\n4. Amazon SDE",
+    "role": "SDE"
+  },
+  {
+    "id": 7,
+    "text": "Metadata: Amazon | SDE | SDE-1 | Medium\nSkills: C++, OOP, Linked Lists, Leadership Principles\nFocus: Coding Speed & Amazon LPs",
+    "company": "Amazon",
+    "tech_stack": [
+      "c++",
+      "leadership principles",
+      "linked lists",
+      "oop"
+    ],
+    "raw_chunk": "Metadata: Amazon | SDE | SDE-1 | Medium\nSkills: C++, OOP, Linked Lists, Leadership Principles\nFocus: Coding Speed & Amazon LPs",
+    "role": "SDE"
+  },
+  {
+    "id": 8,
+    "text": "The Online Assessment (OA) had two medium-level DSA questions and a workplace\nsimulation. The onsite was three rounds. Every single round started with 20 minutes of\n\"Leadership Principles\" (LPs) questions, which are taken very seriously. Technical questions\nwere standard but required high accuracy\u2014think \"Top K Frequent Elements\" and \"LRU Cache\nimplementation.\" I had to explain my design using Object-Oriented principles, ensuring\nencapsulation and modularity. Takeaway: You cannot over-prepare for LPs. Use the STAR\nmethod for every behavioral answer and tie it back to \"Customer Obsession\" or \"Ownership.\" If\nyour code is perfect but you fail to show backbone or deliver results in your stories, you won't\nget the offer.\n5. Amazon Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "The Online Assessment (OA) had two medium-level DSA questions and a workplace\nsimulation. The onsite was three rounds. Every single round started with 20 minutes of\n\"Leadership Principles\" (LPs) questions, which are taken very seriously. Technical questions\nwere standard but required high accuracy\u2014think \"Top K Frequent Elements\" and \"LRU Cache\nimplementation.\" I had to explain my design using Object-Oriented principles, ensuring\nencapsulation and modularity. Takeaway: You cannot over-prepare for LPs. Use the STAR\nmethod for every behavioral answer and tie it back to \"Customer Obsession\" or \"Ownership.\" If\nyour code is perfect but you fail to show backbone or deliver results in your stories, you won't\nget the offer.\n5. Amazon Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 9,
+    "text": "Metadata: Amazon | Backend Engineer | SDE-2 | Hard\nSkills: Java, DynamoDB, Microservices, System Design\nFocus: Customer Obsession & Architectural Trade-offs",
+    "company": "Amazon",
+    "tech_stack": [
+      "dynamodb",
+      "java",
+      "microservices",
+      "system design"
+    ],
+    "raw_chunk": "Metadata: Amazon | Backend Engineer | SDE-2 | Hard\nSkills: Java, DynamoDB, Microservices, System Design\nFocus: Customer Obsession & Architectural Trade-offs",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 10,
+    "text": "This was a 4-round virtual onsite. The System Design round focused on designing a \"Flash\nSale\" system that could handle millions of concurrent requests during a Black Friday event. We\nspent a lot of time on database sharding, caching layers (DAX), and using message queues like\nSQS to decouple the order processing service from the payment service. The coding rounds\nincluded a hard Dynamic Programming problem related to inventory optimization. Takeaway:\nFocus on horizontal scaling and failure recovery. Amazon loves it when you mention \"retry logic\nwith exponential backoff\" and \"idempotency keys\" for payment APIs. Always tie your design\ndecisions back to the user's experience\u2014latency is a dealbreaker.\n6. Amazon Data Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "system design"
+    ],
+    "raw_chunk": "This was a 4-round virtual onsite. The System Design round focused on designing a \"Flash\nSale\" system that could handle millions of concurrent requests during a Black Friday event. We\nspent a lot of time on database sharding, caching layers (DAX), and using message queues like\nSQS to decouple the order processing service from the payment service. The coding rounds\nincluded a hard Dynamic Programming problem related to inventory optimization. Takeaway:\nFocus on horizontal scaling and failure recovery. Amazon loves it when you mention \"retry logic\nwith exponential backoff\" and \"idempotency keys\" for payment APIs. Always tie your design\ndecisions back to the user's experience\u2014latency is a dealbreaker.\n6. Amazon Data Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 11,
+    "text": "Metadata: Amazon | Data Engineer | L5 | Medium\nSkills: SQL, Python, Redshift, ETL Pipelines\nFocus: Data Modeling & Warehouse Architecture",
+    "company": "Amazon",
+    "tech_stack": [
+      "etl pipelines",
+      "python",
+      "redshift",
+      "sql"
+    ],
+    "raw_chunk": "Metadata: Amazon | Data Engineer | L5 | Medium\nSkills: SQL, Python, Redshift, ETL Pipelines\nFocus: Data Modeling & Warehouse Architecture",
+    "role": "Data Engineer"
+  },
+  {
+    "id": 12,
+    "text": "The interview rounds focused on building scalable ETL pipelines. I was given a scenario where\nraw log data was arriving in S3 in various formats and had to design a schema for a star-\nschema warehouse in Redshift. The SQL round was intense, involving recursive CTEs and\nheavy window functions to calculate year-over-year growth per category. We also discussed\ndata quality checks and how to handle late-arriving data. Takeaway: Know the difference\nbetween OLTP and OLAP inside out. Understanding when to use partitioning versus sorting\nkeys in Redshift is a major plus. Being able to visualize the data flow from source to dashboard\nis crucial.\n7. Microsoft Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "sql"
+    ],
+    "raw_chunk": "The interview rounds focused on building scalable ETL pipelines. I was given a scenario where\nraw log data was arriving in S3 in various formats and had to design a schema for a star-\nschema warehouse in Redshift. The SQL round was intense, involving recursive CTEs and\nheavy window functions to calculate year-over-year growth per category. We also discussed\ndata quality checks and how to handle late-arriving data. Takeaway: Know the difference\nbetween OLTP and OLAP inside out. Understanding when to use partitioning versus sorting\nkeys in Redshift is a major plus. Being able to visualize the data flow from source to dashboard\nis crucial.\n7. Microsoft Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 13,
+    "text": "Metadata: Microsoft | Software Engineer | SDE-1 | Medium\nSkills: C#, Azure, Trees, Arrays\nFocus: Problem Solving & Code Quality",
+    "company": "Microsoft",
+    "tech_stack": [
+      "arrays",
+      "azure",
+      "c#",
+      "trees"
+    ],
+    "raw_chunk": "Metadata: Microsoft | Software Engineer | SDE-1 | Medium\nSkills: C#, Azure, Trees, Arrays\nFocus: Problem Solving & Code Quality",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 14,
+    "text": "Microsoft's process felt very \"developer-centric\" and collaborative. Rounds involved coding on a\nshared editor focusing on clean code, proper variable naming, and modularity. Questions were\nmostly around Binary Trees (e.g., \"Serialize and Deserialize a Binary Tree\") and String\nmanipulation using Stacks. There was also a unique \"Debugging\" round, where I had to find a\nlogical error in a provided snippet related to multi-threading. Takeaway: They value candidates\nwho write readable, maintainable code over \"clever\" one-liners. Don't use single-letter variables\nlike i  or j  unless they are loop counters. Mentioning familiarity with Azure services or C#\nfeatures like LINQ can give you an edge, even if the role is language-agnostic.\n8. Microsoft Full Stack Developer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "Microsoft's process felt very \"developer-centric\" and collaborative. Rounds involved coding on a\nshared editor focusing on clean code, proper variable naming, and modularity. Questions were\nmostly around Binary Trees (e.g., \"Serialize and Deserialize a Binary Tree\") and String\nmanipulation using Stacks. There was also a unique \"Debugging\" round, where I had to find a\nlogical error in a provided snippet related to multi-threading. Takeaway: They value candidates\nwho write readable, maintainable code over \"clever\" one-liners. Don't use single-letter variables\nlike i  or j  unless they are loop counters. Mentioning familiarity with Azure services or C#\nfeatures like LINQ can give you an edge, even if the role is language-agnostic.\n8. Microsoft Full Stack Developer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 15,
+    "text": "Metadata: Microsoft | Full Stack Developer | L62 | Medium\nSkills: TypeScript, React, .NET Core, System Design\nFocus: End-to-End Feature Development",
+    "company": "Microsoft",
+    "tech_stack": [
+      ".net core",
+      "react",
+      "system design",
+      "typescript"
+    ],
+    "raw_chunk": "Metadata: Microsoft | Full Stack Developer | L62 | Medium\nSkills: TypeScript, React, .NET Core, System Design\nFocus: End-to-End Feature Development",
+    "role": "Full Stack Developer"
+  },
+  {
+    "id": 16,
+    "text": "The technical rounds were split between building a responsive React component with complex\nstate management and a backend API design. I had to build a \"Real-time Task Management\" UI\nand explain how the frontend would sync with a backend using WebSockets for live updates.\nWe discussed state persistence, error handling on the client side, and RESTful API best\npractices for the backend. Takeaway: Focus on the \"Bridge\" between front and back.\nUnderstanding how to handle API errors gracefully in the UI\u2014like using skeletons or toast\nnotifications\u2014is a key focus area. They want to see that you can own a feature from the\ndatabase to the browser.\n9. Microsoft Data Scientist",
+    "company": "Unknown",
+    "tech_stack": [
+      "react"
+    ],
+    "raw_chunk": "The technical rounds were split between building a responsive React component with complex\nstate management and a backend API design. I had to build a \"Real-time Task Management\" UI\nand explain how the frontend would sync with a backend using WebSockets for live updates.\nWe discussed state persistence, error handling on the client side, and RESTful API best\npractices for the backend. Takeaway: Focus on the \"Bridge\" between front and back.\nUnderstanding how to handle API errors gracefully in the UI\u2014like using skeletons or toast\nnotifications\u2014is a key focus area. They want to see that you can own a feature from the\ndatabase to the browser.\n9. Microsoft Data Scientist",
+    "role": "Frontend Engineer"
+  },
+  {
+    "id": 17,
+    "text": "Metadata: Microsoft | Data Scientist | Senior | Hard\nSkills: Python, PyTorch, Statistics, NLP\nFocus: Large Language Models & Mathematical Foundations",
+    "company": "Microsoft",
+    "tech_stack": [
+      "nlp",
+      "python",
+      "pytorch",
+      "statistics"
+    ],
+    "raw_chunk": "Metadata: Microsoft | Data Scientist | Senior | Hard\nSkills: Python, PyTorch, Statistics, NLP\nFocus: Large Language Models & Mathematical Foundations",
+    "role": "Data Scientist"
+  },
+  {
+    "id": 18,
+    "text": "This was a heavy deep-dive into NLP and Transformer architectures. I was asked to walk\nthrough the \"Self-Attention\" mechanism in detail, explaining why we use scaling factors in dot-\nproduct attention. Another round focused on the math behind gradient descent and optimization\nalgorithms like Adam versus SGD. We also discussed \"Model Explainability\" (SHAP/LIME) for a\ncredit scoring use case. Takeaway: For senior roles, they expect you to know the underlying\ncalculus and linear algebra, not just how to call a library. Be prepared to derive basic loss\nfunctions on a whiteboard and discuss the trade-offs of different activation functions in deep\nnetworks.\n10. Meta Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "algorithms"
+    ],
+    "raw_chunk": "This was a heavy deep-dive into NLP and Transformer architectures. I was asked to walk\nthrough the \"Self-Attention\" mechanism in detail, explaining why we use scaling factors in dot-\nproduct attention. Another round focused on the math behind gradient descent and optimization\nalgorithms like Adam versus SGD. We also discussed \"Model Explainability\" (SHAP/LIME) for a\ncredit scoring use case. Takeaway: For senior roles, they expect you to know the underlying\ncalculus and linear algebra, not just how to call a library. Be prepared to derive basic loss\nfunctions on a whiteboard and discuss the trade-offs of different activation functions in deep\nnetworks.\n10. Meta Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 19,
+    "text": "Metadata: Meta | Software Engineer | E4 | Hard\nSkills: C++, Algorithms, System Design\nFocus: Speed & Optimal DSA Solutions",
+    "company": "Meta",
+    "tech_stack": [
+      "algorithms",
+      "c++",
+      "system design"
+    ],
+    "raw_chunk": "Metadata: Meta | Software Engineer | E4 | Hard\nSkills: C++, Algorithms, System Design\nFocus: Speed & Optimal DSA Solutions",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 20,
+    "text": "Meta is famous for its high-speed coding expectations. You typically have 45 minutes to solve\ntwo LeetCode-style problems perfectly. My questions were \"Lowest Common Ancestor of a\nBinary Tree\" and a variation of \"Binary Tree Maximum Path Sum.\" There was zero room for\nlogical errors. The System Design round focused on \"Designing the Instagram News Feed,\"\nwhere we discussed pull vs. push models for updates and caching strategies for high-celebrity\naccounts. Takeaway: Speed is everything. Practice until you can solve LeetCode Medium\nproblems in under 15 minutes. During the design round, focus on bottleneck identification\u2014how\ndo you handle a user with 100 million followers? Scaling for \"Big Data\" is the only thing that\nmatters here.\n11. Uber Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "system design"
+    ],
+    "raw_chunk": "Meta is famous for its high-speed coding expectations. You typically have 45 minutes to solve\ntwo LeetCode-style problems perfectly. My questions were \"Lowest Common Ancestor of a\nBinary Tree\" and a variation of \"Binary Tree Maximum Path Sum.\" There was zero room for\nlogical errors. The System Design round focused on \"Designing the Instagram News Feed,\"\nwhere we discussed pull vs. push models for updates and caching strategies for high-celebrity\naccounts. Takeaway: Speed is everything. Practice until you can solve LeetCode Medium\nproblems in under 15 minutes. During the design round, focus on bottleneck identification\u2014how\ndo you handle a user with 100 million followers? Scaling for \"Big Data\" is the only thing that\nmatters here.\n11. Uber Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 21,
+    "text": "Metadata: Uber | Backend Engineer | L4 | Hard\nSkills: Go, Distributed Systems, Geospatial Indexing, Kafka",
+    "company": "Uber",
+    "tech_stack": [
+      "distributed systems",
+      "geospatial indexing",
+      "go",
+      "kafka"
+    ],
+    "raw_chunk": "Metadata: Uber | Backend Engineer | L4 | Hard\nSkills: Go, Distributed Systems, Geospatial Indexing, Kafka",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 22,
+    "text": "This was an extremely technical experience. One round was dedicated entirely to\n\"Concurrency\" where I had to implement a thread-safe worker pool from scratch using Go\nchannels. The System Design round was the highlight: \"Designing Uber Ride Dispatch.\" We\ndiscussed Quad-trees and Google\u2019s H3 indexing for location data to find the nearest drivers in\nsub-millisecond time. We also touched upon how Kafka handles event-driven updates for car\nlocations. Takeaway: Uber loves candidates who understand the \"Real-time\" nature of their\nbusiness. Knowing how to handle high-write throughput and geospatial queries is essential.\nBrush up on distributed locking and how to handle network partitions in a CAP-theorem context.\n12. Uber Data Scientist",
+    "company": "Unknown",
+    "tech_stack": [
+      "concurrency",
+      "go",
+      "kafka",
+      "system design"
+    ],
+    "raw_chunk": "This was an extremely technical experience. One round was dedicated entirely to\n\"Concurrency\" where I had to implement a thread-safe worker pool from scratch using Go\nchannels. The System Design round was the highlight: \"Designing Uber Ride Dispatch.\" We\ndiscussed Quad-trees and Google\u2019s H3 indexing for location data to find the nearest drivers in\nsub-millisecond time. We also touched upon how Kafka handles event-driven updates for car\nlocations. Takeaway: Uber loves candidates who understand the \"Real-time\" nature of their\nbusiness. Knowing how to handle high-write throughput and geospatial queries is essential.\nBrush up on distributed locking and how to handle network partitions in a CAP-theorem context.\n12. Uber Data Scientist",
+    "role": "Data Scientist"
+  },
+  {
+    "id": 23,
+    "text": "Metadata: Uber | Data Scientist | L3 | Medium\nSkills: Python, R, Experimentation, Pricing Models",
+    "company": "Uber",
+    "tech_stack": [
+      "experimentation",
+      "pricing models",
+      "python"
+    ],
+    "raw_chunk": "Metadata: Uber | Data Scientist | L3 | Medium\nSkills: Python, R, Experimentation, Pricing Models",
+    "role": "Data Scientist"
+  },
+  {
+    "id": 24,
+    "text": "The focus was heavily on \"Marketplace Dynamics.\" Questions involved surge pricing algorithms\nand how to reduce \"churn\" for drivers using incentive structures. I had to solve a probability\nproblem regarding wait times and driver supply-demand gaps. A large part of the onsite was a\ncase study on A/B testing a new route-sharing feature, where I had to define the \"North Star\"\nmetric and identify potential \"interference\" effects. Takeaway: Understand Uber\u2019s two-sided\nmarketplace model before the interview. They care more about how you think about business\ntrade-offs (e.g., higher price vs. lower wait time) than just your ability to tune a random forest.\n13. Airbnb Full Stack Developer",
+    "company": "Unknown",
+    "tech_stack": [
+      "algorithms"
+    ],
+    "raw_chunk": "The focus was heavily on \"Marketplace Dynamics.\" Questions involved surge pricing algorithms\nand how to reduce \"churn\" for drivers using incentive structures. I had to solve a probability\nproblem regarding wait times and driver supply-demand gaps. A large part of the onsite was a\ncase study on A/B testing a new route-sharing feature, where I had to define the \"North Star\"\nmetric and identify potential \"interference\" effects. Takeaway: Understand Uber\u2019s two-sided\nmarketplace model before the interview. They care more about how you think about business\ntrade-offs (e.g., higher price vs. lower wait time) than just your ability to tune a random forest.\n13. Airbnb Full Stack Developer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 25,
+    "text": "Metadata: Airbnb | Full Stack | L5 | Medium\nSkills: React, GraphQL, CSS-in-JS, UX Design",
+    "company": "Airbnb",
+    "tech_stack": [
+      "css",
+      "css-in-js",
+      "graphql",
+      "react",
+      "ux design"
+    ],
+    "raw_chunk": "Metadata: Airbnb | Full Stack | L5 | Medium\nSkills: React, GraphQL, CSS-in-JS, UX Design",
+    "role": "Full Stack"
+  },
+  {
+    "id": 26,
+    "text": "Airbnb\u2019s \"Craft\" round is legendary. You are given a Figma design and asked to implement it in\nReact, focusing on pixel perfection, accessibility (ARIA labels), and responsive layouts. They\nalso have a unique \"Culture\" round with non-engineers to ensure you align with their values. In\nthe backend round, I designed a GraphQL schema for a \"Booking Management\" system,\ndiscussing the \"N+1 problem\" and how to solve it using DataLoaders. Takeaway: They care\nabout the \"Host\" mindset. Build with empathy and focus on the user journey. Don't just make\nthe code work; make the UI feel smooth and intentional. Performance profiling (Lighthouse\nscores) was a major talking point.\n14. Airbnb Data Analyst",
+    "company": "Unknown",
+    "tech_stack": [
+      "graphql",
+      "react"
+    ],
+    "raw_chunk": "Airbnb\u2019s \"Craft\" round is legendary. You are given a Figma design and asked to implement it in\nReact, focusing on pixel perfection, accessibility (ARIA labels), and responsive layouts. They\nalso have a unique \"Culture\" round with non-engineers to ensure you align with their values. In\nthe backend round, I designed a GraphQL schema for a \"Booking Management\" system,\ndiscussing the \"N+1 problem\" and how to solve it using DataLoaders. Takeaway: They care\nabout the \"Host\" mindset. Build with empathy and focus on the user journey. Don't just make\nthe code work; make the UI feel smooth and intentional. Performance profiling (Lighthouse\nscores) was a major talking point.\n14. Airbnb Data Analyst",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 27,
+    "text": "Metadata: Airbnb | Data Analyst | Junior | Medium\nSkills: SQL, Tableau, Business Metrics, Storytelling",
+    "company": "Airbnb",
+    "tech_stack": [
+      "business metrics",
+      "sql",
+      "storytelling",
+      "tableau"
+    ],
+    "raw_chunk": "Metadata: Airbnb | Data Analyst | Junior | Medium\nSkills: SQL, Tableau, Business Metrics, Storytelling",
+    "role": "Data Analyst"
+  },
+  {
+    "id": 28,
+    "text": "This role focused heavily on \"Data Storytelling.\" I was given a dataset of bookings and had to\nidentify why a certain city\u2019s revenue was dropping despite high traffic. The SQL rounds were\nfairly standard (Joins, Aggregations), but the presentation round was key\u2014I had to explain my\nfindings to a mock \"Product Manager.\" We discussed \"Seasonality\" and \"Cannibalization\" of\nlistings. Takeaway: Focus on the \"So what?\" of the data. Don't just present charts; present\nactionable insights. \"Revenue is down by 5%\" is a stat; \"Revenue is down because local taxes\nincreased, so we should offer host incentives\" is an insight.\n15. Netflix Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "sql"
+    ],
+    "raw_chunk": "This role focused heavily on \"Data Storytelling.\" I was given a dataset of bookings and had to\nidentify why a certain city\u2019s revenue was dropping despite high traffic. The SQL rounds were\nfairly standard (Joins, Aggregations), but the presentation round was key\u2014I had to explain my\nfindings to a mock \"Product Manager.\" We discussed \"Seasonality\" and \"Cannibalization\" of\nlistings. Takeaway: Focus on the \"So what?\" of the data. Don't just present charts; present\nactionable insights. \"Revenue is down by 5%\" is a stat; \"Revenue is down because local taxes\nincreased, so we should offer host incentives\" is an insight.\n15. Netflix Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 29,
+    "text": "Metadata: Netflix | Backend Engineer | Senior | Hard\nSkills: Java, Spring Boot, Chaos Engineering, Cassandra",
+    "company": "Netflix",
+    "tech_stack": [
+      "cassandra",
+      "chaos engineering",
+      "java",
+      "spring",
+      "spring boot"
+    ],
+    "raw_chunk": "Metadata: Netflix | Backend Engineer | Senior | Hard\nSkills: Java, Spring Boot, Chaos Engineering, Cassandra",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 30,
+    "text": "Netflix usually only hires senior engineers, and the interview reflects that. There was no\ntraditional LeetCode; instead, it was a deep dive into my past projects and \"Cultural Fit.\" They\nasked how I would handle a service failure in the middle of the night and my thoughts on\n\"Chaos Monkey\" testing. We discussed the architecture of a content delivery network (CDN)\nand how to ensure 99.99% uptime for streaming. Takeaway: Read the Netflix Culture Memo\nmultiple times. Be opinionated but flexible. They look for \"Stunning Colleagues\" who are self-\ndriven. If you need a manager to tell you what to do, you won't fit in. Be ready to discuss \"High\nAlignment, Low Coupling.\"\n16. Stripe Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "Netflix usually only hires senior engineers, and the interview reflects that. There was no\ntraditional LeetCode; instead, it was a deep dive into my past projects and \"Cultural Fit.\" They\nasked how I would handle a service failure in the middle of the night and my thoughts on\n\"Chaos Monkey\" testing. We discussed the architecture of a content delivery network (CDN)\nand how to ensure 99.99% uptime for streaming. Takeaway: Read the Netflix Culture Memo\nmultiple times. Be opinionated but flexible. They look for \"Stunning Colleagues\" who are self-\ndriven. If you need a manager to tell you what to do, you won't fit in. Be ready to discuss \"High\nAlignment, Low Coupling.\"\n16. Stripe Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 31,
+    "text": "Metadata: Stripe | Software Engineer | L3 | Medium\nSkills: Ruby, API Design, Integration, Webhooks",
+    "company": "Stripe",
+    "tech_stack": [
+      "api design",
+      "integration",
+      "ruby",
+      "webhooks"
+    ],
+    "raw_chunk": "Metadata: Stripe | Software Engineer | L3 | Medium\nSkills: Ruby, API Design, Integration, Webhooks",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 32,
+    "text": "Stripe focuses on \"Work Sample\" tests rather than brain teasers. I had to integrate a new\npayment method into a mock API and handle webhook notifications for successful payments.\nThey look for how you read their documentation and handle edge cases like idempotency and\nnetwork timeouts. The system design round focused on building a \"Global Ledger\" that is\nconsistent across regions. Takeaway: They value \"Clean Code\" and excellent documentation\nskills. Treat your interview code as if it\u2019s going straight to production. Commenting on why you\nchose a specific error code (e.g., 400 vs 422) shows a level of maturity they highly value in their\nengineers.\n17. Atlassian Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "system design"
+    ],
+    "raw_chunk": "Stripe focuses on \"Work Sample\" tests rather than brain teasers. I had to integrate a new\npayment method into a mock API and handle webhook notifications for successful payments.\nThey look for how you read their documentation and handle edge cases like idempotency and\nnetwork timeouts. The system design round focused on building a \"Global Ledger\" that is\nconsistent across regions. Takeaway: They value \"Clean Code\" and excellent documentation\nskills. Treat your interview code as if it\u2019s going straight to production. Commenting on why you\nchose a specific error code (e.g., 400 vs 422) shows a level of maturity they highly value in their\nengineers.\n17. Atlassian Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 33,
+    "text": "Metadata: Atlassian | Software Engineer | P3 | Medium\nSkills: Java, React, Jira API, Microservices",
+    "company": "Atlassian",
+    "tech_stack": [
+      "java",
+      "jira api",
+      "microservices",
+      "react"
+    ],
+    "raw_chunk": "Metadata: Atlassian | Software Engineer | P3 | Medium\nSkills: Java, React, Jira API, Microservices",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 34,
+    "text": "Atlassian places huge weight on their \"Values Interview.\" If you don't pass the values check (like\n\"Don't #@!% the customer\"), the technical score doesn't matter. Technical rounds included a\n\"System Design\" of a collaborative document editor like Confluence, focusing on operational\ntransformation or CRDTs for real-time syncing. Coding was standard but required high-quality\nunit tests. Takeaway: Use the word \"Feedback\" often and show that you are a team player.\nThey are big on open communication and collaborative problem solving. Be ready to admit\nwhen you don't know something; they value honesty over \"faking it.\"\n18. Atlassian Frontend Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "system design"
+    ],
+    "raw_chunk": "Atlassian places huge weight on their \"Values Interview.\" If you don't pass the values check (like\n\"Don't #@!% the customer\"), the technical score doesn't matter. Technical rounds included a\n\"System Design\" of a collaborative document editor like Confluence, focusing on operational\ntransformation or CRDTs for real-time syncing. Coding was standard but required high-quality\nunit tests. Takeaway: Use the word \"Feedback\" often and show that you are a team player.\nThey are big on open communication and collaborative problem solving. Be ready to admit\nwhen you don't know something; they value honesty over \"faking it.\"\n18. Atlassian Frontend Engineer",
+    "role": "Frontend Engineer"
+  },
+  {
+    "id": 35,
+    "text": "Metadata: Atlassian | Frontend Engineer | P2 | Medium\nSkills: JavaScript, React, Testing Library, Webpack",
+    "company": "Atlassian",
+    "tech_stack": [
+      "javascript",
+      "react",
+      "testing library",
+      "webpack"
+    ],
+    "raw_chunk": "Metadata: Atlassian | Frontend Engineer | P2 | Medium\nSkills: JavaScript, React, Testing Library, Webpack",
+    "role": "Frontend Engineer"
+  },
+  {
+    "id": 36,
+    "text": "The focus was on \"Frontend System Design\"\u2014designing a component library that could be\nshared across Jira and Trello. I had to explain how to manage state globally versus locally and\nhow to optimize bundle sizes for slow networks. The coding round involved building a \"Drag and\nDrop\" interface for a Kanban board using vanilla JS or React. Takeaway: Know your React\nHooks and testing strategies (Jest/Cypress) inside out. They love candidates who think about\n\"Micro-frontends\" and how to scale a UI across multiple large teams without breaking things.\n19. Adobe Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "react",
+      "system design"
+    ],
+    "raw_chunk": "The focus was on \"Frontend System Design\"\u2014designing a component library that could be\nshared across Jira and Trello. I had to explain how to manage state globally versus locally and\nhow to optimize bundle sizes for slow networks. The coding round involved building a \"Drag and\nDrop\" interface for a Kanban board using vanilla JS or React. Takeaway: Know your React\nHooks and testing strategies (Jest/Cypress) inside out. They love candidates who think about\n\"Micro-frontends\" and how to scale a UI across multiple large teams without breaking things.\n19. Adobe Software Engineer",
+    "role": "Frontend Engineer"
+  },
+  {
+    "id": 37,
+    "text": "Metadata: Adobe | Software Engineer | Entry | Medium\nSkills: C++, Data Structures, OS, Graphics Algorithms",
+    "company": "Adobe",
+    "tech_stack": [
+      "algorithms",
+      "c++",
+      "data structures",
+      "graphics algorithms",
+      "os"
+    ],
+    "raw_chunk": "Metadata: Adobe | Software Engineer | Entry | Medium\nSkills: C++, Data Structures, OS, Graphics Algorithms",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 38,
+    "text": "Strong focus on Computer Science fundamentals. Questions on memory management,\npointers, and multithreading were very common. One round involved optimizing a simple image\nprocessing algorithm to run in parallel. Coding questions involved Linked Lists and Stacks, but\nwith a twist on memory efficiency. Takeaway: Refresh your OS and DBMS concepts. Adobe\nbuilds heavy software like Photoshop and Premiere, so they care about how your code affects\nthe CPU and RAM. Knowing how a \"Buffer\" works or how \"Garbage Collection\" impacts\nperformance is a major plus for their core engineering roles.\n20. Salesforce Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "multithreading"
+    ],
+    "raw_chunk": "Strong focus on Computer Science fundamentals. Questions on memory management,\npointers, and multithreading were very common. One round involved optimizing a simple image\nprocessing algorithm to run in parallel. Coding questions involved Linked Lists and Stacks, but\nwith a twist on memory efficiency. Takeaway: Refresh your OS and DBMS concepts. Adobe\nbuilds heavy software like Photoshop and Premiere, so they care about how your code affects\nthe CPU and RAM. Knowing how a \"Buffer\" works or how \"Garbage Collection\" impacts\nperformance is a major plus for their core engineering roles.\n20. Salesforce Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 39,
+    "text": "Metadata: Salesforce | Backend Engineer | AMTS | Medium\nSkills: Java, Apex, Multi-tenancy, Cloud Architecture",
+    "company": "Salesforce",
+    "tech_stack": [
+      "apex",
+      "cloud architecture",
+      "java",
+      "multi-tenancy"
+    ],
+    "raw_chunk": "Metadata: Salesforce | Backend Engineer | AMTS | Medium\nSkills: Java, Apex, Multi-tenancy, Cloud Architecture",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 40,
+    "text": "The interview focused on \"Multi-tenant Architecture.\" I was asked how to keep one client's data\nseparate from another's when they share the same physical database. Coding was standard\nLeetCode Medium, but with a heavy emphasis on \"Design Patterns\" like Singleton, Factory, and\nStrategy. We also discussed how Salesforce handles \"Governor Limits\" to prevent one user\nfrom hogging all system resources. Takeaway: Understand the SaaS business model and\narchitectural patterns. They want to see that you understand the complexity of building a\n\"Platform\" that other developers build on top of, not just a standalone app.\n21. Swiggy Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "The interview focused on \"Multi-tenant Architecture.\" I was asked how to keep one client's data\nseparate from another's when they share the same physical database. Coding was standard\nLeetCode Medium, but with a heavy emphasis on \"Design Patterns\" like Singleton, Factory, and\nStrategy. We also discussed how Salesforce handles \"Governor Limits\" to prevent one user\nfrom hogging all system resources. Takeaway: Understand the SaaS business model and\narchitectural patterns. They want to see that you understand the complexity of building a\n\"Platform\" that other developers build on top of, not just a standalone app.\n21. Swiggy Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 41,
+    "text": "Metadata: Swiggy | Backend Engineer | SDE-2 | Medium\nSkills: Java, Redis, Kafka, Microservices",
+    "company": "Swiggy",
+    "tech_stack": [
+      "java",
+      "kafka",
+      "microservices",
+      "redis"
+    ],
+    "raw_chunk": "Metadata: Swiggy | Backend Engineer | SDE-2 | Medium\nSkills: Java, Redis, Kafka, Microservices",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 42,
+    "text": "Questions focused on \"High Concurrency\" and \"Low Latency.\" How do you handle 100k orders\nper minute during a cricket match? We discussed using Redis for real-time tracking and Kafka\nfor event-driven order status updates. I had to implement a custom \"Rate Limiter\" in the coding\nround. Takeaway: Know your caching strategies (Write-through vs Write-back). Swiggy deals\nwith \"perishable\" data, so understanding how to invalidate caches and manage real-time\nstreams is key to passing their senior rounds.\n22. Swiggy Data Scientist",
+    "company": "Unknown",
+    "tech_stack": [
+      "concurrency",
+      "kafka",
+      "redis"
+    ],
+    "raw_chunk": "Questions focused on \"High Concurrency\" and \"Low Latency.\" How do you handle 100k orders\nper minute during a cricket match? We discussed using Redis for real-time tracking and Kafka\nfor event-driven order status updates. I had to implement a custom \"Rate Limiter\" in the coding\nround. Takeaway: Know your caching strategies (Write-through vs Write-back). Swiggy deals\nwith \"perishable\" data, so understanding how to invalidate caches and manage real-time\nstreams is key to passing their senior rounds.\n22. Swiggy Data Scientist",
+    "role": "Data Scientist"
+  },
+  {
+    "id": 43,
+    "text": "Metadata: Swiggy | Data Scientist | Medium\nSkills: Python, XGBoost, Logistics Optimization, Forecasting",
+    "company": "Swiggy",
+    "tech_stack": [
+      "forecasting",
+      "logistics optimization",
+      "python",
+      "xgboost"
+    ],
+    "raw_chunk": "Metadata: Swiggy | Data Scientist | Medium\nSkills: Python, XGBoost, Logistics Optimization, Forecasting",
+    "role": "Data Scientist"
+  },
+  {
+    "id": 44,
+    "text": "The focus was on \"Last-mile Delivery Optimization.\" I was asked to design a model to predict\nthe \"Time to Deliver\" (ETA) by factoring in weather, traffic, and restaurant preparation time. We\ndiscussed feature engineering for time-series data and how to handle outliers (like a sudden\nrainstorm). Takeaway: Focus on practical applications of ML. They aren't looking for the most\n\"complex\" model, but the one that is most \"interpretable\" and \"reliable\" for their delivery fleet.\nMentioning \"Model Monitoring\" in production is a big plus.\n23. Zomato Full Stack Developer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "The focus was on \"Last-mile Delivery Optimization.\" I was asked to design a model to predict\nthe \"Time to Deliver\" (ETA) by factoring in weather, traffic, and restaurant preparation time. We\ndiscussed feature engineering for time-series data and how to handle outliers (like a sudden\nrainstorm). Takeaway: Focus on practical applications of ML. They aren't looking for the most\n\"complex\" model, but the one that is most \"interpretable\" and \"reliable\" for their delivery fleet.\nMentioning \"Model Monitoring\" in production is a big plus.\n23. Zomato Full Stack Developer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 45,
+    "text": "Metadata: Zomato | Full Stack | SDE-1 | Medium\nSkills: React Native, Node.js, AWS",
+    "company": "Zomato",
+    "tech_stack": [
+      "aws",
+      "node",
+      "node.js",
+      "react",
+      "react native"
+    ],
+    "raw_chunk": "Metadata: Zomato | Full Stack | SDE-1 | Medium\nSkills: React Native, Node.js, AWS",
+    "role": "Full Stack"
+  },
+  {
+    "id": 46,
+    "text": "Heavy focus on Mobile performance. Since Zomato is mobile-first, they asked about optimizing\nimage loading, list virtualization in React Native, and handling \"Offline Mode\" for the delivery\napp. In the backend round, I designed an API for \"Restaurant Discovery\" with various filters.\nTakeaway: Know the mobile app lifecycle and how to minimize \"Over-fetching\" of data.\nMentioning GraphQL or efficient JSON structures for slow 3G networks shows you understand\nthe Indian market's constraints.\n24. Razorpay Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "graphql",
+      "react",
+      "react native"
+    ],
+    "raw_chunk": "Heavy focus on Mobile performance. Since Zomato is mobile-first, they asked about optimizing\nimage loading, list virtualization in React Native, and handling \"Offline Mode\" for the delivery\napp. In the backend round, I designed an API for \"Restaurant Discovery\" with various filters.\nTakeaway: Know the mobile app lifecycle and how to minimize \"Over-fetching\" of data.\nMentioning GraphQL or efficient JSON structures for slow 3G networks shows you understand\nthe Indian market's constraints.\n24. Razorpay Software Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 47,
+    "text": "Metadata: Razorpay | Software Engineer | SDE-2 | Hard\nSkills: Go, PHP, MySQL, Payment Gateways",
+    "company": "Razorpay",
+    "tech_stack": [
+      "go",
+      "mysql",
+      "payment gateways",
+      "php"
+    ],
+    "raw_chunk": "Metadata: Razorpay | Software Engineer | SDE-2 | Hard\nSkills: Go, PHP, MySQL, Payment Gateways",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 48,
+    "text": "Very high bar for Backend engineering. I was asked to implement a \"Deadlock-free Transaction\"\nsystem for moving money between two internal accounts. We did a deep dive into MySQL\n\"Isolation Levels\" and how to handle \"Partial Failures\" in a distributed payment flow. Takeaway:\nTransactional integrity is everything in Fintech. If your solution can lose even $0.01 in a race\ncondition, it's a fail. Practice designing systems that are \"Eventual Consistent\" but \"Audit-ready.\"\n25. Flipkart SDE",
+    "company": "Unknown",
+    "tech_stack": [
+      "mysql"
+    ],
+    "raw_chunk": "Very high bar for Backend engineering. I was asked to implement a \"Deadlock-free Transaction\"\nsystem for moving money between two internal accounts. We did a deep dive into MySQL\n\"Isolation Levels\" and how to handle \"Partial Failures\" in a distributed payment flow. Takeaway:\nTransactional integrity is everything in Fintech. If your solution can lose even $0.01 in a race\ncondition, it's a fail. Practice designing systems that are \"Eventual Consistent\" but \"Audit-ready.\"\n25. Flipkart SDE",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 49,
+    "text": "Metadata: Flipkart | SDE | SDE-1 | Hard\nSkills: Java, Machine Coding, LLD, HLD",
+    "company": "Flipkart",
+    "tech_stack": [
+      "hld",
+      "java",
+      "lld",
+      "machine coding"
+    ],
+    "raw_chunk": "Metadata: Flipkart | SDE | SDE-1 | Hard\nSkills: Java, Machine Coding, LLD, HLD",
+    "role": "SDE"
+  },
+  {
+    "id": 50,
+    "text": "The \"Machine Coding\" round is the ultimate filter. I had to build a \"Parking Lot System\" in 90\nminutes\u2014fully working code with extensible classes. This was followed by a DSA round on\nDynamic Programming (specifically 0/1 Knapsack variation) and Graphs. Takeaway: Practice\nLow-Level Design (LLD) and SOLID principles religiously. If your code isn't modular or uses\n\"God Classes,\" you'll fail the machine coding round even if the logic is correct. Speed in writing\nclean, bug-free code is the metric here.\n26. Flipkart Data Analyst",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "The \"Machine Coding\" round is the ultimate filter. I had to build a \"Parking Lot System\" in 90\nminutes\u2014fully working code with extensible classes. This was followed by a DSA round on\nDynamic Programming (specifically 0/1 Knapsack variation) and Graphs. Takeaway: Practice\nLow-Level Design (LLD) and SOLID principles religiously. If your code isn't modular or uses\n\"God Classes,\" you'll fail the machine coding round even if the logic is correct. Speed in writing\nclean, bug-free code is the metric here.\n26. Flipkart Data Analyst",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 51,
+    "text": "Metadata: Flipkart | Data Analyst | Junior | Medium\nSkills: Excel, SQL, Python, Business Analytics",
+    "company": "Flipkart",
+    "tech_stack": [
+      "business analytics",
+      "excel",
+      "python",
+      "sql"
+    ],
+    "raw_chunk": "Metadata: Flipkart | Data Analyst | Junior | Medium\nSkills: Excel, SQL, Python, Business Analytics",
+    "role": "Data Analyst"
+  },
+  {
+    "id": 52,
+    "text": "Heavy focus on Excel and SQL. I had to write complex nested queries to find \"Customer\nRetention\" and \"Churn\" rates over a 6-month period, segmented by region. There was also a\n\"Guesstimate\" round\u2014e.g., \"Estimate the number of smartphones sold in India during a Big\nBillion Day sale.\" Takeaway: Be very comfortable with SQL Window functions. For the\nguesstimates, it's not about the right number, but the logical structure of your assumptions.\nAlways break down the problem into smaller, manageable chunks.\n27. Meesho Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "sql"
+    ],
+    "raw_chunk": "Heavy focus on Excel and SQL. I had to write complex nested queries to find \"Customer\nRetention\" and \"Churn\" rates over a 6-month period, segmented by region. There was also a\n\"Guesstimate\" round\u2014e.g., \"Estimate the number of smartphones sold in India during a Big\nBillion Day sale.\" Takeaway: Be very comfortable with SQL Window functions. For the\nguesstimates, it's not about the right number, but the logical structure of your assumptions.\nAlways break down the problem into smaller, manageable chunks.\n27. Meesho Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 53,
+    "text": "Metadata: Meesho | Backend Engineer | SDE-2 | Medium\nSkills: Java, Spring Boot, Microservices, ElasticSearch",
+    "company": "Meesho",
+    "tech_stack": [
+      "elasticsearch",
+      "java",
+      "microservices",
+      "spring",
+      "spring boot"
+    ],
+    "raw_chunk": "Metadata: Meesho | Backend Engineer | SDE-2 | Medium\nSkills: Java, Spring Boot, Microservices, ElasticSearch",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 54,
+    "text": "The interview focused on \"Scalable Discovery.\" How do you show millions of products to a user\nin a personalized way without lagging? We discussed ElasticSearch indexing strategies and\nhow to handle \"Write-heavy\" workloads when sellers update prices. Coding was standard DSA\n(Trees/Heaps). Takeaway: Understand search and ranking architectures. Meesho grows by\nempowering small sellers, so discuss how you'd build \"Reliable\" and \"Simple\" systems that can\nscale rapidly with minimal dev intervention.\n28. CRED Full Stack Developer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "The interview focused on \"Scalable Discovery.\" How do you show millions of products to a user\nin a personalized way without lagging? We discussed ElasticSearch indexing strategies and\nhow to handle \"Write-heavy\" workloads when sellers update prices. Coding was standard DSA\n(Trees/Heaps). Takeaway: Understand search and ranking architectures. Meesho grows by\nempowering small sellers, so discuss how you'd build \"Reliable\" and \"Simple\" systems that can\nscale rapidly with minimal dev intervention.\n28. CRED Full Stack Developer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 55,
+    "text": "Metadata: CRED | Full Stack | Senior | Hard\nSkills: React, Node.js, Framer Motion, Design Systems",
+    "company": "CRED",
+    "tech_stack": [
+      "design systems",
+      "framer",
+      "framer motion",
+      "node",
+      "node.js",
+      "react"
+    ],
+    "raw_chunk": "Metadata: CRED | Full Stack | Senior | Hard\nSkills: React, Node.js, Framer Motion, Design Systems",
+    "role": "Full Stack"
+  },
+  {
+    "id": 56,
+    "text": "CRED is obsessed with UI/UX. The interview involved building a complex, high-performance\nanimation in React (like a credit card flip or a sleek progress bar) and ensuring it worked at a\nlocked 60fps on mobile. The backend round focused on \"Security\" and \"Data Encryption\" for\nsensitive card info. Takeaway: Focus on CSS animations and performance profiling. If you can\ntalk about the \"Virtual DOM\" vs \"Direct DOM manipulation\" for animations, you're in a good\nspot. They want \"Artists who can Code.\"\n29. Zepto Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "css",
+      "react"
+    ],
+    "raw_chunk": "CRED is obsessed with UI/UX. The interview involved building a complex, high-performance\nanimation in React (like a credit card flip or a sleek progress bar) and ensuring it worked at a\nlocked 60fps on mobile. The backend round focused on \"Security\" and \"Data Encryption\" for\nsensitive card info. Takeaway: Focus on CSS animations and performance profiling. If you can\ntalk about the \"Virtual DOM\" vs \"Direct DOM manipulation\" for animations, you're in a good\nspot. They want \"Artists who can Code.\"\n29. Zepto Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 57,
+    "text": "Metadata: Zepto | Backend Engineer | SDE-1 | Medium\nSkills: Node.js, PostGIS, Real-time Systems, Redis",
+    "company": "Zepto",
+    "tech_stack": [
+      "node",
+      "node.js",
+      "postgis",
+      "real-time systems",
+      "redis"
+    ],
+    "raw_chunk": "Metadata: Zepto | Backend Engineer | SDE-1 | Medium\nSkills: Node.js, PostGIS, Real-time Systems, Redis",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 58,
+    "text": "The focus was entirely on the \"10-minute delivery\" constraint. We discussed Geospatial queries\nand how to use PostGIS to find the nearest delivery partner in milliseconds. I designed a \"Slot\nBooking\" system that updates in real-time as delivery partners become available. Takeaway:\nStudy Geospatial indexing (R-trees/Quad-trees) and Redis. In the world of 10-minute delivery,\nevery millisecond of latency in the backend is a mile on the road. Show that you care about\n\"Throughput.\"\n30. Dunzo Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "redis"
+    ],
+    "raw_chunk": "The focus was entirely on the \"10-minute delivery\" constraint. We discussed Geospatial queries\nand how to use PostGIS to find the nearest delivery partner in milliseconds. I designed a \"Slot\nBooking\" system that updates in real-time as delivery partners become available. Takeaway:\nStudy Geospatial indexing (R-trees/Quad-trees) and Redis. In the world of 10-minute delivery,\nevery millisecond of latency in the backend is a mile on the road. Show that you care about\n\"Throughput.\"\n30. Dunzo Software Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 59,
+    "text": "Metadata: Dunzo | Software Engineer | Junior | Medium\nSkills: Kotlin, Python, Optimization Algorithms",
+    "company": "Dunzo",
+    "tech_stack": [
+      "algorithms",
+      "kotlin",
+      "optimization algorithms",
+      "python"
+    ],
+    "raw_chunk": "Metadata: Dunzo | Software Engineer | Junior | Medium\nSkills: Kotlin, Python, Optimization Algorithms",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 60,
+    "text": "A mix of DSA and \"Real-world Problem Solving.\" I was asked to solve a variation of the\n\"Traveling Salesman Problem\" to optimize a multi-stop delivery route. The coding rounds were\nfocused on Arrays and HashMaps, with a follow-up on how to handle \"Dynamic Pricing\" during\nhigh-demand hours. Takeaway: Focus on optimization and heuristics. They want to see that\nyou can take a complex math problem and turn it into a working script. Mentioning \"Greedy\nAlgorithms\" for route optimization is a good start.\n31. NVIDIA ML Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "algorithms"
+    ],
+    "raw_chunk": "A mix of DSA and \"Real-world Problem Solving.\" I was asked to solve a variation of the\n\"Traveling Salesman Problem\" to optimize a multi-stop delivery route. The coding rounds were\nfocused on Arrays and HashMaps, with a follow-up on how to handle \"Dynamic Pricing\" during\nhigh-demand hours. Takeaway: Focus on optimization and heuristics. They want to see that\nyou can take a complex math problem and turn it into a working script. Mentioning \"Greedy\nAlgorithms\" for route optimization is a good start.\n31. NVIDIA ML Engineer",
+    "role": "ML Engineer"
+  },
+  {
+    "id": 61,
+    "text": "Metadata: NVIDIA | ML Engineer | L3 | Hard\nSkills: CUDA, C++, PyTorch, Kernels, Linear Algebra",
+    "company": "NVIDIA",
+    "tech_stack": [
+      "c++",
+      "cuda",
+      "kernels",
+      "linear algebra",
+      "pytorch"
+    ],
+    "raw_chunk": "Metadata: NVIDIA | ML Engineer | L3 | Hard\nSkills: CUDA, C++, PyTorch, Kernels, Linear Algebra",
+    "role": "ML Engineer"
+  },
+  {
+    "id": 62,
+    "text": "Deep dive into \"GPU Architecture.\" I was asked how to optimize a matrix multiplication kernel in\nCUDA to maximize \"Shared Memory\" usage. We also discussed the internal workings of\nPyTorch's autograd engine and how to minimize latency in \"Model Inference.\" Takeaway: You\nneed to know hardware. If you can't talk about memory coalescing, warp scheduling, or\nTFLOPS, you aren't prepared. NVIDIA sits at the intersection of \"Math\" and \"Metal\"\u2014you must\nmaster both.\n32. NVIDIA Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "pytorch"
+    ],
+    "raw_chunk": "Deep dive into \"GPU Architecture.\" I was asked how to optimize a matrix multiplication kernel in\nCUDA to maximize \"Shared Memory\" usage. We also discussed the internal workings of\nPyTorch's autograd engine and how to minimize latency in \"Model Inference.\" Takeaway: You\nneed to know hardware. If you can't talk about memory coalescing, warp scheduling, or\nTFLOPS, you aren't prepared. NVIDIA sits at the intersection of \"Math\" and \"Metal\"\u2014you must\nmaster both.\n32. NVIDIA Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 63,
+    "text": "Metadata: NVIDIA | Software Engineer | SDE-2 | Medium\nSkills: C, C++, Device Drivers, Linux Internals",
+    "company": "NVIDIA",
+    "tech_stack": [
+      "c++",
+      "device drivers",
+      "linux",
+      "linux internals"
+    ],
+    "raw_chunk": "Metadata: NVIDIA | Software Engineer | SDE-2 | Medium\nSkills: C, C++, Device Drivers, Linux Internals",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 64,
+    "text": "Focus on \"System Software\" and low-level C. Questions ranged from writing a simple character\ndriver to explaining how \"Direct Memory Access\" (DMA) works. I had to solve a coding problem\ninvolving bit manipulation and custom memory allocators. Takeaway: Be a C expert.\nUnderstand pointers, memory alignment, and the difference between stack and heap at a\ngranular level. They value engineers who aren't afraid of the \"Kernel\" and can debug at the\nassembly level if needed.\n33. Intel Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "Focus on \"System Software\" and low-level C. Questions ranged from writing a simple character\ndriver to explaining how \"Direct Memory Access\" (DMA) works. I had to solve a coding problem\ninvolving bit manipulation and custom memory allocators. Takeaway: Be a C expert.\nUnderstand pointers, memory alignment, and the difference between stack and heap at a\ngranular level. They value engineers who aren't afraid of the \"Kernel\" and can debug at the\nassembly level if needed.\n33. Intel Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 65,
+    "text": "Metadata: Intel | Software Engineer | Graduate | Medium\nSkills: C, Assembly, Computer Architecture, Verilog",
+    "company": "Intel",
+    "tech_stack": [
+      "assembly",
+      "computer architecture",
+      "verilog"
+    ],
+    "raw_chunk": "Metadata: Intel | Software Engineer | Graduate | Medium\nSkills: C, Assembly, Computer Architecture, Verilog",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 66,
+    "text": "The interview was heavy on \"Computer Organization.\" I was asked about instruction pipelining,\nbranch prediction, and cache coherency protocols (MESI). One round involved writing a small\npiece of Assembly code to perform an array sum. Takeaway: Refresh your Hennessy &\nPatterson \"Computer Architecture\" textbook. Intel is all about \"Silicon\" and \"Firmware.\" Knowing\nhow the CPU actually executes your C++ code is the key to passing their technical rounds.\n34. Qualcomm Embedded Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "c++"
+    ],
+    "raw_chunk": "The interview was heavy on \"Computer Organization.\" I was asked about instruction pipelining,\nbranch prediction, and cache coherency protocols (MESI). One round involved writing a small\npiece of Assembly code to perform an array sum. Takeaway: Refresh your Hennessy &\nPatterson \"Computer Architecture\" textbook. Intel is all about \"Silicon\" and \"Firmware.\" Knowing\nhow the CPU actually executes your C++ code is the key to passing their technical rounds.\n34. Qualcomm Embedded Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 67,
+    "text": "Metadata: Qualcomm | Embedded Engineer | Junior | Hard\nSkills: Embedded C, RTOS, I2C/SPI, Microcontrollers",
+    "company": "Qualcomm",
+    "tech_stack": [
+      "embedded c",
+      "i2c/spi",
+      "microcontrollers",
+      "rtos"
+    ],
+    "raw_chunk": "Metadata: Qualcomm | Embedded Engineer | Junior | Hard\nSkills: Embedded C, RTOS, I2C/SPI, Microcontrollers",
+    "role": "Embedded Engineer"
+  },
+  {
+    "id": 68,
+    "text": "Focus on \"Real-time Constraints\" and hardware protocols. I had to write code for a task\nscheduler on a bare-metal system, ensuring that high-priority interrupts were handled within a\nspecific microsecond window. We discussed I2C vs SPI for sensor communication. Takeaway:\nKnow your communication protocols and \"Interrupt Service Routines\" (ISRs). Practice writing\n\"Safe\" C code\u2014no dynamic memory allocation in critical sections. Qualcomm is about\n\"Reliability\" in the mobile and automotive space.\n35. Oracle Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "Focus on \"Real-time Constraints\" and hardware protocols. I had to write code for a task\nscheduler on a bare-metal system, ensuring that high-priority interrupts were handled within a\nspecific microsecond window. We discussed I2C vs SPI for sensor communication. Takeaway:\nKnow your communication protocols and \"Interrupt Service Routines\" (ISRs). Practice writing\n\"Safe\" C code\u2014no dynamic memory allocation in critical sections. Qualcomm is about\n\"Reliability\" in the mobile and automotive space.\n35. Oracle Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 69,
+    "text": "Metadata: Oracle | Backend Engineer | IC2 | Medium\nSkills: Java, SQL, Database Internals, Cloud Infra",
+    "company": "Oracle",
+    "tech_stack": [
+      "cloud infra",
+      "database internals",
+      "java",
+      "sql"
+    ],
+    "raw_chunk": "Metadata: Oracle | Backend Engineer | IC2 | Medium\nSkills: Java, SQL, Database Internals, Cloud Infra",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 70,
+    "text": "Very standard DSA and SQL, but the SQL was surprisingly deep. I had to explain \"B-Tree vs\nHash Indexes\" and how to optimize a query that was doing a full table scan. The Java round\nfocused on \"Multi-threading\" and the \"Java Memory Model.\" Takeaway: Know how an RDBMS\nworks under the hood. Oracle is the \"Database Company\"\u2014if you don't know what an\n\"Execution Plan\" is or how \"Acid Properties\" are implemented, you'll struggle in their core\nteams.\n36. SAP Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "java",
+      "sql"
+    ],
+    "raw_chunk": "Very standard DSA and SQL, but the SQL was surprisingly deep. I had to explain \"B-Tree vs\nHash Indexes\" and how to optimize a query that was doing a full table scan. The Java round\nfocused on \"Multi-threading\" and the \"Java Memory Model.\" Takeaway: Know how an RDBMS\nworks under the hood. Oracle is the \"Database Company\"\u2014if you don't know what an\n\"Execution Plan\" is or how \"Acid Properties\" are implemented, you'll struggle in their core\nteams.\n36. SAP Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 71,
+    "text": "Metadata: SAP | Software Engineer | Associate | Medium\nSkills: Java, ABAP, Cloud Foundry, Distributed Systems",
+    "company": "SAP",
+    "tech_stack": [
+      "abap",
+      "cloud foundry",
+      "distributed systems",
+      "java"
+    ],
+    "raw_chunk": "Metadata: SAP | Software Engineer | Associate | Medium\nSkills: Java, ABAP, Cloud Foundry, Distributed Systems",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 72,
+    "text": "Focus on \"Enterprise Design Patterns.\" We discussed how to manage massive datasets across\ndistributed nodes while maintaining data integrity for financial systems. The coding round was\nmostly about \"Clean Code\" and \"Unit Testing.\" Takeaway: Focus on modularity. SAP builds\nsoftware that runs the world's biggest companies. They want engineers who write \"Boring,\nReliable Code\" that won't crash a multi-billion dollar supply chain. Use \"Dependency Injection\"\nand \"Interfaces\" effectively.\n37. Cisco Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "node"
+    ],
+    "raw_chunk": "Focus on \"Enterprise Design Patterns.\" We discussed how to manage massive datasets across\ndistributed nodes while maintaining data integrity for financial systems. The coding round was\nmostly about \"Clean Code\" and \"Unit Testing.\" Takeaway: Focus on modularity. SAP builds\nsoftware that runs the world's biggest companies. They want engineers who write \"Boring,\nReliable Code\" that won't crash a multi-billion dollar supply chain. Use \"Dependency Injection\"\nand \"Interfaces\" effectively.\n37. Cisco Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 73,
+    "text": "Metadata: Cisco | Software Engineer | Grade 4 | Medium\nSkills: Networking (TCP/IP), Python, C++, Routing Protocols",
+    "company": "Cisco",
+    "tech_stack": [
+      "c++",
+      "networking (tcp/ip)",
+      "python",
+      "routing protocols"
+    ],
+    "raw_chunk": "Metadata: Cisco | Software Engineer | Grade 4 | Medium\nSkills: Networking (TCP/IP), Python, C++, Routing Protocols",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 74,
+    "text": "Every round had networking questions. \"What happens when you type a URL in the browser?\"\nwas a 30-minute deep dive into DNS, TCP handshakes, BGP, and ARP. Coding questions\ninvolved implementing a \"Network Packet Filter\" using HashMaps. Takeaway: Master the OSI\nmodel and the TCP/IP stack. Cisco is the \"Backbone of the Internet.\" If you can't explain how a\n\"Router\" differs from a \"Switch\" at the packet level, you're not ready. Brush up on Wireshark and\nsocket programming.\n38. VMware Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "Every round had networking questions. \"What happens when you type a URL in the browser?\"\nwas a 30-minute deep dive into DNS, TCP handshakes, BGP, and ARP. Coding questions\ninvolved implementing a \"Network Packet Filter\" using HashMaps. Takeaway: Master the OSI\nmodel and the TCP/IP stack. Cisco is the \"Backbone of the Internet.\" If you can't explain how a\n\"Router\" differs from a \"Switch\" at the packet level, you're not ready. Brush up on Wireshark and\nsocket programming.\n38. VMware Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 75,
+    "text": "Metadata: VMware | Backend Engineer | MTS-1 | Medium\nSkills: Java, Virtualization, K8s, Distributed Systems",
+    "company": "VMware",
+    "tech_stack": [
+      "distributed systems",
+      "java",
+      "k8s",
+      "virtualization"
+    ],
+    "raw_chunk": "Metadata: VMware | Backend Engineer | MTS-1 | Medium\nSkills: Java, Virtualization, K8s, Distributed Systems",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 76,
+    "text": "Focus on \"Virtualization\" and \"Cloud Native\" technologies. I was asked how a Hypervisor\nmanages \"CPU overcommitment\" and how \"Containers\" differ from \"VMs\" in terms of kernel\nsharing. Coding rounds focused on Trees and Graph traversals. Takeaway: Understand the\n\"Infrastructure\" layer. VMware is moving heavily into Kubernetes (Tanzu), so knowing how K8s\n\"Control Planes\" and \"Data Planes\" work will give you a significant advantage in the system\ndesign rounds.\n39. ServiceNow Software Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "kubernetes"
+    ],
+    "raw_chunk": "Focus on \"Virtualization\" and \"Cloud Native\" technologies. I was asked how a Hypervisor\nmanages \"CPU overcommitment\" and how \"Containers\" differ from \"VMs\" in terms of kernel\nsharing. Coding rounds focused on Trees and Graph traversals. Takeaway: Understand the\n\"Infrastructure\" layer. VMware is moving heavily into Kubernetes (Tanzu), so knowing how K8s\n\"Control Planes\" and \"Data Planes\" work will give you a significant advantage in the system\ndesign rounds.\n39. ServiceNow Software Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 77,
+    "text": "Metadata: ServiceNow | Software Engineer | Junior | Medium\nSkills: JavaScript, Java, SaaS, Workflow Engines",
+    "company": "ServiceNow",
+    "tech_stack": [
+      "java",
+      "javascript",
+      "saas",
+      "workflow engines"
+    ],
+    "raw_chunk": "Metadata: ServiceNow | Software Engineer | Junior | Medium\nSkills: JavaScript, Java, SaaS, Workflow Engines",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 78,
+    "text": "A mix of web technology and backend logic. I had to design a \"Workflow Engine\" where non-\ntechnical users could drag-and-drop logic blocks. We discussed \"Event-driven Architecture\" and\nhow to handle thousands of concurrent automated tasks. Takeaway: Focus on \"Extensibility.\"\nServiceNow is a platform for other businesses to build on. They look for engineers who can\nbuild \"Flexible\" schemas and APIs that don't break when a customer adds a custom field.\n40. Snowflake Backend Engineer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "A mix of web technology and backend logic. I had to design a \"Workflow Engine\" where non-\ntechnical users could drag-and-drop logic blocks. We discussed \"Event-driven Architecture\" and\nhow to handle thousands of concurrent automated tasks. Takeaway: Focus on \"Extensibility.\"\nServiceNow is a platform for other businesses to build on. They look for engineers who can\nbuild \"Flexible\" schemas and APIs that don't break when a customer adds a custom field.\n40. Snowflake Backend Engineer",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 79,
+    "text": "Metadata: Snowflake | Backend Engineer | Hard\nSkills: C++, Database Internals, Storage Engines, Query Optimization",
+    "company": "Snowflake",
+    "tech_stack": [
+      "c++",
+      "database internals",
+      "query optimization",
+      "storage engines"
+    ],
+    "raw_chunk": "Metadata: Snowflake | Backend Engineer | Hard\nSkills: C++, Database Internals, Storage Engines, Query Optimization",
+    "role": "Backend Engineer"
+  },
+  {
+    "id": 80,
+    "text": "One of the most difficult interviews I've experienced. Questions were on \"Columnar Storage\"\nformats, \"Micro-partitioning,\" and how to implement a \"Lock-free Queue\" in C++. We spent 45\nminutes on \"Query Plan Optimization.\" Takeaway: This is for true systems nerds. Study the\n\"Snowflake Paper\" and general database research. They want people who can write high-\nperformance C++ that beats existing benchmarks. Know your \"SIMD\" instructions and \"Cache-\nconscious\" programming.\n41. Amazon DevOps Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "c++"
+    ],
+    "raw_chunk": "One of the most difficult interviews I've experienced. Questions were on \"Columnar Storage\"\nformats, \"Micro-partitioning,\" and how to implement a \"Lock-free Queue\" in C++. We spent 45\nminutes on \"Query Plan Optimization.\" Takeaway: This is for true systems nerds. Study the\n\"Snowflake Paper\" and general database research. They want people who can write high-\nperformance C++ that beats existing benchmarks. Know your \"SIMD\" instructions and \"Cache-\nconscious\" programming.\n41. Amazon DevOps Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 81,
+    "text": "Metadata: Amazon | DevOps | L4 | Medium\nSkills: AWS, Terraform, CI/CD, Shell Scripting",
+    "company": "Amazon",
+    "tech_stack": [
+      "aws",
+      "ci/cd",
+      "shell scripting",
+      "terraform"
+    ],
+    "raw_chunk": "Metadata: Amazon | DevOps | L4 | Medium\nSkills: AWS, Terraform, CI/CD, Shell Scripting",
+    "role": "DevOps"
+  },
+  {
+    "id": 82,
+    "text": "Focus on \"Infrastructure as Code\" (IaC). I had to write a Terraform script to deploy a high-\navailability VPC with public/private subnets and an Auto Scaling Group. We also discussed\n\"Blue-Green Deployment\" strategies and how to rollback a failed production push. Takeaway:\nKnow the AWS \"Well-Architected Framework.\" Amazon DevOps is about \"Automation\" and\n\"Self-healing.\" If you mention \"Manual steps,\" you've already lost. Focus on \"Monitoring\" and\n\"Alerting\" using CloudWatch.\n42. Microsoft Cloud Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "aws",
+      "terraform"
+    ],
+    "raw_chunk": "Focus on \"Infrastructure as Code\" (IaC). I had to write a Terraform script to deploy a high-\navailability VPC with public/private subnets and an Auto Scaling Group. We also discussed\n\"Blue-Green Deployment\" strategies and how to rollback a failed production push. Takeaway:\nKnow the AWS \"Well-Architected Framework.\" Amazon DevOps is about \"Automation\" and\n\"Self-healing.\" If you mention \"Manual steps,\" you've already lost. Focus on \"Monitoring\" and\n\"Alerting\" using CloudWatch.\n42. Microsoft Cloud Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 83,
+    "text": "Metadata: Microsoft | Cloud Engineer | Medium\nSkills: Azure, PowerShell, ARM Templates, Networking",
+    "company": "Microsoft",
+    "tech_stack": [
+      "arm templates",
+      "azure",
+      "networking",
+      "powershell"
+    ],
+    "raw_chunk": "Metadata: Microsoft | Cloud Engineer | Medium\nSkills: Azure, PowerShell, ARM Templates, Networking",
+    "role": "Cloud Engineer"
+  },
+  {
+    "id": 84,
+    "text": "Heavy focus on Azure-specific services like Azure Functions, CosmosDB, and Virtual Networks.\nI was asked how to secure a \"Public API\" using Azure API Management and OAuth2. Technical\nrounds also included basic C# for writing serverless functions. Takeaway: Get an Azure\ncertification before applying. They expect you to know the difference between \"LRS, GRS, and\nZRS\" storage and when to use which. Microsoft values \"Security-first\" cloud design.\n43. Google Cloud Engineer",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "Heavy focus on Azure-specific services like Azure Functions, CosmosDB, and Virtual Networks.\nI was asked how to secure a \"Public API\" using Azure API Management and OAuth2. Technical\nrounds also included basic C# for writing serverless functions. Takeaway: Get an Azure\ncertification before applying. They expect you to know the difference between \"LRS, GRS, and\nZRS\" storage and when to use which. Microsoft values \"Security-first\" cloud design.\n43. Google Cloud Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 85,
+    "text": "Metadata: Google | Cloud Engineer | Hard\nSkills: GCP, Kubernetes (GKE), Anthos, Networking",
+    "company": "Google",
+    "tech_stack": [
+      "anthos",
+      "gcp",
+      "kubernetes",
+      "kubernetes (gke)",
+      "networking"
+    ],
+    "raw_chunk": "Metadata: Google | Cloud Engineer | Hard\nSkills: GCP, Kubernetes (GKE), Anthos, Networking",
+    "role": "Cloud Engineer"
+  },
+  {
+    "id": 86,
+    "text": "Focused on \"Hybrid Cloud\" and \"Containerization.\" I was asked how to migrate a legacy on-\nprem app to GKE using a \"Strangler Pattern.\" We discussed \"Service Meshes\" (Istio) and how\nto manage traffic splitting. Takeaway: Master GKE. Google is Kubernetes. If you don't\nunderstand \"Pods,\" \"Deployments,\" and \"Ingress,\" you won't pass. Also, be ready for \"Site\nReliability\" (SRE) questions\u2014Google invented the term, after all.\n44. Oracle Cloud Engineer",
+    "company": "Unknown",
+    "tech_stack": [
+      "kubernetes"
+    ],
+    "raw_chunk": "Focused on \"Hybrid Cloud\" and \"Containerization.\" I was asked how to migrate a legacy on-\nprem app to GKE using a \"Strangler Pattern.\" We discussed \"Service Meshes\" (Istio) and how\nto manage traffic splitting. Takeaway: Master GKE. Google is Kubernetes. If you don't\nunderstand \"Pods,\" \"Deployments,\" and \"Ingress,\" you won't pass. Also, be ready for \"Site\nReliability\" (SRE) questions\u2014Google invented the term, after all.\n44. Oracle Cloud Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 87,
+    "text": "Metadata: Oracle | Cloud Engineer | Medium\nSkills: OCI, Networking, Linux, Terraform",
+    "company": "Oracle",
+    "tech_stack": [
+      "linux",
+      "networking",
+      "oci",
+      "terraform"
+    ],
+    "raw_chunk": "Metadata: Oracle | Cloud Engineer | Medium\nSkills: OCI, Networking, Linux, Terraform",
+    "role": "Cloud Engineer"
+  },
+  {
+    "id": 88,
+    "text": "Focus on \"Bare Metal\" cloud performance and low-latency networking. I had to design a\nnetwork topology for a high-performance database cluster. We discussed \"VCN Peering\" and\n\"FastConnect.\" Takeaway: Understand OCI's unique networking layers and how they differ\nfrom AWS. Oracle markets itself as the best cloud for \"Heavy Databases,\" so show that you\nunderstand \"IOPS\" and \"Network Latency\" optimization.\n45. IBM DevOps Engineer",
+    "company": "AWS",
+    "tech_stack": [
+      "aws"
+    ],
+    "raw_chunk": "Focus on \"Bare Metal\" cloud performance and low-latency networking. I had to design a\nnetwork topology for a high-performance database cluster. We discussed \"VCN Peering\" and\n\"FastConnect.\" Takeaway: Understand OCI's unique networking layers and how they differ\nfrom AWS. Oracle markets itself as the best cloud for \"Heavy Databases,\" so show that you\nunderstand \"IOPS\" and \"Network Latency\" optimization.\n45. IBM DevOps Engineer",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 89,
+    "text": "Metadata: IBM | DevOps | Junior | Medium\nSkills: Ansible, Jenkins, OpenShift, Linux",
+    "company": "IBM",
+    "tech_stack": [
+      "ansible",
+      "jenkins",
+      "linux",
+      "openshift"
+    ],
+    "raw_chunk": "Metadata: IBM | DevOps | Junior | Medium\nSkills: Ansible, Jenkins, OpenShift, Linux",
+    "role": "DevOps"
+  },
+  {
+    "id": 90,
+    "text": "Focus on \"Enterprise Automation\" using Jenkins and Ansible for legacy systems. I was asked\nhow to automate the patching of 500 Linux servers without downtime. We also discussed\n\"OpenShift\" as a managed K8s platform. Takeaway: Know your \"Configuration Management.\"\nIBM works with many \"Legacy\" clients, so showing you can bridge the gap between \"Old-school\nMainframes\" and \"Modern Cloud\" is a massive advantage.\n46. Fintech Startup \u2013 Backend Engineer\nMetadata: Fintech | Backend | SDE-2 | Hard\nSkills: Go, PostgreSQL, Ledger Design, Distributed Transactions",
+    "company": "Fintech",
+    "tech_stack": [
+      "distributed transactions",
+      "go",
+      "jenkins",
+      "ledger design",
+      "linux",
+      "postgresql"
+    ],
+    "raw_chunk": "Focus on \"Enterprise Automation\" using Jenkins and Ansible for legacy systems. I was asked\nhow to automate the patching of 500 Linux servers without downtime. We also discussed\n\"OpenShift\" as a managed K8s platform. Takeaway: Know your \"Configuration Management.\"\nIBM works with many \"Legacy\" clients, so showing you can bridge the gap between \"Old-school\nMainframes\" and \"Modern Cloud\" is a massive advantage.\n46. Fintech Startup \u2013 Backend Engineer\nMetadata: Fintech | Backend | SDE-2 | Hard\nSkills: Go, PostgreSQL, Ledger Design, Distributed Transactions",
+    "role": "Backend"
+  },
+  {
+    "id": 91,
+    "text": "Focus on \"Idempotency\" and \"Data Consistency.\" How do you ensure a payment isn't\nprocessed twice during a network retry? I designed a \"Double-entry Bookkeeping\" ledger from\nscratch in the system design round. Takeaway: Study distributed transactions and the \"Saga\nPattern.\" In Fintech, \"Eventual Consistency\" is often not enough. You must understand how to\nuse \"Postgres Locks\" and \"Unique Constraints\" to prevent financial discrepancies.\n47. AI Startup \u2013 ML Engineer\nMetadata: AI Startup | ML Engineer | Medium\nSkills: Python, LangChain, OpenAI API, Vector DBs",
+    "company": "AI Startup",
+    "tech_stack": [
+      "langchain",
+      "openai api",
+      "python",
+      "system design",
+      "vector dbs"
+    ],
+    "raw_chunk": "Focus on \"Idempotency\" and \"Data Consistency.\" How do you ensure a payment isn't\nprocessed twice during a network retry? I designed a \"Double-entry Bookkeeping\" ledger from\nscratch in the system design round. Takeaway: Study distributed transactions and the \"Saga\nPattern.\" In Fintech, \"Eventual Consistency\" is often not enough. You must understand how to\nuse \"Postgres Locks\" and \"Unique Constraints\" to prevent financial discrepancies.\n47. AI Startup \u2013 ML Engineer\nMetadata: AI Startup | ML Engineer | Medium\nSkills: Python, LangChain, OpenAI API, Vector DBs",
+    "role": "ML Engineer"
+  },
+  {
+    "id": 92,
+    "text": "Focus on \"RAG\" (Retrieval Augmented Generation). I had to build a simple Q&A bot over a set\nof PDF documents using LangChain and Pinecone. We discussed \"Prompt Engineering\" and\nhow to reduce \"Hallucinations\" in LLMs. Takeaway: Stay updated on Generative AI. They want\nto see that you can take a raw LLM and build a \"Product\" around it. Mentioning \"Evaluation\nFrameworks\" for LLM outputs is a huge plus.\n48. SaaS Startup \u2013 Full Stack Developer\nMetadata: SaaS Startup | Full Stack | Junior | Medium\nSkills: Next.js, Prisma, Tailwind, TypeScript",
+    "company": "SaaS Startup",
+    "tech_stack": [
+      "next.js",
+      "prisma",
+      "tailwind",
+      "typescript"
+    ],
+    "raw_chunk": "Focus on \"RAG\" (Retrieval Augmented Generation). I had to build a simple Q&A bot over a set\nof PDF documents using LangChain and Pinecone. We discussed \"Prompt Engineering\" and\nhow to reduce \"Hallucinations\" in LLMs. Takeaway: Stay updated on Generative AI. They want\nto see that you can take a raw LLM and build a \"Product\" around it. Mentioning \"Evaluation\nFrameworks\" for LLM outputs is a huge plus.\n48. SaaS Startup \u2013 Full Stack Developer\nMetadata: SaaS Startup | Full Stack | Junior | Medium\nSkills: Next.js, Prisma, Tailwind, TypeScript",
+    "role": "Full Stack"
+  },
+  {
+    "id": 93,
+    "text": "Rapid-fire coding. I had to build a \"Subscription Dashboard\" with real-time billing updates\n(Stripe integration) in 60 minutes. They cared about my ability to move fast and \"Ship\" a\nworking feature. Takeaway: Speed and \"Product Sense\" are key. In a SaaS startup, they don't\nhave time for 5 rounds of LeetCode. They want to see if you can take a \"User Story\" and turn it\ninto a \"Pull Request\" by the end of the day.\n49. EdTech Startup \u2013 Frontend Engineer\nMetadata: EdTech | Frontend | Medium\nSkills: React, Video Players, Canvas API, WebSockets",
+    "company": "EdTech",
+    "tech_stack": [
+      "canvas api",
+      "react",
+      "video players",
+      "websockets"
+    ],
+    "raw_chunk": "Rapid-fire coding. I had to build a \"Subscription Dashboard\" with real-time billing updates\n(Stripe integration) in 60 minutes. They cared about my ability to move fast and \"Ship\" a\nworking feature. Takeaway: Speed and \"Product Sense\" are key. In a SaaS startup, they don't\nhave time for 5 rounds of LeetCode. They want to see if you can take a \"User Story\" and turn it\ninto a \"Pull Request\" by the end of the day.\n49. EdTech Startup \u2013 Frontend Engineer\nMetadata: EdTech | Frontend | Medium\nSkills: React, Video Players, Canvas API, WebSockets",
+    "role": "Frontend"
+  },
+  {
+    "id": 94,
+    "text": "Focus on \"Interactive UI.\" How do you build a custom video player that allows teachers to draw\non the screen in real-time? We discussed using the \"Canvas API\" and \"WebRTC\" for low-\nlatency video streaming. Takeaway: Know your \"Web APIs\" beyond just React. EdTech is about\nengagement, so show that you can build \"Fun\" and \"Performant\" interfaces that work on slow\nstudent tablets.\n50. HealthTech Startup \u2013 Backend Engineer\nMetadata: HealthTech | Backend | Medium\nSkills: Python, HIPAA Compliance, FHIR, Encryption",
+    "company": "HealthTech",
+    "tech_stack": [
+      "encryption",
+      "fhir",
+      "hipaa compliance",
+      "python",
+      "react"
+    ],
+    "raw_chunk": "Focus on \"Interactive UI.\" How do you build a custom video player that allows teachers to draw\non the screen in real-time? We discussed using the \"Canvas API\" and \"WebRTC\" for low-\nlatency video streaming. Takeaway: Know your \"Web APIs\" beyond just React. EdTech is about\nengagement, so show that you can build \"Fun\" and \"Performant\" interfaces that work on slow\nstudent tablets.\n50. HealthTech Startup \u2013 Backend Engineer\nMetadata: HealthTech | Backend | Medium\nSkills: Python, HIPAA Compliance, FHIR, Encryption",
+    "role": "Backend"
+  },
+  {
+    "id": 95,
+    "text": "Heavy focus on \"Data Privacy\" and \"Regulatory Compliance.\" I was asked how to encrypt\n\"Personally Identifiable Information\" (PII) at rest and in transit. We discussed the \"FHIR\"\nstandard for medical data exchange. Takeaway: Know your security. In HealthTech, a data leak\nis a legal disaster. Show that you prioritize \"Security\" over \"Speed\" and understand \"Audit Logs\"\nand \"Access Control\" (RBAC).\n51. Gaming Company \u2013 Backend Engineer\nMetadata: Gaming | Backend | Hard\nSkills: C++, UDP, WebSockets, Redis",
+    "company": "Gaming",
+    "tech_stack": [
+      "c++",
+      "redis",
+      "rest",
+      "udp",
+      "websockets"
+    ],
+    "raw_chunk": "Heavy focus on \"Data Privacy\" and \"Regulatory Compliance.\" I was asked how to encrypt\n\"Personally Identifiable Information\" (PII) at rest and in transit. We discussed the \"FHIR\"\nstandard for medical data exchange. Takeaway: Know your security. In HealthTech, a data leak\nis a legal disaster. Show that you prioritize \"Security\" over \"Speed\" and understand \"Audit Logs\"\nand \"Access Control\" (RBAC).\n51. Gaming Company \u2013 Backend Engineer\nMetadata: Gaming | Backend | Hard\nSkills: C++, UDP, WebSockets, Redis",
+    "role": "Backend"
+  },
+  {
+    "id": 96,
+    "text": "Focus on \"Latency\" and \"Synchronization.\" How do you sync player positions across 100 clients\nin a fast-paced shooter? We discussed \"UDP\" vs \"TCP\" and \"Client-side Prediction.\"\nTakeaway: Study networking for games. You need to understand how to handle \"Packet Loss\"\nand \"Jitter.\" Mentioning \"Entity-Component-System\" (ECS) architecture for the backend is a\ngreat way to show you speak their language.\n52. Cybersecurity Firm \u2013 Software Engineer\nMetadata: CyberSec | Software Engineer | Hard\nSkills: C, Assembly, Reverse Engineering, Python",
+    "company": "CyberSec",
+    "tech_stack": [
+      "assembly",
+      "python",
+      "reverse engineering"
+    ],
+    "raw_chunk": "Focus on \"Latency\" and \"Synchronization.\" How do you sync player positions across 100 clients\nin a fast-paced shooter? We discussed \"UDP\" vs \"TCP\" and \"Client-side Prediction.\"\nTakeaway: Study networking for games. You need to understand how to handle \"Packet Loss\"\nand \"Jitter.\" Mentioning \"Entity-Component-System\" (ECS) architecture for the backend is a\ngreat way to show you speak their language.\n52. Cybersecurity Firm \u2013 Software Engineer\nMetadata: CyberSec | Software Engineer | Hard\nSkills: C, Assembly, Reverse Engineering, Python",
+    "role": "Software Engineer"
+  },
+  {
+    "id": 97,
+    "text": "I was given a compiled binary and asked to find a \"Buffer Overflow\" vulnerability. Then, I had to\nwrite a Python script to automate the detection of similar patterns in a large codebase.\nTakeaway: Think like a hacker. They want to see that you understand how \"Exploits\" work so\nyou can build \"Defenses.\" Knowledge of \"Static vs Dynamic Analysis\" and \"Fuzzing\" is\nessential.\n53. PayPal \u2013 Software Engineer\nMetadata: PayPal | SWE | Junior | Medium\nSkills: Java, Spring Boot, REST, SQL",
+    "company": "PayPal",
+    "tech_stack": [
+      "java",
+      "python",
+      "rest",
+      "spring",
+      "spring boot",
+      "sql"
+    ],
+    "raw_chunk": "I was given a compiled binary and asked to find a \"Buffer Overflow\" vulnerability. Then, I had to\nwrite a Python script to automate the detection of similar patterns in a large codebase.\nTakeaway: Think like a hacker. They want to see that you understand how \"Exploits\" work so\nyou can build \"Defenses.\" Knowledge of \"Static vs Dynamic Analysis\" and \"Fuzzing\" is\nessential.\n53. PayPal \u2013 Software Engineer\nMetadata: PayPal | SWE | Junior | Medium\nSkills: Java, Spring Boot, REST, SQL",
+    "role": "SWE"
+  },
+  {
+    "id": 98,
+    "text": "Standard Java/Spring questions. I was asked to \"Explain Spring Bean Scopes\" and \"How does\n@Transactional work?\" Coding was LeetCode Medium\u2014mostly Arrays and Strings. Takeaway:\nBe strong in your Java fundamentals. PayPal has a massive legacy Java codebase, so they\nvalue engineers who understand the \"Spring Ecosystem\" and can write clean, testable Java\ncode.\n54. PayPal \u2013 Backend Engineer\nMetadata: PayPal | Backend | SDE-2 | Medium\nSkills: Node.js, Microservices, API Gateways",
+    "company": "PayPal",
+    "tech_stack": [
+      "api gateways",
+      "java",
+      "microservices",
+      "node",
+      "node.js",
+      "spring"
+    ],
+    "raw_chunk": "Standard Java/Spring questions. I was asked to \"Explain Spring Bean Scopes\" and \"How does\n@Transactional work?\" Coding was LeetCode Medium\u2014mostly Arrays and Strings. Takeaway:\nBe strong in your Java fundamentals. PayPal has a massive legacy Java codebase, so they\nvalue engineers who understand the \"Spring Ecosystem\" and can write clean, testable Java\ncode.\n54. PayPal \u2013 Backend Engineer\nMetadata: PayPal | Backend | SDE-2 | Medium\nSkills: Node.js, Microservices, API Gateways",
+    "role": "Backend"
+  },
+  {
+    "id": 99,
+    "text": "Focus on \"API Design\" and \"Rate Limiting.\" How do you build a gateway that handles millions\nof requests while protecting internal services from being overwhelmed? We discussed \"Circuit\nBreakers\" (Hystrix). Takeaway: Know your microservice patterns. PayPal is moving towards a\nmore \"Modern\" stack, so show that you understand \"Service Discovery\" and \"Distributed\nTracing\" (Zipkin/Jaeger).\n55. Bloomberg \u2013 Software Engineer\nMetadata: Bloomberg | SWE | New Grad | Hard\nSkills: C++, Data Structures, Memory Management",
+    "company": "Bloomberg",
+    "tech_stack": [
+      "c++",
+      "data structures",
+      "memory management"
+    ],
+    "raw_chunk": "Focus on \"API Design\" and \"Rate Limiting.\" How do you build a gateway that handles millions\nof requests while protecting internal services from being overwhelmed? We discussed \"Circuit\nBreakers\" (Hystrix). Takeaway: Know your microservice patterns. PayPal is moving towards a\nmore \"Modern\" stack, so show that you understand \"Service Discovery\" and \"Distributed\nTracing\" (Zipkin/Jaeger).\n55. Bloomberg \u2013 Software Engineer\nMetadata: Bloomberg | SWE | New Grad | Hard\nSkills: C++, Data Structures, Memory Management",
+    "role": "SWE"
+  },
+  {
+    "id": 100,
+    "text": "Bloomberg loves C++. Expect deep questions on \"Smart Pointers,\" std::vector  internal\nresizing, and \"Virtual Functions.\" My coding problem was a variation of the \"Trading Order\nBook\" (using Heaps and Maps). Takeaway: Practice LeetCode in C++. They don't just want the\nanswer; they want to see that you understand \"Memory Layout\" and how to write code that\ndoesn't cause \"Cache Misses.\"\n56. Bloomberg \u2013 Data Scientist\nMetadata: Bloomberg | Data Scientist | Medium\nSkills: Python, Time Series, NLP, Finance",
+    "company": "Bloomberg",
+    "tech_stack": [
+      "finance",
+      "nlp",
+      "python",
+      "time series"
+    ],
+    "raw_chunk": "Bloomberg loves C++. Expect deep questions on \"Smart Pointers,\" std::vector  internal\nresizing, and \"Virtual Functions.\" My coding problem was a variation of the \"Trading Order\nBook\" (using Heaps and Maps). Takeaway: Practice LeetCode in C++. They don't just want the\nanswer; they want to see that you understand \"Memory Layout\" and how to write code that\ndoesn't cause \"Cache Misses.\"\n56. Bloomberg \u2013 Data Scientist\nMetadata: Bloomberg | Data Scientist | Medium\nSkills: Python, Time Series, NLP, Finance",
+    "role": "Data Scientist"
+  },
+  {
+    "id": 101,
+    "text": "Focus on \"Financial Sentiment Analysis.\" I had to design a model that reads \"Twitter Feeds\"\nand predicts stock market volatility. We discussed \"LSTM\" vs \"Transformers\" for time-series\ndata. Takeaway: Know your NLP. Bloomberg's core product is \"Information,\" so show that you\ncan extract \"Signal\" from \"Noise\" in massive text datasets.\n57. Goldman Sachs \u2013 Software Engineer\nMetadata: Goldman Sachs | SWE | Analyst | Medium\nSkills: Java, Algorithms, Hashing, Math",
+    "company": "Goldman Sachs",
+    "tech_stack": [
+      "algorithms",
+      "hashing",
+      "java",
+      "math"
+    ],
+    "raw_chunk": "Focus on \"Financial Sentiment Analysis.\" I had to design a model that reads \"Twitter Feeds\"\nand predicts stock market volatility. We discussed \"LSTM\" vs \"Transformers\" for time-series\ndata. Takeaway: Know your NLP. Bloomberg's core product is \"Information,\" so show that you\ncan extract \"Signal\" from \"Noise\" in massive text datasets.\n57. Goldman Sachs \u2013 Software Engineer\nMetadata: Goldman Sachs | SWE | Analyst | Medium\nSkills: Java, Algorithms, Hashing, Math",
+    "role": "SWE"
+  },
+  {
+    "id": 102,
+    "text": "Focus on \"Mathematical DSA.\" I had many questions on Number Theory (Primes, GCD) and\n\"Combinatorics.\" The coding round involved finding the \"First non-repeating character\" in a\nstream of millions of characters. Takeaway: Practice math-heavy coding problems. Goldman\nvalues \"Logical Rigor.\" They also have a behavioral round focused on \"Integrity\" and\n\"Teamwork\"\u2014don't treat it as a formality.\n58. JPMorgan \u2013 Software Engineer\nMetadata: JPMorgan | SWE | Analyst | Medium\nSkills: Java, SQL, Agile, Spring",
+    "company": "JPMorgan",
+    "tech_stack": [
+      "agile",
+      "java",
+      "spring",
+      "sql"
+    ],
+    "raw_chunk": "Focus on \"Mathematical DSA.\" I had many questions on Number Theory (Primes, GCD) and\n\"Combinatorics.\" The coding round involved finding the \"First non-repeating character\" in a\nstream of millions of characters. Takeaway: Practice math-heavy coding problems. Goldman\nvalues \"Logical Rigor.\" They also have a behavioral round focused on \"Integrity\" and\n\"Teamwork\"\u2014don't treat it as a formality.\n58. JPMorgan \u2013 Software Engineer\nMetadata: JPMorgan | SWE | Analyst | Medium\nSkills: Java, SQL, Agile, Spring",
+    "role": "SWE"
+  },
+  {
+    "id": 103,
+    "text": "Very behavioral and process-oriented. \"Tell me about a time you handled a conflict in a group.\"\nThe technical rounds were basic Java/Spring and SQL (Joins/Indexes). Takeaway: Be a \"Team\nPlayer.\" JPMC is a massive organization where \"Agile\" and \"Communication\" are as important\nas your coding skills. Show that you can work within a large corporate structure.\n59. Morgan Stanley \u2013 Software Engineer\nMetadata: Morgan Stanley | SWE | Junior | Medium\nSkills: C++, Java, Linux, Multi-threading",
+    "company": "Morgan Stanley",
+    "tech_stack": [
+      "c++",
+      "java",
+      "linux",
+      "multi-threading",
+      "spring",
+      "sql"
+    ],
+    "raw_chunk": "Very behavioral and process-oriented. \"Tell me about a time you handled a conflict in a group.\"\nThe technical rounds were basic Java/Spring and SQL (Joins/Indexes). Takeaway: Be a \"Team\nPlayer.\" JPMC is a massive organization where \"Agile\" and \"Communication\" are as important\nas your coding skills. Show that you can work within a large corporate structure.\n59. Morgan Stanley \u2013 Software Engineer\nMetadata: Morgan Stanley | SWE | Junior | Medium\nSkills: C++, Java, Linux, Multi-threading",
+    "role": "SWE"
+  },
+  {
+    "id": 104,
+    "text": "Questions on \"Low-latency\" and \"JVM Tuning.\" I was asked how to reduce \"Garbage Collection\"\npauses in a high-frequency trading app. Coding was mostly about \"Linked Lists\" and \"Queues.\"\nTakeaway: Know your \"Operating Systems.\" Morgan Stanley values engineers who understand\n\"Context Switching\" and \"CPU Pinning\" to squeeze every millisecond of performance out of\ntheir systems.\n60. Deloitte \u2013 Software Engineer\nMetadata: Deloitte | SWE | Consultant | Medium\nSkills: .NET, SQL, Communication, SDLC",
+    "company": "Deloitte",
+    "tech_stack": [
+      ".net",
+      "communication",
+      "sdlc",
+      "sql"
+    ],
+    "raw_chunk": "Questions on \"Low-latency\" and \"JVM Tuning.\" I was asked how to reduce \"Garbage Collection\"\npauses in a high-frequency trading app. Coding was mostly about \"Linked Lists\" and \"Queues.\"\nTakeaway: Know your \"Operating Systems.\" Morgan Stanley values engineers who understand\n\"Context Switching\" and \"CPU Pinning\" to squeeze every millisecond of performance out of\ntheir systems.\n60. Deloitte \u2013 Software Engineer\nMetadata: Deloitte | SWE | Consultant | Medium\nSkills: .NET, SQL, Communication, SDLC",
+    "role": "SWE"
+  },
+  {
+    "id": 105,
+    "text": "More focus on \"Consulting Skills.\" How would you explain a \"Cloud Migration\" strategy to a non-\ntechnical CEO? The technical test was a mix of .NET basics and SQL. Takeaway:\nCommunication is 50% of the interview. They hire consultants who happen to code. Show that\nyou can gather \"Requirements\" and turn them into a \"Technical Spec.\"\n61. Accenture \u2013 Full Stack Developer\nMetadata: Accenture | Full Stack | Junior | Medium\nSkills: JavaScript, React, SQL, Java",
+    "company": "Accenture",
+    "tech_stack": [
+      "java",
+      "javascript",
+      "react",
+      "sql"
+    ],
+    "raw_chunk": "More focus on \"Consulting Skills.\" How would you explain a \"Cloud Migration\" strategy to a non-\ntechnical CEO? The technical test was a mix of .NET basics and SQL. Takeaway:\nCommunication is 50% of the interview. They hire consultants who happen to code. Show that\nyou can gather \"Requirements\" and turn them into a \"Technical Spec.\"\n61. Accenture \u2013 Full Stack Developer\nMetadata: Accenture | Full Stack | Junior | Medium\nSkills: JavaScript, React, SQL, Java",
+    "role": "Full Stack"
+  },
+  {
+    "id": 106,
+    "text": "Standard tech rounds. I had to build a simple \"Employee Management System\" using React\nand a Java backend. They checked for \"Full Stack\" versatility. Takeaway: Be a \"Generalist.\"\nAccenture moves people between projects frequently, so show that you are willing to learn new\nlanguages (e.g., \"I know React, but I'm happy to learn Angular for a client\").\n62. Infosys \u2013 Software Engineer\nMetadata: Infosys | SWE | Entry | Easy\nSkills: Java/Python, Aptitude, Basic DBMS",
+    "company": "Infosys",
+    "tech_stack": [
+      "angular",
+      "aptitude",
+      "basic dbms",
+      "java",
+      "java/python",
+      "python",
+      "react"
+    ],
+    "raw_chunk": "Standard tech rounds. I had to build a simple \"Employee Management System\" using React\nand a Java backend. They checked for \"Full Stack\" versatility. Takeaway: Be a \"Generalist.\"\nAccenture moves people between projects frequently, so show that you are willing to learn new\nlanguages (e.g., \"I know React, but I'm happy to learn Angular for a client\").\n62. Infosys \u2013 Software Engineer\nMetadata: Infosys | SWE | Entry | Easy\nSkills: Java/Python, Aptitude, Basic DBMS",
+    "role": "SWE"
+  },
+  {
+    "id": 107,
+    "text": "Focus on the \"Aptitude Test\" (Logical Reasoning, Quant). The technical interview was very\nbasic: \"Difference between Class and Object\" and \"Reverse a string.\" Takeaway: Don't fail the\naptitude test\u2014it's the biggest filter. In the HR round, just show that you are enthusiastic and\nwilling to relocate to any office.\n63. TCS \u2013 Software Engineer\nMetadata: TCS | SWE | Digital Role | Medium\nSkills: Python, DSA, DBMS, Cloud Basics",
+    "company": "TCS",
+    "tech_stack": [
+      "cloud basics",
+      "dbms",
+      "dsa",
+      "python"
+    ],
+    "raw_chunk": "Focus on the \"Aptitude Test\" (Logical Reasoning, Quant). The technical interview was very\nbasic: \"Difference between Class and Object\" and \"Reverse a string.\" Takeaway: Don't fail the\naptitude test\u2014it's the biggest filter. In the HR round, just show that you are enthusiastic and\nwilling to relocate to any office.\n63. TCS \u2013 Software Engineer\nMetadata: TCS | SWE | Digital Role | Medium\nSkills: Python, DSA, DBMS, Cloud Basics",
+    "role": "SWE"
+  },
+  {
+    "id": 108,
+    "text": "The \"Digital\" track has decent DSA questions (Medium level). I was asked about \"Inheritance\"\nand had to write a SQL query for \"Second Highest Salary.\" Takeaway: Aim for the \"Digital\" or\n\"Prime\" track for better pay. These roles require a solid understanding of one programming\nlanguage and basic system design.\n64. Wipro \u2013 Software Engineer\nMetadata: Wipro | SWE | Entry | Easy\nSkills: C/C++, Basic Web, Logic",
+    "company": "Wipro",
+    "tech_stack": [
+      "basic web",
+      "c/c++",
+      "logic",
+      "sql",
+      "system design"
+    ],
+    "raw_chunk": "The \"Digital\" track has decent DSA questions (Medium level). I was asked about \"Inheritance\"\nand had to write a SQL query for \"Second Highest Salary.\" Takeaway: Aim for the \"Digital\" or\n\"Prime\" track for better pay. These roles require a solid understanding of one programming\nlanguage and basic system design.\n64. Wipro \u2013 Software Engineer\nMetadata: Wipro | SWE | Entry | Easy\nSkills: C/C++, Basic Web, Logic",
+    "role": "SWE"
+  },
+  {
+    "id": 109,
+    "text": "Standard campus placement flow. Basic coding test followed by a technical interview on \"Final\nyear project.\" HR round was about \"Hobbies\" and \"Bond agreement.\" Takeaway: Be confident\nand clear in your communication. Show that you have a strong grasp of your college projects,\nas they will ask most of their questions from there.",
+    "company": "Unknown",
+    "tech_stack": [],
+    "raw_chunk": "Standard campus placement flow. Basic coding test followed by a technical interview on \"Final\nyear project.\" HR round was about \"Hobbies\" and \"Bond agreement.\" Takeaway: Be confident\nand clear in your communication. Show that you have a strong grasp of your college projects,\nas they will ask most of their questions from there.",
+    "role": "Software Engineer"
+  }
+]
