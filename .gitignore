@@ -1,0 +1,24 @@
+# Virtual Environment
+venv/
+.venv/
+
+# Environment Variables (Secrets)
+.env
+**/.env
+
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Vector Database (Local storage)
+**/chroma_db/
+**/food_index_db/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# General patterns to catch any others
+*.db
+*.sqlite3

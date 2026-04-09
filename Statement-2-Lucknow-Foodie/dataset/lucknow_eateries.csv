@@ -1,0 +1,54 @@
+name,location,distance,budget,veg_nonveg,famous_for,rating,price,vibe,timings
+Tunday Kababi , Aminabad , 15 km , low , non-veg ," kebab, biryani ",4.5,200, local , 11 AM - 11 PM
+Royal Cafe , Hazratganj , 8 km , medium , veg , basket chaat ,4.3,300, family , 10 AM - 10 PM
+Dastarkhwan , Lalbagh , 9 km , medium , non-veg ," mutton curry, kebab ",4.4,400, family , 12 PM - 11 PM
+Idris Biryani , Chowk , 12 km , low , non-veg , biryani ,4.6,150, street , 10 AM - 10 PM
+Mubeen’s , Chowk , 12 km , low , non-veg ," kebab, nihari ",4.5,200, street , 8 AM - 11 PM
+Sky Glass Brewing , Gomti Nagar , 3 km , high , both ," pizza, drinks ",4.4,1200, date , 12 PM - 12 AM
+ZAO , Gomti Nagar , 3 km , high , both ," sushi, asian ",4.5,1500, date , 12 PM - 11 PM
+Purple Basil , Gomti Nagar , 4 km , high , both ," continental, pizza ",4.3,1200, date , 11 AM - 11 PM 
+Barbeque Nation , Gomti Nagar , 5 km , high , both ," buffet, bbq ",4.2,1500, family , 12 PM - 11 PM 
+The Hazelnut Factory , Gomti Nagar , 3 km , medium , veg ," desserts, coffee ",4.5,500, cafe , 10 AM - 11 PM
+Cherry Tree Cafe , Hazratganj , 8 km , medium , both ," desserts, coffee ",4.4,600, cafe , 11 AM - 11 PM 
+Cappuccino Blast , Hazratganj , 9 km , high , both ," italian, coffee ",4.3,1000, date , 11 AM - 11 PM 
+Cafe Repertwahr , Gomti Nagar , 4 km , medium , both ," coffee, pasta ",4.4,600, study , 11 AM - 11 PM 
+Cafe HONS , Gomti Nagar , 4 km , medium , veg , healthy food ,4.5,700, cafe , 10 AM - 10 PM 
+Cafe 1991 , Gomti Nagar , 3 km , medium , both ," coffee, fast food ",4.6,700, cafe , 11 AM - 11 PM 
+Nothing Before Coffee , Indira Nagar , 5 km , low , veg ," coffee, shakes ",4.4,200, cafe , 12 PM - 11 PM 
+The Fresh Factory , Gomti Nagar , 3 km , medium , both , healthy food ,4.4,800, cafe , 9 AM - 10 PM 
+Planters Tea Cafe , Gomti Nagar , 4 km , medium , both ," tea, snacks ",4.3,500, study , 10 AM - 11 PM 
+Coffee Culture , Mahanagar , 7 km , medium , both ," coffee, pizza ",4.2,800, date , 11 AM - 11 PM 
+Chacoco , Gomti Nagar , 3 km , medium , both ,"desserts,pizza",4.4,800, cafe , 11 AM - 11 PM 
+Melting Point , Gomti Nagar , 3 km , medium , both ," fast food, coffee ",4.2,700, cafe , 10 AM - 10 PM 
+Fashion TV Cafe , Gomti Nagar , 4 km , high , both , continental ,3.8,1000, date , 12 PM - 11 PM
+Aryan Family Delight , Gomti Nagar , 4 km , medium , both , north indian ,4.1,600, family , 11 AM - 11 PM 
+Kava Restaurant , Gomti Nagar , 4 km , high , both , buffet ,4.4,1500, family , 7 AM - 11 PM 
+Green Restaurant , Gomti Nagar , 4 km , medium , veg , north indian ,4.0,500, family , 10 AM - 10 PM 
+Owl Cafe , Gomti Nagar , 3 km , medium , both ," pasta, shakes ",4.2,700, cafe , 10 AM - 12 AM
+Bae House Cafe , Gomti Nagar , 3 km , medium , both ," chinese, cafe ",4.3,800, cafe , 10 AM - 2 AM 
+Coffee Palette , Gomti Nagar , 3 km , medium , both ," pasta, pizza ",4.4,800, cafe , 11 AM - 10 PM 
+Phoenix Palassio Food Court , Gomti Nagar , 2 km , medium , both , variety ,4.5,400, mall , 11 AM - 11 PM
+Lulu Mall Food Court , Amar Shaheed Path , 6 km , medium , both , variety ,4.5,400, mall , 11 AM - 11 PM
+Sharma Tea Stall , Lalbagh , 9 km , low , veg ," bun maska, tea ",4.6,100, street , 6 AM - 10 PM
+Ram Asrey , Hazratganj , 8 km , low , veg ," sweets, chaat ",4.5,200, family , 9 AM - 10 PM
+Jain Chaat Bhandar , Chowk , 12 km , low , veg , chaat ,4.6,150, street , 11 AM - 9 PM
+Netram Kachori , Chowk , 12 km , low , veg , kachori ,4.7,100, street , 6 AM - 12 PM
+The Chocolate Room , Gomti Nagar , 4 km , medium , veg ," desserts, shakes ",4.2,500, cafe , 11 AM - 11 PM
+Waffle House , Gomti Nagar , 3 km , medium , veg ," waffles, desserts ",4.3,400, cafe , 11 AM - 11 PM
+Belgian Waffle Co. , Lulu Mall , 6 km , medium , veg , waffles ,4.4,300, mall , 11 AM - 11 PM
+Starbucks , Phoenix Palassio , 2 km , high , both , coffee ,4.5,600, cafe , 10 AM - 11 PM
+Burger King , Lulu Mall , 6 km , medium , both , burgers ,4.2,300, mall , 11 AM - 11 PM
+McDonald's , Phoenix Palassio , 2 km , medium , both ," burgers, fries ",4.2,300, mall , 11 AM - 11 PM
+KFC , Lulu Mall , 6 km , medium , non-veg , fried chicken ,4.1,400, mall , 11 AM - 11 PM
+Sheroes Hangout , Gomti Nagar , 4 km , low , veg , cafe food ,4.6,200, cafe , 10 AM - 8 PM
+The Urban Terrace , Gomti Nagar , 4 km , high , both , rooftop dining ,4.3,1200, date , 12 PM - 11 PM
+The Drowning Street , Gomti Nagar , 3 km , high , both ," drinks, continental ",4.2,1500, date , 12 PM - 12 AM
+The Butler Palace Cafe , Butler Palace , 9 km , medium , both , cafe food ,4.4,700, cafe , 11 AM - 10 PM
+Cafe Delhi Heights , Phoenix Palassio , 2 km , high , both , north indian ,4.3,1200, family , 11 AM - 11 PM
+Pirates of Grill , Gomti Nagar , 5 km , high , both , buffet ,4.3,1500, family , 12 PM - 11 PM
+Mainland China , Gomti Nagar , 5 km , high , both , chinese ,4.4,1500, date , 12 PM - 11 PM
+Ritz Continental Corner , Hazratganj , 8 km , medium , both , fast food ,4.2,500, cafe , 11 AM - 10 PM
+Capoor & Sons , Hazratganj , 8 km , medium , both ," bakery, desserts ",4.3,500, cafe , 10 AM - 10 PM
+Moti Mahal Delux , Gomti Nagar , 4 km , medium , non-veg , butter chicken ,4.2,700, family , 12 PM - 11 PM
+Sakhawat Restaurant , Indira Nagar , 5 km , low , non-veg , biryani ,4.3,250, local , 11 AM - 11 PM
+Aryans Restaurant , Gomti Nagar , 4 km , medium , both , north indian ,4.1,600, family , 11 AM - 11 PM
