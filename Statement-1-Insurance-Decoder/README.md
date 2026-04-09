@@ -44,7 +44,7 @@ GOOGLE_API_KEY=your_api_key_here
 
 ### 2. Installation
 ```bash
-pip install -r requirements.txt
+pip install -r Statement-1-Insurance-Decoder/requirements.txt
 ```
 
 ### 3. Usage
