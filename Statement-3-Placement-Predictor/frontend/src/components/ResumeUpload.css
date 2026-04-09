@@ -1,0 +1,113 @@
+/* ── Resume Upload ──────────────────────────────────────────────────── */
+.upload-container {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.5s ease;
+}
+
+.upload-zone {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3xl) var(--space-xl);
+  text-align: center;
+  transition: all var(--transition-base);
+  background: var(--color-bg-glass);
+  cursor: pointer;
+  margin-bottom: var(--space-xl);
+}
+
+.upload-zone:hover, .upload-zone.active {
+  border-color: var(--color-accent-primary);
+  background: rgba(108, 99, 255, 0.05);
+  box-shadow: var(--shadow-glow);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  display: inline-block;
+}
+
+.upload-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+.upload-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-lg);
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.upload-zone.active .upload-btn {
+  background: var(--gradient-primary);
+  border-color: transparent;
+}
+
+.file-input {
+  display: none;
+}
+
+/* Upload state */
+.upload-processing {
+  text-align: center;
+  padding: var(--space-2xl) 0;
+}
+
+.upload-loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(108, 99, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--color-accent-primary);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: var(--space-ld);
+}
+
+/* Extracted preview */
+.extractor-preview {
+  margin-top: var(--space-xl);
+  animation: fadeIn 0.5s ease;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.preview-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent-secondary);
+}
+
+.resume-preview-box {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  height: 120px;
+  overflow-y: auto;
+  font-family: monospace;
+  line-height: 1.5;
+}
