@@ -148,11 +148,14 @@
 
         .rest-card {
             min-width: 290px; max-width: 330px; background: rgba(30, 30, 35, 0.8);
-            border: 1px solid var(--glass-border); border-top: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-md); overflow: hidden;
+            border: 1px solid var(--glass-border); border-top: 2px solid rgba(255,255,255,0.2); border-radius: var(--radius-md); overflow: hidden;
             scroll-snap-align: start; flex-shrink: 0; transition: var(--transition); display: flex; flex-direction: column;
-            opacity: 0; animation: cardEntrance 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0; transform: translateY(20px);
         }
-        .rest-card:hover { transform: translateY(-5px); border-color: var(--accent-main); box-shadow: 0 10px 30px rgba(255, 126, 95, 0.2); }
+        .rest-card.animated {
+            animation: cardEntrance 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        .rest-card:hover { transform: translateY(-5px); border-color: var(--accent-main); box-shadow: 0 10px 40px rgba(255, 126, 95, 0.3); }
 
         /* Inner Image Carousel */
         .inner-img-carousel {
@@ -478,14 +481,74 @@
             return finalHtml;
         }
 
-        function addMessage(role, text) {
+        async function typeWriter(element, text, speed = 8) {
+            let i = 0;
+            element.innerHTML = "";
+            return new Promise(resolve => {
+                function type() {
+                    if (i < text.length) {
+                        if (text.substr(i, 4) === "<br>") {
+                            element.innerHTML += "<br>";
+                            i += 4;
+                        } else if (text[i] === "<") {
+                            // Quick skip tags like <strong>
+                            let tagEnd = text.indexOf(">", i);
+                            element.innerHTML += text.substring(i, tagEnd + 1);
+                            i = tagEnd + 1;
+                        } else {
+                            element.innerHTML += text.charAt(i);
+                            i++;
+                        }
+                        setTimeout(type, speed);
+                    } else {
+                        resolve();
+                    }
+                }
+                type();
+            });
+        }
+
+        async function addMessage(role, text) {
             const row = document.createElement('div');
             row.className = `message-row ${role}-row`;
             row.innerHTML = `
                 <div class="av">${role === 'bot' ? '🍽️' : '😎'}</div>
-                <div class="bubble">${role === 'bot' ? parseCardsAndText(text) : text}</div>
+                <div class="bubble"></div>
             `;
+            const bubble = row.querySelector('.bubble');
             chatFeed.appendChild(row);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            if (role === 'user') {
+                bubble.textContent = text;
+            } else {
+                const htmlContent = parseCardsAndText(text);
+                // Extract text and card html
+                const temp = document.createElement('div');
+                temp.innerHTML = htmlContent;
+                const textPart = temp.querySelector('.msg-text')?.innerHTML || "";
+                const carouselPart = temp.querySelector('.cards-carousel');
+                const footerPart = temp.querySelector('div[style*="font-size: 0.75rem"]') || temp.querySelector('div[style*="font-size:0.75rem"]');
+
+                // Type the text part
+                if (textPart) {
+                    const textContainer = document.createElement('div');
+                    textContainer.className = "msg-text";
+                    bubble.appendChild(textContainer);
+                    await typeWriter(textContainer, textPart);
+                }
+
+                // Append the carousel if exists
+                if (carouselPart) {
+                    bubble.appendChild(carouselPart);
+                    // Add animation class after small delay
+                    setTimeout(() => {
+                        carouselPart.querySelectorAll('.rest-card').forEach(card => card.classList.add('animated'));
+                    }, 100);
+                }
+
+                if (footerPart) bubble.appendChild(footerPart);
+            }
             chatContainer.scrollTop = chatContainer.scrollHeight;
         }
 

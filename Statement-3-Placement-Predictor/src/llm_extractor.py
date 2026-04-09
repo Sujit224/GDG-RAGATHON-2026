@@ -38,7 +38,7 @@ def extract_profile_from_text(context_text: str) -> dict:
     """
     
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-2.0-flash-exp',
         contents=prompt,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",

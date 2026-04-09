@@ -12,9 +12,27 @@ export default function ChatBox() {
   const [isLoading, setIsLoading] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState('');
+  const [typedMessage, setTypedMessage] = useState('');
+  const [isTypingEffect, setIsTypingEffect] = useState(false);
 
   const messagesEndRef = useRef(null);
   const fileInputRef = useRef(null);
+
+  const typeEffect = (text) => {
+    setIsTypingEffect(true);
+    setTypedMessage('');
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedMessage(prev => prev + text.charAt(i));
+      i++;
+      if (i >= text.length) {
+        clearInterval(interval);
+        setMessages(prev => [...prev, { role: 'system', content: text }]);
+        setTypedMessage('');
+        setIsTypingEffect(false);
+      }
+    }, 5);
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -22,7 +40,7 @@ export default function ChatBox() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, isLoading]);
+  }, [messages, isLoading, typedMessage]);
 
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
@@ -81,9 +99,9 @@ export default function ChatBox() {
       }
 
       const data = await response.json();
-      setMessages(prev => [...prev, { role: 'system', content: data.response }]);
+      typeEffect(data.response);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'system', content: 'Connection error. Ensure the FastAPI plugin is running and GROQ_API_KEY is configured.' }]);
+      setMessages(prev => [...prev, { role: 'system', content: 'Connection error. Ensure the FastAPI backend is running and GROQ_API_KEY is configured.' }]);
     } finally {
       setIsLoading(false);
     }
@@ -91,25 +109,50 @@ export default function ChatBox() {
 
   return (
     <div className="chatbox-wrapper">
+      <div className="upload-zone">
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+          <h4 style={{marginBottom: '4px'}}>Insurance Policy Sync</h4>
+          <span className="upload-status">{uploadStatus || 'Select a PDF policy document to decode.'}</span>
+        </div>
+        <div>
+          <input
+            type="file"
+            accept=".pdf"
+            ref={fileInputRef}
+            onChange={handleFileUpload}
+            style={{ display: 'none' }}
+            id="pdf-upload"
+          />
+          <label htmlFor="pdf-upload" className={`upload-button ${isUploading ? 'loading' : ''}`}>
+            {isUploading ? '⌛ Processing...' : '📤 Upload PDF Policy'}
+          </label>
+        </div>
+      </div>
 
-
-      <div className="chatbox-container centered-chat">
+      <div className="centered-chat">
         <div className="chat-header">
           <div className="ai-icon"></div>
           <div>
-            <h3>Policy Decoder Bot</h3>
-            <p>Powered by Langchain & Groq</p>
+            <h3>Policy Decoder Pro</h3>
+            <p>Smart RAG Insurance Analysis • ELI5 Enabled</p>
           </div>
         </div>
 
         <div className="messages-area">
           {messages.map((msg, i) => (
             <div key={i} className={`message-wrapper ${msg.role}`}>
-              <div className={`message-bubble ${msg.role}`}>
-                {msg.content}
+              <div className={`message-bubble ${msg.role}`} 
+                dangerouslySetInnerHTML={{ __html: msg.content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>') }}>
               </div>
             </div>
           ))}
+          {isTypingEffect && (
+            <div className="message-wrapper system">
+              <div className="message-bubble system" 
+                dangerouslySetInnerHTML={{ __html: typedMessage.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>') }}>
+              </div>
+            </div>
+          )}
           {isLoading && (
             <div className="message-wrapper system">
               <div className="message-bubble system typing">
