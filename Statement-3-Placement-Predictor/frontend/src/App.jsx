@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useChat } from './hooks/useChat'
 import ChatInterface from './components/ChatInterface'
 import ProfileExtracted from './components/ProfileExtracted'
@@ -13,7 +12,7 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white">
       <header className="border-b border-white/10 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center text-sm font-bold">P</div>
+          <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center text-sm font-bold shadow-lg shadow-indigo-500/40">P</div>
           <span className="text-lg font-semibold tracking-tight">PlaceIQ</span>
           <span className="text-xs text-white/40 ml-1">Placement Predictor & Mentor</span>
         </div>
@@ -24,7 +23,7 @@ export default function App() {
         )}
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 py-8 space-y-8">
+      <main className="max-w-4xl mx-auto px-4 py-8 space-y-6">
         <StepProgress currentStep={step} />
 
         {/* Step 1: Chat */}
@@ -35,13 +34,25 @@ export default function App() {
           disabled={step > 1}
         />
 
-        {/* Step 2: Profile */}
+        {/* Step 2: Extracted Profile */}
         {profile && <ProfileExtracted profile={profile} />}
 
-        {/* Step 3: Score */}
-        {score && <ScoreGauge score={score.score} tier={score.tier} advice={score.advice} />}
+        {/* Step 3: Full Prediction Output */}
+        {score && (
+          <ScoreGauge
+            score={score.score}
+            tier={score.tier}
+            advice={score.advice}
+            reasons={score.reasons}
+            improvements={score.improvements}
+            what_if={score.what_if}
+            confidence={score.confidence}
+            ml_score={score.ml_score}
+            rule_score={score.rule_score}
+          />
+        )}
 
-        {/* Step 4: RAG Experiences */}
+        {/* Step 4: RAG Interview Experiences */}
         {experiences.length > 0 && <ExperienceCards experiences={experiences} />}
       </main>
     </div>

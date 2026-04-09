@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { sendChat, getPrediction, getExperiences } from '../api/client'
+import { sendChat, getExperiences } from '../api/client'
 
 export function useChat() {
-  const [messages, setMessages] = useState([])          // chat history
-  const [step, setStep] = useState(1)                   // 1=chat, 2=profile, 3=score, 4=experiences
-  const [profile, setProfile] = useState(null)
-  const [score, setScore] = useState(null)
+  const [messages, setMessages]     = useState([])
+  const [step, setStep]             = useState(1)   // 1=chat, 2=profile, 3=score, 4=experiences
+  const [profile, setProfile]       = useState(null)
+  const [score, setScore]           = useState(null)
   const [experiences, setExperiences] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading]       = useState(false)
 
   async function sendMessage(userText) {
     const newMessages = [...messages, { role: 'user', content: userText }]
@@ -23,18 +23,26 @@ export function useChat() {
         setProfile(data.profile)
         setStep(2)
 
-        // Step 3: Get ML score
-        const { data: scoreData } = await getPrediction(data.profile)
-        setScore(scoreData)
-        setStep(3)
+        // Use prediction already computed by the backend (full pipeline)
+        if (data.prediction) {
+          setScore(data.prediction)
+          setStep(3)
+        }
 
-        // Step 4: Get RAG experiences
-        const { data: ragData } = await getExperiences(data.profile.tech_stack)
-        setExperiences(ragData.experiences)
+        // Step 4: RAG experiences (still separate, lightweight)
+        const techStack = data.profile.tech_stack || []
+        if (techStack.length > 0) {
+          try {
+            const { data: ragData } = await getExperiences(techStack)
+            setExperiences(ragData.experiences || [])
+          } catch {
+            setExperiences([])
+          }
+        }
         setStep(4)
       }
     } catch (e) {
-      console.error(e)
+      console.error('Chat error:', e)
     } finally {
       setLoading(false)
     }
