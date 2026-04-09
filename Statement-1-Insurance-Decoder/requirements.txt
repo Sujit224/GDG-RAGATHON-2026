@@ -1,6 +1,0 @@
-langchain
-langchain-google-genai
-langchain-chroma
-langchain-classic
-pypdf
-python-dotenv
