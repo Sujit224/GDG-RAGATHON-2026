@@ -19,7 +19,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from src.rag import FoodieRAG
-from src.ingest import ingest, CHROMA_DIR, COLLECTION_NAME
+from src.ingest import ingest, EMBEDDINGS_PATH
 
 # ---------------------------------------------------------------------------
 # Lifespan — run ingestion on startup if DB doesn't exist
@@ -36,18 +36,13 @@ async def lifespan(app: FastAPI):
     """
     global rag_engine
 
-    # Check if ChromaDB is populated
-    import chromadb
-
-    client = chromadb.PersistentClient(path=CHROMA_DIR)
-    collections = [c.name for c in client.list_collections()]
-
-    if COLLECTION_NAME not in collections:
+    # Check if embeddings are populated
+    if not os.path.exists(EMBEDDINGS_PATH):
         print("🔄 First run detected — running ingestion pipeline...")
         ingest()
         print("✅ Ingestion complete!")
     else:
-        print(f"✅ ChromaDB collection '{COLLECTION_NAME}' found.")
+        print("✅ Embeddings found.")
 
     # Initialise RAG engine
     print("🚀 Initialising Foodie RAG engine...")

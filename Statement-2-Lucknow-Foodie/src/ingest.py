@@ -2,7 +2,7 @@
 Ingestion Pipeline for Lucknow Foodie Guide
 =============================================
 Loads restaurant data from JSON, creates rich text documents,
-embeds them using sentence-transformers, and stores in ChromaDB.
+embeds them using sentence-transformers, and saves embeddings to disk.
 
 Usage:
     python -m src.ingest
@@ -12,17 +12,17 @@ Usage:
 
 import json
 import os
-import sys
-import chromadb
-from chromadb.utils import embedding_functions
+import pickle
+import numpy as np
+from sentence_transformers import SentenceTransformer
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATASET_PATH = os.path.join(BASE_DIR, "dataset", "restaurants.json")
-CHROMA_DIR = os.path.join(BASE_DIR, "src", "chroma_db")
-COLLECTION_NAME = "lucknow_restaurants"
+EMBEDDINGS_DIR = os.path.join(BASE_DIR, "src", "embeddings")
+EMBEDDINGS_PATH = os.path.join(EMBEDDINGS_DIR, "restaurant_embeddings.pkl")
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # fast, lightweight, runs locally
 
 
@@ -62,27 +62,6 @@ def build_document(restaurant: dict) -> str:
     return doc
 
 
-def build_metadata(restaurant: dict) -> dict:
-    """
-    Extract structured metadata for ChromaDB filtering.
-    ChromaDB metadata values must be str, int, float, or bool.
-    """
-    return {
-        "name": restaurant["name"],
-        "area": restaurant["area"],
-        "cuisine": ", ".join(restaurant["cuisine"]),
-        "price_range": restaurant["price_range"],
-        "cost_for_two": restaurant.get("cost_for_two", 0),
-        "veg_nonveg": restaurant["veg_nonveg"],
-        "signature_dishes": ", ".join(restaurant["signature_dishes"]),
-        "opening_hours": restaurant["opening_hours"],
-        "vibe": ", ".join(restaurant["vibe"]),
-        "rating": restaurant["rating"],
-        "distance_from_iiit_km": restaurant["distance_from_iiit_km"],
-        "maps_link": restaurant.get("maps_link", ""),
-    }
-
-
 def ingest():
     """Main ingestion pipeline."""
     # ── Load dataset ─────────────────────────────────────────────
@@ -91,49 +70,49 @@ def ingest():
         restaurants = json.load(f)
     print(f"   Found {len(restaurants)} restaurants")
 
-    # ── Prepare documents ────────────────────────────────────────
-    ids = []
+    # ── Build documents ──────────────────────────────────────────
     documents = []
     metadatas = []
 
     for r in restaurants:
-        doc_id = f"restaurant_{r['id']}"
-        ids.append(doc_id)
         documents.append(build_document(r))
-        metadatas.append(build_metadata(r))
+        metadatas.append({
+            "name": r["name"],
+            "area": r["area"],
+            "cuisine": ", ".join(r["cuisine"]),
+            "price_range": r["price_range"],
+            "cost_for_two": r.get("cost_for_two", 0),
+            "veg_nonveg": r["veg_nonveg"],
+            "signature_dishes": ", ".join(r["signature_dishes"]),
+            "opening_hours": r["opening_hours"],
+            "vibe": ", ".join(r["vibe"]),
+            "rating": r["rating"],
+            "distance_from_iiit_km": r["distance_from_iiit_km"],
+            "maps_link": r.get("maps_link", ""),
+        })
 
-    # ── Setup ChromaDB ───────────────────────────────────────────
-    print(f"🗄️  Initialising ChromaDB at {CHROMA_DIR}")
-    client = chromadb.PersistentClient(path=CHROMA_DIR)
+    # ── Compute embeddings ───────────────────────────────────────
+    print(f"🧠 Loading embedding model: {EMBEDDING_MODEL}")
+    model = SentenceTransformer(EMBEDDING_MODEL)
 
-    # Use sentence-transformers for local embeddings (no API key needed)
-    ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-        model_name=EMBEDDING_MODEL
-    )
+    print(f"📥 Embedding {len(documents)} documents ...")
+    embeddings = model.encode(documents, show_progress_bar=True, normalize_embeddings=True)
 
-    # Delete existing collection if it exists (fresh ingest)
-    try:
-        client.delete_collection(name=COLLECTION_NAME)
-        print("   Deleted existing collection (fresh start)")
-    except ValueError:
-        pass
+    # ── Save to disk ─────────────────────────────────────────────
+    os.makedirs(EMBEDDINGS_DIR, exist_ok=True)
 
-    collection = client.get_or_create_collection(
-        name=COLLECTION_NAME,
-        embedding_function=ef,
-        metadata={"hnsw:space": "cosine"},
-    )
+    data = {
+        "embeddings": embeddings,  # numpy array (N, dim)
+        "documents": documents,
+        "metadatas": metadatas,
+        "model_name": EMBEDDING_MODEL,
+    }
 
-    # ── Upsert documents ─────────────────────────────────────────
-    print(f"📥 Embedding and storing {len(documents)} documents ...")
-    collection.add(
-        ids=ids,
-        documents=documents,
-        metadatas=metadatas,
-    )
+    with open(EMBEDDINGS_PATH, "wb") as f:
+        pickle.dump(data, f)
 
-    print(f"✅ Ingestion complete! Collection '{COLLECTION_NAME}' has {collection.count()} documents.")
-    return collection
+    print(f"✅ Ingestion complete! Saved {len(documents)} embeddings to {EMBEDDINGS_PATH}")
+    return data
 
 
 if __name__ == "__main__":

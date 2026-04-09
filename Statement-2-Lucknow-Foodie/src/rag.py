@@ -1,7 +1,7 @@
 """
 RAG Engine for Lucknow Foodie Guide
 =====================================
-Hybrid search (metadata filters + semantic vector search)
+Hybrid search (metadata filters + cosine similarity)
 combined with Groq LLM for conversational responses.
 
 Usage:
@@ -11,11 +11,11 @@ Usage:
 """
 
 import os
-import json
-import re
+import pickle
+import numpy as np
+from scipy.spatial.distance import cosine
 from dotenv import load_dotenv
-import chromadb
-from chromadb.utils import embedding_functions
+from sentence_transformers import SentenceTransformer
 from groq import Groq
 
 # ---------------------------------------------------------------------------
@@ -24,8 +24,7 @@ from groq import Groq
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CHROMA_DIR = os.path.join(BASE_DIR, "src", "chroma_db")
-COLLECTION_NAME = "lucknow_restaurants"
+EMBEDDINGS_PATH = os.path.join(BASE_DIR, "src", "embeddings", "restaurant_embeddings.pkl")
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -36,7 +35,6 @@ GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 # Filter Extraction — Pre-filters for hybrid search
 # ---------------------------------------------------------------------------
 
-# Keywords mapped to ChromaDB metadata filters
 VEG_KEYWORDS = {"veg", "vegetarian", "pure veg", "paneer", "dal", "sabzi", "chaat"}
 NONVEG_KEYWORDS = {"non-veg", "nonveg", "non veg", "chicken", "mutton", "kebab",
                    "biryani", "nihari", "fish", "prawns", "meat", "egg"}
@@ -51,40 +49,50 @@ NEARBY_KEYWORDS = {"near campus", "near iiit", "nearby", "close", "walking dista
 def extract_filters(query: str) -> dict:
     """
     Extract metadata filters from the user query for pre-filtering
-    in ChromaDB before semantic search.
-    Returns a dict of ChromaDB `where` conditions.
+    before semantic search.
     """
     q = query.lower()
     filters = {}
 
-    # Veg / Non-veg filter
     if any(kw in q for kw in VEG_KEYWORDS) and not any(kw in q for kw in NONVEG_KEYWORDS):
-        filters["veg_nonveg"] = {"$in": ["Veg", "Both"]}
+        filters["veg"] = True
     elif any(kw in q for kw in NONVEG_KEYWORDS):
-        filters["veg_nonveg"] = {"$in": ["Non-Veg", "Both"]}
+        filters["nonveg"] = True
 
-    # Budget filter
     if any(kw in q for kw in BUDGET_KEYWORDS):
-        filters["cost_for_two"] = {"$lte": 500}
+        filters["budget"] = True
 
-    # Premium filter
     if any(kw in q for kw in PREMIUM_KEYWORDS):
-        filters["cost_for_two"] = {"$gte": 1000}
+        filters["premium"] = True
 
-    # Nearby filter (within 5 km of IIIT)
     if any(kw in q for kw in NEARBY_KEYWORDS):
-        filters["distance_from_iiit_km"] = {"$lte": 5.0}
+        filters["nearby"] = True
 
-    # Build ChromaDB where clause
-    if len(filters) == 0:
-        return None
-    elif len(filters) == 1:
-        key = list(filters.keys())[0]
-        return {key: filters[key]}
-    else:
-        # Multiple filters → use $and
-        conditions = [{k: v} for k, v in filters.items()]
-        return {"$and": conditions}
+    return filters
+
+
+def apply_filters(metadatas: list[dict], filters: dict) -> list[int]:
+    """
+    Return indices of restaurants that pass the filters.
+    If no filters, return all indices.
+    """
+    if not filters:
+        return list(range(len(metadatas)))
+
+    valid = set(range(len(metadatas)))
+
+    if filters.get("veg"):
+        valid &= {i for i, m in enumerate(metadatas) if m["veg_nonveg"] in ("Veg", "Both")}
+    if filters.get("nonveg"):
+        valid &= {i for i, m in enumerate(metadatas) if m["veg_nonveg"] in ("Non-Veg", "Both")}
+    if filters.get("budget"):
+        valid &= {i for i, m in enumerate(metadatas) if m["cost_for_two"] <= 500}
+    if filters.get("premium"):
+        valid &= {i for i, m in enumerate(metadatas) if m["cost_for_two"] >= 1000}
+    if filters.get("nearby"):
+        valid &= {i for i, m in enumerate(metadatas) if m["distance_from_iiit_km"] <= 5.0}
+
+    return list(valid)
 
 
 # ---------------------------------------------------------------------------
@@ -95,20 +103,26 @@ class FoodieRAG:
     """
     Core RAG engine combining:
     1. Keyword-based metadata pre-filtering
-    2. Semantic vector search via ChromaDB
+    2. Cosine similarity search via numpy
     3. Groq LLM for response generation
     """
 
     def __init__(self):
-        # ── ChromaDB ──────────────────────────────────────────────
-        self.client = chromadb.PersistentClient(path=CHROMA_DIR)
-        self.ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-            model_name=EMBEDDING_MODEL
-        )
-        self.collection = self.client.get_collection(
-            name=COLLECTION_NAME,
-            embedding_function=self.ef,
-        )
+        # ── Load embeddings ───────────────────────────────────────
+        if not os.path.exists(EMBEDDINGS_PATH):
+            raise FileNotFoundError(
+                f"Embeddings not found at {EMBEDDINGS_PATH}. Run ingestion first."
+            )
+
+        with open(EMBEDDINGS_PATH, "rb") as f:
+            data = pickle.load(f)
+
+        self.embeddings = data["embeddings"]      # numpy array (N, dim)
+        self.documents = data["documents"]         # list of strings
+        self.metadatas = data["metadatas"]          # list of dicts
+
+        # ── Load embedding model for query encoding ───────────────
+        self.model = SentenceTransformer(EMBEDDING_MODEL)
 
         # ── Groq LLM ─────────────────────────────────────────────
         if not GROQ_API_KEY:
@@ -122,37 +136,46 @@ class FoodieRAG:
 
     def search(self, query: str, n_results: int = 6) -> list[dict]:
         """
-        Hybrid search: metadata filters + semantic similarity.
+        Hybrid search: metadata filters + cosine similarity.
         Returns list of matched restaurant documents with metadata.
         """
-        where_filter = extract_filters(query)
+        # Step 1: Apply keyword filters
+        filters = extract_filters(query)
+        valid_indices = apply_filters(self.metadatas, filters)
 
-        try:
-            results = self.collection.query(
-                query_texts=[query],
-                n_results=n_results,
-                where=where_filter,
-                include=["documents", "metadatas", "distances"],
-            )
-        except Exception:
-            # If filtered query returns too few results, fallback without filters
-            results = self.collection.query(
-                query_texts=[query],
-                n_results=n_results,
-                include=["documents", "metadatas", "distances"],
-            )
+        # Step 2: Compute query embedding
+        query_embedding = self.model.encode([query], normalize_embeddings=True)[0]
 
-        # Parse results into clean list
+        # Step 3: Compute cosine similarities (only for filtered restaurants)
+        similarities = []
+        for idx in valid_indices:
+            sim = 1 - cosine(query_embedding, self.embeddings[idx])
+            similarities.append((idx, sim))
+
+        # Sort by similarity (highest first)
+        similarities.sort(key=lambda x: x[1], reverse=True)
+
+        # Take top n_results
+        top_results = similarities[:n_results]
+
+        # If filtered results are too few, fallback to all restaurants
+        if len(top_results) < 3 and filters:
+            all_sims = []
+            for idx in range(len(self.metadatas)):
+                sim = 1 - cosine(query_embedding, self.embeddings[idx])
+                all_sims.append((idx, sim))
+            all_sims.sort(key=lambda x: x[1], reverse=True)
+            top_results = all_sims[:n_results]
+
+        # Build results
         matches = []
-        if results and results["documents"]:
-            for i, doc in enumerate(results["documents"][0]):
-                meta = results["metadatas"][0][i] if results["metadatas"] else {}
-                distance = results["distances"][0][i] if results["distances"] else 0
-                matches.append({
-                    "document": doc,
-                    "metadata": meta,
-                    "similarity_score": round(1 - distance, 3),  # cosine → similarity
-                })
+        for idx, sim in top_results:
+            matches.append({
+                "document": self.documents[idx],
+                "metadata": self.metadatas[idx],
+                "similarity_score": round(sim, 3),
+            })
+
         return matches
 
     def build_context(self, matches: list[dict]) -> str:
@@ -243,9 +266,8 @@ IMPORTANT: Base ALL recommendations strictly on the provided context data. Never
         return answer
 
     def get_all_restaurants(self) -> list[dict]:
-        """Return all restaurants from the collection (for browsing)."""
-        results = self.collection.get(include=["metadatas"])
-        return results["metadatas"] if results else []
+        """Return all restaurants (for browsing)."""
+        return self.metadatas
 
     def reset_history(self):
         """Clear conversation history."""

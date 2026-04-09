@@ -1,0 +1,19 @@
+# ─── Lucknow Foodie Guide Dependencies ──────────────
+# Install: pip install -r requirements.txt
+
+# Web Framework
+fastapi
+uvicorn[standard]
+
+# Embeddings (runs locally, no API key needed)
+sentence-transformers
+
+# Similarity search (no vector DB needed for 41 restaurants)
+numpy
+scipy
+
+# LLM Provider
+groq
+
+# Environment Variables
+python-dotenv

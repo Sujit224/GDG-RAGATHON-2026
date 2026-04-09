@@ -718,5 +718,23 @@
     "reviews_summary": "Best vegetarian thali in Lucknow. Sweets are fresh and authentic. Great for gifting boxes during festivals. Clean and well-run.",
     "distance_from_iiit_km": 10.0,
     "maps_link": "https://maps.google.com/?q=Chhappan+Bhog+Gomti+Nagar+Lucknow"
+  },
+  {
+    "id": 41,
+    "name": "Sky Glass Brewing Co.",
+    "area": "Gomti Nagar",
+    "address": "Vibhuti Khand, Gomti Nagar, Lucknow",
+    "cuisine": ["Continental", "Italian", "Bar Food", "Craft Beer"],
+    "price_range": "₹₹₹₹",
+    "cost_for_two": 2500,
+    "veg_nonveg": "Both",
+    "signature_dishes": ["Craft Beer", "Wood-Fired Pizza", "Grilled Chicken Wings", "Nachos Platter", "Pasta"],
+    "opening_hours": "12:00 PM - 12:00 AM",
+    "vibe": ["rooftop", "nightlife", "date night", "premium", "party", "craft brewery"],
+    "rating": 4.2,
+    "description": "Sky Glass Brewing Co. is a premium rooftop brewery in Gomti Nagar. Known for its in-house craft beers, stunning skyline views, wood-fired pizzas, and vibrant nightlife atmosphere. One of Lucknow's most popular spots for a special evening out.",
+    "reviews_summary": "Great ambiance and craft beers. Rooftop view is stunning at night. A bit pricey but the vibe is unmatched. Popular weekend destination for young professionals and college students.",
+    "distance_from_iiit_km": 12.0,
+    "maps_link": "https://maps.google.com/?q=Sky+Glass+Brewing+Co+Gomti+Nagar+Lucknow"
   }
 ]
