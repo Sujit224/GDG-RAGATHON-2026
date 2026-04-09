@@ -1,0 +1,90 @@
+# =========================================================
+# Python bytecode, caches, and build artifacts
+# =========================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Packaging / distribution
+build/
+dist/
+site/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.egg
+
+# Test / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.coverage
+.coverage.*
+htmlcov/
+
+# =========================================================
+# Virtual environments
+# =========================================================
+venv/
+.venv/
+env/
+ENV/
+virtualenv/
+.python-version
+
+# =========================================================
+# Environment files & secrets
+# =========================================================
+.env
+.env.*
+*.env
+.flaskenv
+.streamlit/secrets.toml
+
+# Optional: local Streamlit config/state (safe to keep out of git)
+.streamlit/config.toml
+
+# =========================================================
+# Vector DB / local persistence (runtime-generated)
+# =========================================================
+qdrant_data/
+**/qdrant_data/
+
+# ChromaDB local stores
+chroma/
+chromadb/
+vector_db/
+**/vector_db/
+**/chroma/
+**/chromadb/
+*.chroma
+*.sqlite3
+*.db
+
+# =========================================================
+# ML model / embedding caches (large, local-only)
+# =========================================================
+.cache/
+.cache/huggingface/
+.cache/torch/
+huggingface/
+hf_cache/
+sentence_transformers/
+transformers_cache/
+
+# =========================================================
+# IDE / editor files
+# =========================================================
+.vscode/
+.idea/
+*.iml
+
+# =========================================================
+# OS files
+# =========================================================
+.DS_Store
+Thumbs.db
+desktop.ini

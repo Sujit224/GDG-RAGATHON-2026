@@ -1,0 +1,167 @@
+[
+  {
+    "name": "Tunday Kababi (Aminabad)",
+    "vibe": "iconic old-Lucknow, crowded, quick-service, authentic Awadhi flavor",
+    "budget": "budget",
+    "signature_dishes": ["Galouti Kebab", "Mutton Biryani", "Sheermal"],
+    "is_veg": false,
+    "reviews": [
+      "Melt-in-mouth kebabs and fast service.",
+      "Best for authentic non-veg Awadhi taste on a budget."
+    ]
+  },
+  {
+    "name": "Royal Cafe (Hazratganj)",
+    "vibe": "family-friendly, classic, central city hangout, nostalgic",
+    "budget": "mid",
+    "signature_dishes": ["Basket Chaat", "Tokri Chaat", "Kulfi Falooda"],
+    "is_veg": true,
+    "reviews": [
+      "Must-visit for chaat lovers.",
+      "Comfortable seating and very popular in evenings."
+    ]
+  },
+  {
+    "name": "Dastarkhwan (Hazratganj)",
+    "vibe": "traditional dine-in, rich Awadhi aroma, relaxed dinner place",
+    "budget": "mid",
+    "signature_dishes": ["Chicken Masala", "Mutton Korma", "Biryani"],
+    "is_veg": false,
+    "reviews": [
+      "Flavor-packed curries and good portions.",
+      "Reliable choice for biryani and Mughlai meals."
+    ]
+  },
+  {
+    "name": "Wahid Biryani (Aminabad)",
+    "vibe": "no-frills, legendary biryani stop, local favorite",
+    "budget": "budget",
+    "signature_dishes": ["Mutton Biryani", "Chicken Biryani", "Raita"],
+    "is_veg": false,
+    "reviews": [
+      "Strong biryani aroma and authentic old-city style.",
+      "Great value for money and quick takeaway."
+    ]
+  },
+  {
+    "name": "Cappuccino Blast (Gomti Nagar)",
+    "vibe": "modern cafe, youth crowd, cozy, social-media friendly",
+    "budget": "premium",
+    "signature_dishes": ["Wood-fired Pizza", "Pasta", "Cold Coffee"],
+    "is_veg": true,
+    "reviews": [
+      "Good ambience for groups and casual meetings.",
+      "Slightly expensive but consistent food quality."
+    ]
+  },
+  {
+    "name": "Sky Glass Brewing Co. (Phoenix Palassio)",
+    "vibe": "upscale, rooftop views, energetic nightlife, premium dining",
+    "budget": "premium",
+    "signature_dishes": ["Craft Beer", "Wood-fired Pizza", "Signature Cocktails"],
+    "is_veg": false,
+    "reviews": [
+      "Fantastic views of the city skyline and great for weekend hangouts.",
+      "The best place for a premium evening experience near the Ekana stadium area."
+    ]
+  },
+  {
+    "name": "The Hazelnut Factory (Gomti Nagar)",
+    "vibe": "chic bakery, aesthetically pleasing, student-friendly, dessert heaven",
+    "budget": "mid",
+    "signature_dishes": ["Hazelnut Pastry", "Macarons", "Peri Peri Fries"],
+    "is_veg": true,
+    "reviews": [
+      "A paradise for dessert lovers with very Instagrammable interiors.",
+      "Great spot for a casual coffee date or catching up on assignments."
+    ]
+  },
+  {
+    "name": "Sakhawat's (Qaiserbagh)",
+    "vibe": "historic, hidden gem, no-frills, focused entirely on taste",
+    "budget": "budget",
+    "signature_dishes": ["Shami Kebab", "Mutton Stew", "Boti Kabab"],
+    "is_veg": false,
+    "reviews": [
+      "Often overlooked but serves some of the most authentic Awadhi food in the city.",
+      "Truly traditional flavors that haven't changed in decades."
+    ]
+  },
+  {
+    "name": "Idris Biryani (Chowk)",
+    "vibe": "legendary street food, rustic, intense aromas, old-city hustle",
+    "budget": "budget",
+    "signature_dishes": ["Mutton Biryani", "Special Raita"],
+    "is_veg": false,
+    "reviews": [
+      "The wood-fired cooking gives this biryani a flavor you won't find anywhere else.",
+      "Long queues but absolutely worth the wait for any biryani enthusiast."
+    ]
+  },
+  {
+    "name": "Netram Ajay Kumar (Aminabad)",
+    "vibe": "traditional breakfast spot, bustling morning energy, heritage eatery",
+    "budget": "budget",
+    "signature_dishes": ["Kachori-Sabzi", "Jalebi", "Lassi"],
+    "is_veg": true,
+    "reviews": [
+      "The quintessential Lucknow breakfast experience.",
+      "The desi ghee preparation makes everything taste incredibly rich."
+    ]
+  },
+  {
+    "name": "Sharma Tea Stall (Hazratganj)",
+    "vibe": "iconic social hub, casual, roadside classic, morning tradition",
+    "budget": "budget",
+    "signature_dishes": ["Bun-Makkhan", "Samosa", "Ginger Tea"],
+    "is_veg": true,
+    "reviews": [
+      "You haven't experienced Lucknow until you've had tea here.",
+      "Simple, consistent, and always crowded with locals sharing stories."
+    ]
+  },
+  {
+    "name": "Mubeen's (Chowk)",
+    "vibe": "traditional Mughlai, lively, rich culinary heritage",
+    "budget": "budget",
+    "signature_dishes": ["Pasanda Kebab", "Nihari-Kulcha", "Biryani"],
+    "is_veg": false,
+    "reviews": [
+      "Their Nihari is legendary and a must-try during winters.",
+      "Affordable and authentic flavors from the heart of the old city."
+    ]
+  },
+  {
+    "name": "Repertwahr Cafe (Maruti Puram)",
+    "vibe": "artistic, bohemian, library-themed, tranquil, creative workspace",
+    "budget": "mid",
+    "signature_dishes": ["Blueberry Cheesecake", "Pesto Pasta", "Gourmet Sandwiches"],
+    "is_veg": true,
+    "reviews": [
+      "A quiet escape perfect for reading a book or working on a laptop.",
+      "The atmosphere is incredibly peaceful and creative."
+    ]
+  },
+  {
+    "name": "G.Y.L.T - Get Your Life Together (Gomti Nagar)",
+    "vibe": "modern, vibrant, quick-bite focused, trendy among students",
+    "budget": "mid",
+    "signature_dishes": ["Burgers", "Loaded Fries", "Thick Shakes"],
+    "is_veg": false,
+    "reviews": [
+      "Excellent place for a quick, filling meal with friends.",
+      "The vibes are very contemporary and the portions are generous."
+    ]
+  },
+  {
+    "name": "Lalla Biryani (Chowk)",
+    "vibe": "small-scale legendary, authentic, specialized, cult following",
+    "budget": "budget",
+    "signature_dishes": ["Mutton Biryani"],
+    "is_veg": false,
+    "reviews": [
+      "Many locals swear this is the best biryani in all of Lucknow.",
+      "Simple setup but the taste is unmatched."
+    ]
+  }
+]
