@@ -2,7 +2,7 @@
 
 **Organized by GDG ML Wing, IIIT Lucknow** | **April 7th – April 9th, 2026**
 
-Welcome to the official repository for **RAGATHON 2026**. This 5-day challenge is designed to push your limits in **Retrieval-Augmented Generation (RAG)**, **Vector Databases**, and **Predictive ML Integration**.
+Welcome to the official repository for **RAGATHON 2026**. This 3-day challenge is designed to push your limits in **Retrieval-Augmented Generation (RAG)**, **Vector Databases**, and **Predictive ML Integration**.
 
 ---
 
@@ -106,7 +106,7 @@ Once you have created your Pull Request on GitHub, you **must** submit the URL o
 
 ## 📞 Support & Contact
 
-For technical hurdles or clarifications, contact the GDG ML Wing leads:
+For technical hurdles or clarifications, contact the GDG ML Wing members:
 
 - **C Sai Sujit:** +91 81056 26006
     
