@@ -71,7 +71,7 @@ def extract_filters(query: str) -> dict:
     return filters
 
 
-def apply_filters(metadatas: list[dict], filters: dict) -> list[int]:
+def apply_filters(metadatas: list[dict], filters: dict, diet_filters: list[str] = None) -> list[int]:
     """
     Return indices of restaurants that pass the filters.
     If no filters, return all indices.
@@ -91,6 +91,12 @@ def apply_filters(metadatas: list[dict], filters: dict) -> list[int]:
         valid &= {i for i, m in enumerate(metadatas) if m["cost_for_two"] >= 1000}
     if filters.get("nearby"):
         valid &= {i for i, m in enumerate(metadatas) if m["distance_from_iiit_km"] <= 5.0}
+
+    # Strict UI Dictionary Filters
+    if diet_filters:
+        strict_veg = any(d in diet_filters for d in ("Vegan", "Pure Veg", "Jain"))
+        if strict_veg:
+            valid &= {i for i, m in enumerate(metadatas) if m["veg_nonveg"] == "Veg" or m["veg_nonveg"] == "Both"}
 
     return list(valid)
 
@@ -134,14 +140,14 @@ class FoodieRAG:
         # ── Conversation history ──────────────────────────────────
         self.history: list[dict] = []
 
-    def search(self, query: str, n_results: int = 6) -> list[dict]:
+    def search(self, query: str, diet_filters: list[str] = None, n_results: int = 6) -> list[dict]:
         """
         Hybrid search: metadata filters + cosine similarity.
         Returns list of matched restaurant documents with metadata.
         """
-        # Step 1: Apply keyword filters
+        # Step 1: Apply keyword filters & diet restrictions
         filters = extract_filters(query)
-        valid_indices = apply_filters(self.metadatas, filters)
+        valid_indices = apply_filters(self.metadatas, filters, diet_filters)
 
         # Step 2: Compute query embedding
         query_embedding = self.model.encode([query], normalize_embeddings=True)[0]
@@ -202,7 +208,7 @@ class FoodieRAG:
             )
         return "\n\n".join(context_parts)
 
-    def query(self, user_message: str) -> str:
+    def query(self, user_message: str, diet_filters: list[str] = None, allergies: str = "") -> str:
         """
         Full RAG pipeline:
         1. Search for relevant restaurants
@@ -210,27 +216,40 @@ class FoodieRAG:
         3. Generate response via Groq
         """
         # ── Step 1: Retrieve ──────────────────────────────────────
-        matches = self.search(user_message)
+        matches = self.search(user_message, diet_filters)
         context = self.build_context(matches)
 
         # ── Step 2: Build prompt ──────────────────────────────────
-        system_prompt = """You are the **Lucknow Foodie Guide** 🍽️ — a friendly, knowledgeable food recommendation bot for students of IIIT Lucknow.
+        system_prompt = """You are the **Lucknow Foodie Guide** 🍽️ — a highly advanced, premium food recommendation AI for IIIT Lucknow students.
 
-Your job is to recommend restaurants based on the user's query using ONLY the restaurant data provided in the context below. Do NOT make up restaurants or information.
+Your job is to recommend restaurants based on the user's query using ONLY the data provided. Do NOT invent restaurants.
+
+CRITICAL INSTRUCTION:
+When you recommend a restaurant, you MUST format the recommendation as a specific structured tag so the UI can render a beautiful image card.
+Do NOT just write text paragraphs about the restaurant. Use this exact literal syntax on a new line:
+[CARD: Restaurant Name | Cuisine | Price Range | Rating | Distance from IIIT | Map Link]
+
+Example of a correct response:
+"Here is a great budget spot near campus!
+[CARD: Sharma Ji Ka Dhaba | North Indian, Street Food | ₹ (Under 200) | 4.2 | 1.5 | https://g.co/kgs/xyz]
+You should definitely try their signature Dal Makhani!"
 
 Guidelines:
-- Be warm, enthusiastic, and conversational — like a foodie friend, not a database
-- Recommend 2-4 restaurants per query (unless the user asks for more or fewer)
-- For each recommendation, include: name, what makes it special, signature dishes, price range, distance from IIIT, and a Google Maps link
-- Use emojis naturally (🍕 🔥 ⭐ etc.) but don't overdo it
-- If the user asks about vibes (date night, party, study cafe), prioritise the vibe tags
-- If a restaurant is far (>10 km), mention it's "Worth the trip!" or "A Lucknow pilgrimage"
-- If no restaurants match, suggest the closest alternatives and explain why
-- Keep responses concise but informative — students are busy!
-- When mentioning price, use both the ₹ symbols AND actual cost for two
-- If user asks a non-food question, gently redirect to food recommendations
+- Recommend 2-4 restaurants per query.
+- Use emojis naturally but don't overdo it.
+- If the user asks a non-food question, politely redirect to food.
+- Make sure every component inside the [CARD: ...] is separated exactly by ' | '.
+- NEVER miss a field inside the CARD tag. It must have exactly 6 sections separated by 5 pipes.
+"""
 
-IMPORTANT: Base ALL recommendations strictly on the provided context data. Never invent restaurants."""
+        # ── Dynamically inject explicit dietary rules if provided ──
+        if diet_filters or allergies:
+            system_prompt += "\n\nCRITICAL DIETARY RESTRICTIONS FROM USER:\n"
+            if diet_filters:
+                system_prompt += f"- Required Tags: {', '.join(diet_filters)}\n"
+            if allergies:
+                system_prompt += f"- Custom Allergies/Aversions: {allergies}\n"
+            system_prompt += "\nYou MUST strictly obey these restrictions. Verify the restaurant can safely accommodate them. If you cannot be sure, explicitly warn the user."
 
         # ── Step 3: Generate via Groq ─────────────────────────────
         messages = [

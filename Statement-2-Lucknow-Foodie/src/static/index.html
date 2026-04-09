@@ -3,847 +3,540 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucknow Foodie Guide 🍽️ | IIIT Lucknow</title>
-    <meta name="description" content="AI-powered restaurant recommendation chatbot for IIIT Lucknow students. Find the best food spots near campus.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Lucknow Foodie Guide 🍽️ | Premium RAG Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <style>
-        /* ─── CSS Reset & Variables ─────────────────────────────── */
+        /* ─── CSS Reset & Modern Variables ──────────────────────── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a2e;
-            --bg-glass: rgba(26, 26, 46, 0.7);
-            --bg-input: #16162a;
+            --bg-base: #050505;
+            --glass-bg: rgba(20, 20, 25, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            
+            --accent-main: #ff7e5f;
+            --accent-secondary: #feb47b;
+            --accent-glow: rgba(255, 126, 95, 0.3);
 
-            --accent-primary: #f59e0b;
-            --accent-secondary: #d97706;
-            --accent-glow: rgba(245, 158, 11, 0.15);
-            --accent-soft: rgba(245, 158, 11, 0.08);
-
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-
-            --border: rgba(255, 255, 255, 0.06);
-            --border-accent: rgba(245, 158, 11, 0.2);
+            --text-high: #ffffff;
+            --text-medium: #b3b3b8;
+            --text-low: #6c6c75;
 
             --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-            --radius-full: 9999px;
-
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
-            --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
-            --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.15);
-
-            --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-pill: 100px;
+            
+            --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-high);
+            height: 100vh;
             display: flex;
             flex-direction: column;
             overflow: hidden;
-        }
-
-        /* ─── Background Ambient Effect ────────────────────────── */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at 30% 20%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 80%, rgba(217, 119, 6, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ─── Header ───────────────────────────────────────────── */
-        .header {
             position: relative;
-            z-index: 10;
-            padding: 16px 24px;
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            margin: 0;
         }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 14px;
+        /* ─── Ambient Background ────────────────────────────── */
+        .ambient-mesh {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0; overflow: hidden; pointer-events: none;
         }
-
-        .logo {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            box-shadow: var(--shadow-glow);
+        .orb {
+            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4;
+            animation: float 20s infinite ease-in-out alternate;
         }
-
-        .header-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-primary), #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .header-subtitle {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-icon {
-            width: 38px;
-            height: 38px;
-            border: 1px solid var(--border);
-            background: var(--bg-card);
-            color: var(--text-secondary);
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .btn-icon:hover {
-            border-color: var(--border-accent);
-            color: var(--accent-primary);
-            background: var(--accent-soft);
-        }
-
-        /* ─── Chat Container ───────────────────────────────────── */
-        .chat-container {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px 0;
-            position: relative;
-            z-index: 1;
-            scroll-behavior: smooth;
-        }
-
-        .chat-messages {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        /* ─── Welcome Card ─────────────────────────────────────── */
-        .welcome-card {
-            text-align: center;
-            padding: 48px 24px 32px;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .welcome-emoji {
-            font-size: 56px;
-            margin-bottom: 16px;
-            display: block;
-            animation: float 3s ease-in-out infinite;
-        }
-
+        .orb-1 { width: 40vw; height: 40vw; background: radial-gradient(circle, var(--accent-main), transparent 70%); top: -10%; left: -10%; }
+        .orb-2 { width: 50vw; height: 50vw; background: radial-gradient(circle, var(--accent-secondary), transparent 70%); bottom: -20%; right: -10%; animation-delay: -5s; }
+        .orb-3 { width: 30vw; height: 30vw; background: radial-gradient(circle, #ff5e62, transparent 70%); top: 40%; left: 60%; animation-delay: -10s; }
+        
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 5%) scale(1.1); }
+            100% { transform: translate(-5%, -5%) scale(0.95); }
         }
 
-        .welcome-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .welcome-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            max-width: 480px;
+        /* ─── App Wrapper & Header ──────────────────────────────── */
+        .app-wrapper {
+            position: relative; z-index: 10;
+            display: flex; flex-direction: column;
+            height: 100%; width: 100%; max-width: 1000px;
             margin: 0 auto;
         }
 
-        /* ─── Quick Chips ──────────────────────────────────────── */
-        .quick-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-top: 24px;
+        .header {
+            padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;
+            background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border); border-radius: 0 0 var(--radius-lg) var(--radius-lg);
         }
 
-        .chip {
-            padding: 8px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-full);
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: var(--transition);
-            white-space: nowrap;
+        .brand { display: flex; gap: 16px; align-items: center; }
+        .logo-box {
+            width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-main), var(--accent-secondary));
+            border-radius: var(--radius-md); display: flex; justify-content: center; align-items: center;
+            font-size: 24px; box-shadow: var(--glass-shadow);
         }
+        .brand-text h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; background: linear-gradient(to right, #fff, var(--accent-secondary)); background-clip: text; -webkit-background-clip: text; color:transparent; }
+        .brand-text span { font-size: 0.8rem; color: var(--text-medium); font-weight: 500; }
 
-        .chip:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            background: var(--accent-soft);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-glow);
+        .header-controls { display: flex; gap: 12px; }
+        .btn-icon {
+            width: 42px; height: 42px; border-radius: var(--radius-pill); border: 1px solid var(--glass-border);
+            background: rgba(255,255,255,0.05); color: var(--text-high); display: flex; justify-content: center; align-items: center;
+            cursor: pointer; transition: var(--transition); font-size: 18px;
         }
+        .btn-icon:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); box-shadow: var(--glass-shadow); }
 
-        /* ─── Messages ─────────────────────────────────────────── */
-        .message {
-            display: flex;
-            gap: 12px;
-            animation: fadeInUp 0.35s ease-out;
-            max-width: 100%;
+        /* ─── Chat Area ──────────────────────────────────────────── */
+        .chat-scroll {
+            flex: 1; overflow-y: auto; padding: 30px 20px; scroll-behavior: smooth;
         }
+        .chat-scroll::-webkit-scrollbar { width: 6px; }
+        .chat-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .chat-feed { display: flex; flex-direction: column; gap: 24px; padding-bottom: 20px; }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(12px); }
+        /* Welcome UI */
+        .hero-welcome { text-align: center; padding: 60px 20px; animation: fadeUp 1s ease-out; }
+        .hero-welcome h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 16px; font-weight: 700; }
+        .hero-welcome p { color: var(--text-medium); max-width: 500px; margin: 0 auto 32px; line-height: 1.6; }
+        
+        .quick-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .action-chip {
+            padding: 12px 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-pill);
+            color: var(--text-high); cursor: pointer; transition: var(--transition); backdrop-filter: blur(10px);
+        }
+        .action-chip:hover { background: var(--accent-glow); border-color: var(--accent-main); transform: scale(1.05); }
+
+        /* ─── Messages ───────────────────────────────────────────── */
+        .message-row { display: flex; gap: 16px; animation: slideIn 0.4s ease-out; max-width: 100%; }
+        .message-row.user-row { flex-direction: row-reverse; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .av {
+            width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 20px; flex-shrink: 0; background: var(--glass-bg); border: 1px solid var(--glass-border);
+        }
+        .user-row .av { background: rgba(255, 255, 255, 0.1); }
+        .bot-row .av { background: linear-gradient(135deg, var(--accent-main), var(--accent-secondary)); border: none; }
+
+        .bubble {
+            max-width: 85%; padding: 16px 20px; border-radius: var(--radius-lg); font-size: 1rem; line-height: 1.6;
+            backdrop-filter: blur(10px); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-medium);
+        }
+        .user-row .bubble { background: var(--text-high); color: var(--bg-base); border-bottom-right-radius: 4px; font-weight: 500; }
+        .bot-row .bubble { border-bottom-left-radius: 4px; }
+        .bot-row .bubble strong { color: var(--text-high); }
+
+        /* ─── Cards & Multiple Images (Image Carousel inside Card) ────── */
+        @keyframes cardEntrance {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .message.user {
-            flex-direction: row-reverse;
+        .cards-carousel {
+            display: flex; overflow-x: auto; gap: 16px; padding: 10px 0; margin-top: 12px;
+            scroll-snap-type: x mandatory; scroll-behavior: smooth;
+        }
+        .cards-carousel::-webkit-scrollbar { height: 6px; }
+        .cards-carousel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+        .rest-card {
+            min-width: 290px; max-width: 330px; background: rgba(30, 30, 35, 0.8);
+            border: 1px solid var(--glass-border); border-top: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-md); overflow: hidden;
+            scroll-snap-align: start; flex-shrink: 0; transition: var(--transition); display: flex; flex-direction: column;
+            opacity: 0; animation: cardEntrance 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        .rest-card:hover { transform: translateY(-5px); border-color: var(--accent-main); box-shadow: 0 10px 30px rgba(255, 126, 95, 0.2); }
+
+        /* Inner Image Carousel */
+        .inner-img-carousel {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory; height: 180px; width: 100%;
+            scrollbar-width: none; /* Firefox */
+        }
+        .inner-img-carousel::-webkit-scrollbar { display: none; } /* Chrome */
+        .rest-img {
+            width: 100%; height: 180px; flex-shrink: 0; scroll-snap-align: start;
+            background-color: #2a2a30; background-size: cover; background-position: center; position: relative;
+        }
+        .img-indicator {
+            position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6);
+            padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; color: #fff;
         }
 
-        .message-avatar {
-            width: 34px;
-            height: 34px;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            flex-shrink: 0;
-            margin-top: 2px;
+        .rest-info { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+        .rest-name { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .rest-cuisine { font-size: 0.85rem; color: var(--accent-secondary); margin-bottom: 12px; }
+        .rest-stats { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .stat-pill { background: rgba(255,255,255,0.08); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; color: #fff; }
+        
+        .rest-actions {
+            margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap;
+        }
+        .rest-action {
+            flex: 1; text-align: center; border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 600; 
+            text-decoration: none; padding: 8px 10px; transition: var(--transition); color: #fff;
+        }
+        .map-btn { background: rgba(255,255,255,0.1); }
+        .map-btn:hover { background: rgba(255,255,255,0.2); }
+        
+        .swiggy-btn { background: linear-gradient(135deg, #fc8019, #fd9945); }
+        .swiggy-btn:hover { box-shadow: 0 4px 15px rgba(252, 128, 25, 0.4); transform: translateY(-2px); }
+        
+        .zomato-btn { background: linear-gradient(135deg, #e23744, #f05c67); }
+        .zomato-btn:hover { box-shadow: 0 4px 15px rgba(226, 55, 68, 0.4); transform: translateY(-2px); }
+
+        /* ─── Dietary Settings Tray ──────────────────────────────── */
+        .diet-tray {
+            padding: 0 24px;
+            margin-top: auto;
+            display: flex; flex-direction: column; gap: 10px;
         }
 
-        .message.bot .message-avatar {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+        .diet-toggles {
+            display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
+        }
+        .diet-toggles::-webkit-scrollbar { display: none; }
+
+        .diet-btn {
+            background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            padding: 6px 14px; border-radius: var(--radius-pill); color: var(--text-medium);
+            font-size: 0.85rem; cursor: pointer; transition: 0.2s; white-space: nowrap;
+        }
+        .diet-btn.active {
+            background: var(--accent-glow); border-color: var(--accent-main); color: #fff;
         }
 
-        .message.user .message-avatar {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+        .custom-diet-box {
+            display: flex; gap: 8px; align-items: center;
         }
-
-        .message-content {
-            max-width: 85%;
-            min-width: 0;
-        }
-
-        .message-bubble {
-            padding: 14px 18px;
-            border-radius: var(--radius-lg);
-            font-size: 0.9rem;
-            line-height: 1.65;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .message.bot .message-bubble {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-top-left-radius: 4px;
-            color: var(--text-primary);
-        }
-
-        .message.user .message-bubble {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            border-top-right-radius: 4px;
-            color: #0a0a0f;
-            font-weight: 500;
-        }
-
-        /* Markdown-like formatting in bot responses */
-        .message-bubble strong, .message-bubble b {
-            color: var(--accent-primary);
-            font-weight: 600;
-        }
-
-        .message.user .message-bubble strong,
-        .message.user .message-bubble b {
-            color: #0a0a0f;
-        }
-
-        .message-bubble a {
-            color: var(--accent-primary);
-            text-decoration: none;
-            border-bottom: 1px dashed var(--accent-primary);
-            transition: var(--transition);
-        }
-
-        .message-bubble a:hover {
-            border-bottom-style: solid;
-        }
-
-        .message.user .message-bubble a {
-            color: #0a0a0f;
-            border-bottom-color: #0a0a0f;
-        }
-
-        .message-bubble ul, .message-bubble ol {
-            margin: 8px 0;
-            padding-left: 20px;
-        }
-
-        .message-bubble li {
-            margin: 4px 0;
-        }
-
-        .message-bubble p {
-            margin: 6px 0;
-        }
-
-        .message-bubble p:first-child { margin-top: 0; }
-        .message-bubble p:last-child { margin-bottom: 0; }
-
-        .message-bubble code {
-            background: rgba(255,255,255,0.08);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.85em;
-        }
-
-        .message-bubble h3, .message-bubble h4 {
-            margin: 10px 0 4px;
-            color: var(--accent-primary);
-        }
-
-        .message-bubble hr {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 10px 0;
-        }
-
-        .message-bubble emoji {
-            font-size: 1.1em;
-        }
-
-        /* ─── Typing Indicator ─────────────────────────────────── */
-        .typing-indicator {
-            display: flex;
-            gap: 5px;
-            padding: 18px;
-        }
-
-        .typing-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--text-muted);
-            border-radius: 50%;
-            animation: typingBounce 1.2s infinite;
-        }
-
-        .typing-dot:nth-child(2) { animation-delay: 0.15s; }
-        .typing-dot:nth-child(3) { animation-delay: 0.3s; }
-
-        @keyframes typingBounce {
-            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-            30% { transform: translateY(-6px); opacity: 1; }
-        }
-
-        /* ─── Input Area ───────────────────────────────────────── */
-        .input-area {
-            position: relative;
-            z-index: 10;
-            padding: 16px 20px 20px;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-        }
-
-        .input-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            gap: 10px;
-            align-items: flex-end;
-        }
-
-        .input-field-wrapper {
-            flex: 1;
-            position: relative;
-        }
-
-        #chat-input {
-            width: 100%;
-            padding: 14px 18px;
-            background: var(--bg-input);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+        .custom-diet-input {
+            flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            padding: 8px 14px; border-radius: var(--radius-md); color: #fff; font-family: 'Outfit'; font-size: 0.85rem;
             outline: none;
+        }
+        .custom-diet-input:focus { border-color: var(--accent-secondary); }
+
+        /* ─── Input Area ─────────────────────────────────────────── */
+        .input-region {
+            padding: 16px 24px 30px; background: linear-gradient(to top, var(--bg-base) 80%, transparent);
+            position: relative; z-index: 10;
+        }
+
+        .input-box {
+            display: flex; align-items: center; background: rgba(20,20,25, 0.7);
+            border: 1px solid var(--glass-border); border-radius: var(--radius-pill);
+            padding: 6px 6px 6px 20px; backdrop-filter: blur(20px); box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             transition: var(--transition);
-            resize: none;
-            min-height: 48px;
-            max-height: 120px;
-            line-height: 1.4;
         }
+        .input-box:focus-within { border-color: var(--accent-main); box-shadow: 0 4px 20px var(--accent-glow); }
+        .input-box input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: 1rem; padding: 12px 0; }
+        .input-box input::placeholder { color: var(--text-low); }
 
-        #chat-input::placeholder {
-            color: var(--text-muted);
+        .input-actions { display: flex; gap: 8px; }
+        .mic-btn, .send-btn {
+            width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer;
+            display: flex; justify-content: center; align-items: center; font-size: 18px; transition: 0.2s;
         }
+        .mic-btn { background: rgba(255,255,255,0.1); color: #fff; }
+        .mic-btn.listening { background: #ef4444; animation: pulse-red 1.5s infinite; }
+        @keyframes pulse-red { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); } }
+        .send-btn { background: linear-gradient(135deg, var(--accent-main), var(--accent-secondary)); color: #000; }
+        .send-btn:hover { transform: scale(1.05); }
 
-        #chat-input:focus {
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px var(--accent-glow);
-        }
+        /* typing dots */
+        .typing { display: flex; gap: 4px; padding: 10px; }
+        .dot { width: 6px; height: 6px; background: #fff; border-radius: 50%; animation: blink 1.4s infinite both; }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes blink { 0%, 80%, 100% { opacity: 0.2; } 40% { opacity: 1; } }
 
-        #send-btn {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            border: none;
-            border-radius: var(--radius-md);
-            color: #0a0a0f;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            flex-shrink: 0;
-        }
-
-        #send-btn:hover:not(:disabled) {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-glow);
-        }
-
-        #send-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        #send-btn:active:not(:disabled) {
-            transform: scale(0.95);
-        }
-
-        /* ─── Scrollbar ────────────────────────────────────────── */
-        .chat-container::-webkit-scrollbar { width: 6px; }
-        .chat-container::-webkit-scrollbar-track { background: transparent; }
-        .chat-container::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 3px;
-        }
-        .chat-container::-webkit-scrollbar-thumb:hover {
-            background: var(--text-muted);
-        }
-
-        /* ─── Responsive ───────────────────────────────────────── */
-        @media (max-width: 640px) {
-            .header { padding: 12px 16px; }
-            .header-title { font-size: 1.1rem; }
-            .logo { width: 38px; height: 38px; font-size: 18px; }
-            .chat-messages { padding: 0 12px; }
-            .input-area { padding: 12px 12px 16px; }
-            .message-content { max-width: 90%; }
-            .welcome-card { padding: 32px 16px 24px; }
-            .welcome-emoji { font-size: 44px; }
-            .welcome-card h2 { font-size: 1.3rem; }
-            .quick-chips { gap: 6px; }
-            .chip { font-size: 0.75rem; padding: 6px 12px; }
-            .header-subtitle { display: none; }
-        }
-
-        /* ─── Markdown rendering helpers ───────────────────────── */
-        .bot-text em { font-style: italic; color: var(--text-secondary); }
+        /* Dashboard grid */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
+        .dash-card { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 16px; border-radius: var(--radius-md); }
     </style>
 </head>
 <body>
 
-    <!-- ─── Header ──────────────────────────────────────────── -->
-    <header class="header" id="app-header">
-        <div class="header-left">
-            <div class="logo">🍽️</div>
-            <div>
-                <div class="header-title">Lucknow Foodie Guide</div>
-                <div class="header-subtitle">RAG-powered • IIIT Lucknow</div>
-            </div>
-        </div>
-        <div class="header-actions">
-            <button class="btn-icon" id="reset-btn" title="New Chat" aria-label="Start new conversation">🔄</button>
-            <button class="btn-icon" id="browse-btn" title="Browse Restaurants" aria-label="Browse all restaurants">📋</button>
-        </div>
-    </header>
+    <!-- Ambient Background -->
+    <div class="ambient-mesh">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
 
-    <!-- ─── Chat Messages ───────────────────────────────────── -->
-    <main class="chat-container" id="chat-container">
-        <div class="chat-messages" id="chat-messages">
-            <!-- Welcome card -->
-            <div class="welcome-card" id="welcome-card">
-                <span class="welcome-emoji">🍛</span>
-                <h2>Namaste, Foodie! 🙏</h2>
-                <p>I'm your AI food guide for Lucknow. Ask me about restaurants, dishes, vibes, budgets — anything! I know 40+ spots from campus dhabas to Tunday Kababi.</p>
-                <div class="quick-chips">
-                    <button class="chip" data-query="Best budget food near IIIT campus">🎓 Near campus</button>
-                    <button class="chip" data-query="Suggest a good biryani place">🍚 Best biryani</button>
-                    <button class="chip" data-query="Where can I find the best basket chaat in Lucknow?">🥘 Basket chaat</button>
-                    <button class="chip" data-query="Good date night restaurant with nice ambiance">💑 Date night</button>
-                    <button class="chip" data-query="Best vegetarian restaurants near IIIT">🥗 Veg options</button>
-                    <button class="chip" data-query="Late night food options near campus">🌙 Late night</button>
-                    <button class="chip" data-query="Best cafes to study at in Lucknow">☕ Study cafes</button>
-                    <button class="chip" data-query="Where to go for a birthday celebration?">🎂 Celebrations</button>
+    <div class="app-wrapper">
+        <header class="header">
+            <div class="brand">
+                <div class="logo-box">🍽️</div>
+                <div class="brand-text">
+                    <h1>Lucknow Foodie</h1>
+                    <span>Smart Recommendations</span>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button class="btn-icon" id="browse-btn" title="Browse Grid">🗂️</button>
+                <button class="btn-icon" id="reset-btn" title="New Chat">✨</button>
+            </div>
+        </header>
+
+        <div class="chat-scroll" id="chat-container">
+            <div class="chat-feed" id="chat-feed">
+                <!-- Welcome UI -->
+                <div class="hero-welcome" id="welcome-view">
+                    <h2>Welcome, Foodie! 👋</h2>
+                    <p>Experience the ultimate food guide for IIIT Lucknow. Complete with strict dietary filtering, voice search, and rich visual carousels.</p>
+                    <div class="quick-actions">
+                        <button class="action-chip" data-q="Strict visual check for Date Night">🍷 Premium Dining</button>
+                        <button class="action-chip" data-q="Best authentic Awadhi biryani">🔥 Awadhi Cuisine</button>
+                        <button class="action-chip" data-q="Find the nearest fast food joint">🍔 Fast Food</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- ─── Input Area ──────────────────────────────────────── -->
-    <footer class="input-area" id="input-area">
-        <div class="input-wrapper">
-            <div class="input-field-wrapper">
-                <textarea id="chat-input"
-                          placeholder="Ask about food in Lucknow..."
-                          rows="1"
-                          aria-label="Type your food query"></textarea>
+        <!-- Settings / Dietary Filters -->
+        <div class="diet-tray">
+            <div class="diet-toggles" id="diet-filters">
+                <button class="diet-btn" data-val="Vegan">🌱 Vegan</button>
+                <button class="diet-btn" data-val="Pure Veg">🥗 Pure Veg</button>
+                <button class="diet-btn" data-val="Jain">🙏 Jain</button>
+                <button class="diet-btn" data-val="Halal">🍖 Halal</button>
+                <button class="diet-btn" data-val="Gluten-Free">🌾 Gluten-Free</button>
             </div>
-            <button id="send-btn" aria-label="Send message">➤</button>
+            <div class="custom-diet-box">
+                <input type="text" id="custom-allergy" class="custom-diet-input" placeholder="Any specific allergies or restrictions? (e.g. no peanuts)">
+            </div>
         </div>
-    </footer>
 
-    <!-- ─── JavaScript ──────────────────────────────────────── -->
+        <!-- Chat Input -->
+        <div class="input-region">
+            <div class="input-box">
+                <input type="text" id="chat-input" placeholder="Type or speak your craving..." autocomplete="off">
+                <div class="input-actions">
+                    <button class="mic-btn" id="mic-btn" title="Voice Search">🎙️</button>
+                    <button class="send-btn" id="send-btn">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Script ────────────────────────────────────────────── -->
     <script>
-        // ── DOM Elements ─────────────────────────────────────────
-        const chatMessages = document.getElementById('chat-messages');
+        const chatFeed = document.getElementById('chat-feed');
         const chatContainer = document.getElementById('chat-container');
         const chatInput = document.getElementById('chat-input');
         const sendBtn = document.getElementById('send-btn');
-        const resetBtn = document.getElementById('reset-btn');
-        const browseBtn = document.getElementById('browse-btn');
-        const welcomeCard = document.getElementById('welcome-card');
+        const micBtn = document.getElementById('mic-btn');
+        const welcomeView = document.getElementById('welcome-view');
+        const customAllergy = document.getElementById('custom-allergy');
 
         const API_BASE = window.location.origin;
-        let isLoading = false;
+        let isWaiting = false;
 
-        // ── Auto-resize textarea ─────────────────────────────────
-        chatInput.addEventListener('input', () => {
-            chatInput.style.height = 'auto';
-            chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px';
+        // Dietary Toggles State
+        let activeDiets = new Set();
+        document.querySelectorAll('.diet-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const val = btn.dataset.val;
+                if(activeDiets.has(val)) {
+                    activeDiets.delete(val);
+                    btn.classList.remove('active');
+                } else {
+                    activeDiets.add(val);
+                    btn.classList.add('active');
+                }
+            });
         });
 
-        // ── Send message ─────────────────────────────────────────
+        // Voice Input setup
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'en-IN';
+            recognition.onstart = () => { micBtn.classList.add('listening'); chatInput.placeholder = "Listening..."; };
+            recognition.onresult = (e) => { chatInput.value = e.results[0][0].transcript; sendMessage(chatInput.value); };
+            recognition.onend = () => { micBtn.classList.remove('listening'); chatInput.placeholder = "Type or speak your craving..."; };
+            micBtn.addEventListener('click', () => { micBtn.classList.contains('listening') ? recognition.stop() : recognition.start(); });
+        } else {
+            micBtn.style.display = 'none';
+        }
+
         async function sendMessage(text) {
-            if (isLoading || !text.trim()) return;
+            if (isWaiting || !text.trim()) return;
+            if (welcomeView) welcomeView.style.display = 'none';
 
-            // Hide welcome card
-            if (welcomeCard) {
-                welcomeCard.style.display = 'none';
-            }
-
-            // Add user message
-            appendMessage('user', text);
-
-            // Clear input
+            addMessage('user', text);
             chatInput.value = '';
-            chatInput.style.height = 'auto';
+            
+            const typingIndicator = showTyping();
+            isWaiting = true;
 
-            // Show typing indicator
-            const typingEl = showTyping();
-
-            isLoading = true;
-            sendBtn.disabled = true;
+            // Gather dependencies
+            const reqBody = {
+                message: text,
+                diet: Array.from(activeDiets),
+                allergies: customAllergy.value.trim()
+            };
 
             try {
-                const response = await fetch(`${API_BASE}/chat`, {
+                const res = await fetch(`${API_BASE}/chat`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: text }),
+                    body: JSON.stringify(reqBody)
                 });
-
-                if (!response.ok) {
-                    throw new Error(`Server error: ${response.status}`);
-                }
-
-                const data = await response.json();
-                removeTyping(typingEl);
-                appendMessage('bot', data.reply);
-
-            } catch (err) {
-                removeTyping(typingEl);
-                appendMessage('bot', `⚠️ Couldn't reach the server. Make sure the backend is running!\n\nError: ${err.message}`);
+                const data = await res.json();
+                typingIndicator.remove();
+                addMessage('bot', data.reply);
+            } catch(e) {
+                typingIndicator.remove();
+                addMessage('bot', `⚠️ Server error.`);
             } finally {
-                isLoading = false;
-                sendBtn.disabled = false;
-                chatInput.focus();
+                isWaiting = false;
             }
         }
 
-        // ── Append message to chat ───────────────────────────────
-        function appendMessage(role, text) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `message ${role}`;
+        // Premium Image Dictionary (Solves deprecated unsplash source API breaking)
+        const PRESET_IMAGES = {
+            biryani: ['https://images.unsplash.com/photo-1589302168068-964664d93cb0?w=600&q=80', 'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=600&q=80', 'https://images.unsplash.com/photo-1633940274404-7b196881c1c7?w=600&q=80'],
+            indian: ['https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80', 'https://images.unsplash.com/photo-1618449840665-9ed506d73a34?w=600&q=80', 'https://images.unsplash.com/photo-1505253758473-b67a49e012bf?w=600&q=80'],
+            cafe: ['https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80', 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=600&q=80'],
+            fastfood: ['https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80', 'https://images.unsplash.com/photo-1610440042657-612c34d95e9f?w=600&q=80', 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80'],
+            default: ['https://images.unsplash.com/photo-1544025162-811114cd144e?w=600&q=80', 'https://images.unsplash.com/photo-1414235077428-33898dd14582?w=600&q=80', 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80']
+        };
 
-            const avatarDiv = document.createElement('div');
-            avatarDiv.className = 'message-avatar';
-            avatarDiv.textContent = role === 'bot' ? '🍽️' : '👤';
+        // Generate an array of 3 image URLs based on cuisine
+        function getCarouselImages(cuisineStr) {
+            const kw = cuisineStr.toLowerCase();
+            if (kw.includes('biryani') || kw.includes('mughlai')) return PRESET_IMAGES.biryani;
+            if (kw.includes('cafe') || kw.includes('coffee') || kw.includes('bakery')) return PRESET_IMAGES.cafe;
+            if (kw.includes('burger') || kw.includes('pizza') || kw.includes('fast')) return PRESET_IMAGES.fastfood;
+            if (kw.includes('indian') || kw.includes('street') || kw.includes('chaat')) return PRESET_IMAGES.indian;
+            return PRESET_IMAGES.default;
+        }
 
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'message-content';
+        function parseCardsAndText(rawText) {
+            const cardRegex = /\[CARD:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\]/g;
+            let htmlText = rawText;
+            const cards = [];
 
-            const bubbleDiv = document.createElement('div');
-            bubbleDiv.className = 'message-bubble';
-
-            if (role === 'bot') {
-                bubbleDiv.innerHTML = formatMarkdown(text);
-            } else {
-                bubbleDiv.textContent = text;
+            let match;
+            while ((match = cardRegex.exec(rawText)) !== null) {
+                cards.push({
+                    name: match[1], cuisine: match[2], price: match[3],
+                    rating: match[4], distance: match[5], link: match[6]
+                });
             }
 
-            contentDiv.appendChild(bubbleDiv);
-            msgDiv.appendChild(avatarDiv);
-            msgDiv.appendChild(contentDiv);
-            chatMessages.appendChild(msgDiv);
+            htmlText = htmlText.replace(cardRegex, '').trim();
+            htmlText = htmlText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            let finalHtml = `<div class="msg-text">${htmlText}</div>`;
 
-            scrollToBottom();
-        }
-
-        // ── Format markdown-like text to HTML ────────────────────
-        function formatMarkdown(text) {
-            let html = text;
-
-            // Escape HTML first
-            html = html.replace(/&/g, '&amp;')
-                       .replace(/</g, '&lt;')
-                       .replace(/>/g, '&gt;');
-
-            // Bold: **text** or __text__
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
-
-            // Italic: *text* or _text_
-            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
-            // Links: [text](url)
-            html = html.replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g,
-                '<a href="$2" target="_blank" rel="noopener">$1</a>');
-
-            // Bare URLs
-            html = html.replace(/(^|[^"=])(https?:\/\/[^\s<]+)/g,
-                '$1<a href="$2" target="_blank" rel="noopener">📍 Map Link</a>');
-
-            // Headers: ### text
-            html = html.replace(/^### (.+)$/gm, '<h4>$1</h4>');
-            html = html.replace(/^## (.+)$/gm, '<h3>$1</h3>');
-
-            // Horizontal rule
-            html = html.replace(/^---$/gm, '<hr>');
-
-            // Unordered list items
-            html = html.replace(/^[•\-\*] (.+)$/gm, '<li>$1</li>');
-
-            // Numbered list items
-            html = html.replace(/^\d+\.\s(.+)$/gm, '<li>$1</li>');
-
-            // Wrap consecutive <li> in <ul>
-            html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>');
-
-            // Paragraphs: double newlines
-            html = html.replace(/\n\n/g, '</p><p>');
-
-            // Single newlines to <br>
-            html = html.replace(/\n/g, '<br>');
-
-            // Wrap in paragraph if not already wrapped
-            if (!html.startsWith('<')) {
-                html = '<p>' + html + '</p>';
+            if (cards.length > 0) {
+                // Outer Carousel
+                let carouselHtml = `<div class="cards-carousel">`;
+                cards.forEach((c, index) => {
+                    const images = getCarouselImages(c.cuisine);
+                    const animDelay = index * 0.15;
+                    
+                    // Single Card
+                    carouselHtml += `
+                        <div class="rest-card" style="animation-delay: ${animDelay}s">
+                            <!-- Inner Image Carousel -->
+                            <div class="inner-img-carousel">
+                                <div class="rest-img" style="background-image: url('${images[0]}')"><span class="img-indicator">1/3</span></div>
+                                <div class="rest-img" style="background-image: url('${images[1]}')"><span class="img-indicator">2/3</span></div>
+                                <div class="rest-img" style="background-image: url('${images[2]}')"><span class="img-indicator">3/3</span></div>
+                            </div>
+                            <!-- Card Info -->
+                            <div class="rest-info">
+                                <div class="rest-name">${c.name}</div>
+                                <div class="rest-cuisine">${c.cuisine}</div>
+                                <div class="rest-stats">
+                                    <span class="stat-pill">💰 ${c.price}</span>
+                                    <span class="stat-pill">⭐ ${c.rating}</span>
+                                    <span class="stat-pill">📍 ${c.distance} km</span>
+                                </div>
+                                <div class="rest-actions">
+                                    <a href="${c.link}" target="_blank" class="rest-action map-btn">📍 Maps</a>
+                                    <a href="https://www.swiggy.com/city/lucknow/search?query=${encodeURIComponent(c.name)}" target="_blank" class="rest-action swiggy-btn">⚡ Swiggy</a>
+                                    <a href="https://www.zomato.com/lucknow/restaurants?search=${encodeURIComponent(c.name)}" target="_blank" class="rest-action zomato-btn">🍽️ Zomato</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                carouselHtml += `</div><div style="font-size:0.75rem; color:var(--text-low); margin-top:8px;">☝️ Swipe left/right on photos and cards!</div>`;
+                finalHtml += carouselHtml;
             }
 
-            return html;
+            return finalHtml;
         }
 
-        // ── Typing indicator ─────────────────────────────────────
-        function showTyping() {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'message bot';
-            msgDiv.id = 'typing-msg';
-
-            const avatarDiv = document.createElement('div');
-            avatarDiv.className = 'message-avatar';
-            avatarDiv.textContent = '🍽️';
-
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'message-content';
-
-            const bubbleDiv = document.createElement('div');
-            bubbleDiv.className = 'message-bubble';
-
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'typing-indicator';
-            typingDiv.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-
-            bubbleDiv.appendChild(typingDiv);
-            contentDiv.appendChild(bubbleDiv);
-            msgDiv.appendChild(avatarDiv);
-            msgDiv.appendChild(contentDiv);
-            chatMessages.appendChild(msgDiv);
-
-            scrollToBottom();
-            return msgDiv;
-        }
-
-        function removeTyping(el) {
-            if (el && el.parentNode) {
-                el.parentNode.removeChild(el);
-            }
-        }
-
-        // ── Scroll to bottom ─────────────────────────────────────
-        function scrollToBottom() {
-            requestAnimationFrame(() => {
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-            });
-        }
-
-        // ── Event Listeners ──────────────────────────────────────
-
-        // Send button
-        sendBtn.addEventListener('click', () => {
-            sendMessage(chatInput.value);
-        });
-
-        // Enter key (Shift+Enter for newline)
-        chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage(chatInput.value);
-            }
-        });
-
-        // Quick chips
-        document.querySelectorAll('.chip').forEach(chip => {
-            chip.addEventListener('click', () => {
-                const query = chip.getAttribute('data-query');
-                sendMessage(query);
-            });
-        });
-
-        // Reset button
-        resetBtn.addEventListener('click', async () => {
-            try {
-                await fetch(`${API_BASE}/reset`, { method: 'POST' });
-            } catch (e) { /* ignore */ }
-
-            // Clear chat UI
-            chatMessages.innerHTML = '';
-
-            // Re-add welcome card
-            const welcome = document.createElement('div');
-            welcome.className = 'welcome-card';
-            welcome.id = 'welcome-card';
-            welcome.innerHTML = `
-                <span class="welcome-emoji">🍛</span>
-                <h2>Namaste, Foodie! 🙏</h2>
-                <p>I'm your AI food guide for Lucknow. Ask me about restaurants, dishes, vibes, budgets — anything! I know 40+ spots from campus dhabas to Tunday Kababi.</p>
-                <div class="quick-chips">
-                    <button class="chip" data-query="Best budget food near IIIT campus">🎓 Near campus</button>
-                    <button class="chip" data-query="Suggest a good biryani place">🍚 Best biryani</button>
-                    <button class="chip" data-query="Where can I find the best basket chaat in Lucknow?">🥘 Basket chaat</button>
-                    <button class="chip" data-query="Good date night restaurant with nice ambiance">💑 Date night</button>
-                    <button class="chip" data-query="Best vegetarian restaurants near IIIT">🥗 Veg options</button>
-                    <button class="chip" data-query="Late night food options near campus">🌙 Late night</button>
-                    <button class="chip" data-query="Best cafes to study at in Lucknow">☕ Study cafes</button>
-                    <button class="chip" data-query="Where to go for a birthday celebration?">🎂 Celebrations</button>
-                </div>
+        function addMessage(role, text) {
+            const row = document.createElement('div');
+            row.className = `message-row ${role}-row`;
+            row.innerHTML = `
+                <div class="av">${role === 'bot' ? '🍽️' : '😎'}</div>
+                <div class="bubble">${role === 'bot' ? parseCardsAndText(text) : text}</div>
             `;
-            chatMessages.appendChild(welcome);
+            chatFeed.appendChild(row);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
 
-            // Re-attach chip listeners
-            welcome.querySelectorAll('.chip').forEach(chip => {
-                chip.addEventListener('click', () => {
-                    sendMessage(chip.getAttribute('data-query'));
-                });
-            });
+        function showTyping() {
+            const row = document.createElement('div');
+            row.className = 'message-row bot-row';
+            row.innerHTML = `<div class="av">🍽️</div><div class="bubble"><div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>`;
+            chatFeed.appendChild(row);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            return row;
+        }
+
+        document.querySelectorAll('.action-chip').forEach(btn => btn.addEventListener('click', () => sendMessage(btn.dataset.q)));
+        sendBtn.addEventListener('click', () => sendMessage(chatInput.value));
+        chatInput.addEventListener('keypress', e => { if(e.key === 'Enter') sendMessage(chatInput.value); });
+
+        document.getElementById('reset-btn').addEventListener('click', () => {
+            fetch(`${API_BASE}/reset`, {method: 'POST'}).catch(()=>{});
+            chatFeed.innerHTML = ''; chatFeed.appendChild(welcomeView); welcomeView.style.display = 'block';
         });
 
-        // Browse restaurants
-        browseBtn.addEventListener('click', async () => {
-            if (isLoading) return;
-
-            if (welcomeCard) welcomeCard.style.display = 'none';
-
-            appendMessage('user', 'Show me all restaurants');
-
-            const typingEl = showTyping();
-            isLoading = true;
-
+        document.getElementById('browse-btn').addEventListener('click', async () => {
+            if (isWaiting) return;
+            if (welcomeView) welcomeView.style.display = 'none';
+            addMessage('user', 'Show Dashboard');
+            const ind = showTyping();
+            
             try {
-                const response = await fetch(`${API_BASE}/restaurants`);
-                const data = await response.json();
-                removeTyping(typingEl);
+                const res = await fetch(`${API_BASE}/restaurants`);
+                const data = await res.json();
+                ind.remove();
 
-                let tableText = `**📋 All ${data.length} Restaurants in Database:**\n\n`;
-                
-                // Group by area
-                const grouped = {};
+                let dashHtml = `<div class="msg-text"><strong>📋 Database Overview (${data.length} eateries)</strong></div>`;
+                dashHtml += `<div class="dashboard-grid">`;
                 data.forEach(r => {
-                    const area = r.area.split('(')[0].trim();
-                    if (!grouped[area]) grouped[area] = [];
-                    grouped[area].push(r);
+                    const vIcon = r.veg_nonveg === 'Veg' ? '🟢' : '🔴';
+                    dashHtml += `<div class="dash-card">
+                        <div style="font-weight:700; color:#fff; margin-bottom:4px;">${r.name}</div>
+                        <div style="font-size:0.8rem; color:#ff7e5f;">${r.area}</div>
+                        <div style="margin-top:10px; display:flex; gap:8px; font-size:0.8rem;">
+                            <span>${vIcon}</span><span>⭐ ${r.rating}</span><span>${r.price_range}</span>
+                        </div>
+                    </div>`;
                 });
+                dashHtml += `</div>`;
 
-                for (const [area, restaurants] of Object.entries(grouped)) {
-                    tableText += `### 📍 ${area}\n`;
-                    restaurants.forEach(r => {
-                        const vegIcon = r.veg_nonveg === 'Veg' ? '🟢' : r.veg_nonveg === 'Non-Veg' ? '🔴' : '🟡';
-                        tableText += `- **${r.name}** ${vegIcon} | ${r.price_range} | ⭐ ${r.rating} | ${r.distance_from_iiit_km} km\n`;
-                    });
-                    tableText += '\n';
-                }
-
-                appendMessage('bot', tableText);
-
-            } catch (err) {
-                removeTyping(typingEl);
-                appendMessage('bot', `⚠️ Couldn't load restaurants. Make sure the backend is running!`);
-            } finally {
-                isLoading = false;
-            }
+                const row = document.createElement('div'); row.className = 'message-row bot-row';
+                row.innerHTML = `<div class="av">🍽️</div><div class="bubble" style="max-width:100%; width:100%;">${dashHtml}</div>`;
+                chatFeed.appendChild(row); chatContainer.scrollTop = chatContainer.scrollHeight;
+            } catch(e) { ind.remove(); addMessage('bot', '⚠️ Failed to load database.'); }
         });
-
-        // Focus input on load
-        chatInput.focus();
     </script>
 </body>
 </html>

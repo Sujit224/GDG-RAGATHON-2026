@@ -84,6 +84,8 @@ if os.path.exists(STATIC_DIR):
 # ---------------------------------------------------------------------------
 class ChatRequest(BaseModel):
     message: str
+    diet: list[str] = []
+    allergies: str = ""
 
 
 class ChatResponse(BaseModel):
@@ -129,9 +131,9 @@ async def chat(request: ChatRequest):
     if not request.message.strip():
         raise HTTPException(status_code=400, detail="Message cannot be empty.")
 
-    # Run RAG pipeline
-    reply = rag_engine.query(request.message)
-    matches = rag_engine.search(request.message)
+    # Run RAG pipeline with user dietary preferences
+    reply = rag_engine.query(request.message, request.diet, request.allergies)
+    matches = rag_engine.search(request.message, request.diet)
 
     return ChatResponse(
         reply=reply,
