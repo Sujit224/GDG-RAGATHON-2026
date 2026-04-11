@@ -18,7 +18,7 @@ While primarily optimized for the **Titan Secure Health Insurance Policy**, the 
 
 * **Dynamic Multi-Doc RAG:** Ingests multiple PDFs simultaneously from a local directory or via the Web UI.
 
-* **Interactive Web Interface:** A professional Streamlit UI with chat history and real-time re-indexing.
+* **Interactive Web Interface:** A professional Streamlit UI featuring a custom **High-Tech Dark Theme**, neon animations, chat history, and real-time re-indexing.
 
 * **High-Stakes Accuracy:** Uses `gemini-1.5-flash-lite` to ensure fast, accurate, and quota-resilient responses.
 
@@ -63,9 +63,11 @@ python Statement-1-Insurance-Decoder/src/decoder.py
 ## 📂 Project Structure
 
 * `src/app.py`: Streamlit Web Interface & Dynamic Uploader.
+* `src/style.css`: Custom CSS for high-tech neon UI animations.
 * `src/decoder.py`: The "Brain" – handles RAG chain logic and ELI5 prompting.
 * `src/vector_store.py`: Manages embeddings and ChromaDB persistence.
 * `src/loader.py`: Handles multi-document PDF directory loading.
+* `.streamlit/config.toml`: Enforces native dark mode aesthetics globally.
 * `docs/`: Directory for policy PDFs (e.g., Titan Secure, Loan Agreements).
 
 ---
@@ -74,5 +76,10 @@ python Statement-1-Insurance-Decoder/src/decoder.py
 
 * [x] **Source Attribution:** Full citations of Sections and Clause numbers.
 * [x] **Multi-Document Context:** Ingests a set of 3–5 documents seamlessly.
+* [x] **High-Tech UI Upgrade:** Fully custom glowing cybersecurity/neon aesthetic built directly into Streamlit leveraging dynamic animations.
 
 ---
+
+## 🎥 Demonstration Video
+
+**[Click here to watch the demonstration video](https://youtu.be/FZyt7HW2VYM)**
