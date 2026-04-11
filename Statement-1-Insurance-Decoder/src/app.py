@@ -7,6 +7,14 @@ from vector_store import create_vector_db
 # --- UI CONFIGURATION ---
 st.set_page_config(page_title="Fine Print Decoder", page_icon="⚖️", layout="centered")
 
+def load_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Load custom high-tech CSS
+css_path = os.path.join(os.path.dirname(__file__), "style.css")
+load_css(css_path)
+
 st.title("⚖️ Fine Print Decoder")
 st.markdown("### Simplify complex policy documents and hidden clauses.")
 
