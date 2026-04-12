@@ -1,33 +1,22 @@
-# Core Web Framework
+# Consolidated Requirements for GDG-RAGATHON-2026
+
+# Web Framework and UI
 streamlit
 
-# AI & RAG Orchestration
+# AI, RAG and Orchestration
 langchain
-langchain-community
-langchain-core
-langchain-groq
-langchain-huggingface
-langchain-text-splitters
-
-# Intelligence & Embeddings
 openai
-google-genai
-sentence-transformers
-huggingface_hub
-
-# Vector Database
 faiss-cpu
+sentence-transformers
+PyPDF2
 
-# Data & Machine Learning
+# Data Science and Machine Learning
 pandas
 numpy
 scikit-learn
-pydantic
+matplotlib
+seaborn
+joblib
 
 # Utilities
 python-dotenv
-pypdf
-requests
-PyYAML
-tqdm
-rich

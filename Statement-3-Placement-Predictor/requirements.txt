@@ -1,11 +1,5 @@
-streamlit
-langchain
-langchain-groq
-langchain-huggingface
-langchain-community
-faiss-cpu
-pypdf
-python-dotenv
 pandas
 scikit-learn
-numpy
+matplotlib
+seaborn
+joblib
