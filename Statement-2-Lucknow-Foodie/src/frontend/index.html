@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gourmet Guide - IIIT Lucknow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <!-- Chatbot Section -->
+    <section class="chat-section">
+      <div class="chat-header">
+        <h1>Gourmet Guide</h1>
+        <p>Curated dining around IIIT Lucknow</p>
+      </div>
+
+      <div class="chat-history" id="chatHistory">
+        <div class="chat-message bot">
+          <div class="bubble">
+            Hello! I'm your Gourmet Guide. Ask me for recommendations based on your vibe, budget, or favorite dishes around IIIT Lucknow!
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-container">
+        <input type="text" id="chatInput" placeholder="Suggest a budget-friendly biryani place..." />
+        <button id="sendBtn">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Floating Cards Menu Slider -->
+    <section class="slider-section">
+      <div class="slider-header">
+        <h2>Highlighted Cravings</h2>
+      </div>
+      <div class="slider-container">
+        <div class="slider-track" id="sliderTrack">
+          <!-- Dynamically populated cards go here -->
+          
+          <div class="card">
+            <img src="public/images/dish_2.png" alt="Mutton Biryani">
+            <div class="card-content">
+              <h3>Awadhi Mutton Biryani</h3>
+            </div>
+            <div class="glow"></div>
+          </div>
+
+          <div class="card">
+            <img src="public/images/dish_3.png" alt="Truffle Pasta">
+            <div class="card-content">
+              <h3>Truffle Pasta</h3>
+            </div>
+            <div class="glow"></div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

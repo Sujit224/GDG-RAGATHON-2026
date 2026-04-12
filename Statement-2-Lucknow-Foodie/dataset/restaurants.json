@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Tunday Kababi",
+    "location": "Aminabad & Alambagh",
+    "cuisine": ["Awadhi", "Mughlai", "Non-veg"],
+    "budget": "₹",
+    "rating": 4.8,
+    "vibe": ["Historic", "Crowded", "Iconic"],
+    "signature_dishes": ["Galauti Kebab", "Mutton Biryani", "Ulte Tawa ka Paratha"],
+    "description": "The most iconic eating joint in Lucknow known for its melt-in-the-mouth Galauti Kebabs. A must-visit for non-vegetarians looking for authentic Awadhi cuisine."
+  },
+  {
+    "name": "Royal Cafe",
+    "location": "Hazratganj",
+    "cuisine": ["North Indian", "Street Food", "Veg"],
+    "budget": "₹₹",
+    "rating": 4.6,
+    "vibe": ["Family-friendly", "Premium", "Bustling"],
+    "signature_dishes": ["Basket Chaat", "Dahi Vada", "Aloo Tikki"],
+    "description": "Originally a casual diner, famous across the country for inventing the majestic 'Basket Chaat'."
+  },
+  {
+    "name": "Sky Glass Brewing Co.",
+    "location": "Phoenix Palassio, Gomti Nagar",
+    "cuisine": ["Continental", "Asian", "Drinks", "Non-veg", "Veg"],
+    "budget": "₹₹₹",
+    "rating": 4.5,
+    "vibe": ["Party", "Premium", "Live Music", "Vibrant"],
+    "signature_dishes": ["Craft Beers", "Woodfired Pizza", "Sushi"],
+    "description": "A stunning microbrewery offering craft beers and a highly electric atmosphere with panoramic views. Perfect for parties."
+  },
+  {
+    "name": "Prakash Ki Kulfi",
+    "location": "Aminabad",
+    "cuisine": ["Dessert", "Veg"],
+    "budget": "₹",
+    "rating": 4.7,
+    "vibe": ["Street Food", "Sweet", "Classic"],
+    "signature_dishes": ["Prakash Kulfi Falooda"],
+    "description": "Serving the best, creamiest Kulfi Falooda in the city for decades. Often crowded, but worth the wait."
+  },
+  {
+    "name": "Dastarkhwan",
+    "location": "Lalbagh",
+    "cuisine": ["Awadhi", "Mughlai", "Non-veg"],
+    "budget": "₹₹",
+    "rating": 4.5,
+    "vibe": ["Spicy", "Authentic", "Foodie"],
+    "signature_dishes": ["Chicken Masala", "Mughlai Paratha", "Boti Kebab"],
+    "description": "Renowned for its spicy, flavorful Awadhi gravies and incredible chicken masala."
+  },
+  {
+    "name": "Sharma Ji Ki Chai",
+    "location": "Lalbagh",
+    "cuisine": ["Beverage", "Snacks", "Veg"],
+    "budget": "₹",
+    "rating": 4.9,
+    "vibe": ["Morning vibe", "Chill", "Student favorite", "Budget", "Historic"],
+    "signature_dishes": ["Kulhad Chai", "Round Samosa", "Bun Makkhan"],
+    "description": "The cult-classic tea stall of Lucknow where you will find everyone from students to politicians sipping tea gracefully."
+  },
+  {
+    "name": "Idris Ki Biryani",
+    "location": "Chowk",
+    "cuisine": ["Awadhi", "Non-veg"],
+    "budget": "₹",
+    "rating": 4.6,
+    "vibe": ["Historic", "Street Food", "Authentic"],
+    "signature_dishes": ["Mutton Biryani"],
+    "description": "Some argue it's the best Mutton Biryani in Lucknow, cooked perfectly over slow heat."
+  },
+  {
+    "name": "The Cherry Tree Cafe",
+    "location": "Hazratganj",
+    "cuisine": ["Italian", "Cafe", "Desserts", "Veg", "Non-veg"],
+    "budget": "₹₹",
+    "rating": 4.4,
+    "vibe": ["Aesthetic", "Chill", "Date Spot", "Cozy"],
+    "signature_dishes": ["Pasta", "Cheesecake", "Cold Coffee"],
+    "description": "A very cute, aesthetically pleasing cafe with an impressive bakery and cozy interior. Ideal for dates."
+  },
+  {
+    "name": "Raheem's Kulcha Nihari",
+    "location": "Chowk",
+    "cuisine": ["Awadhi", "Mughlai", "Non-veg"],
+    "budget": "₹",
+    "rating": 4.5,
+    "vibe": ["Heritage", "Crowded"],
+    "signature_dishes": ["Nihari", "Kulcha"],
+    "description": "A breakfast staple for meat lovers. They've been serving authentic Nihari for generations."
+  },
+  {
+    "name": "Mubin's",
+    "location": "Chowk",
+    "cuisine": ["Awadhi", "Non-veg"],
+    "budget": "₹",
+    "rating": 4.4,
+    "vibe": ["Street Food", "Spicy", "Lively"],
+    "signature_dishes": ["Pasanda", "Mutton Kulcha"],
+    "description": "Another powerhouse of old-city non-vegetarian Awadhi food."
+  },
+  {
+    "name": "Mocha",
+    "location": "Gomti Nagar",
+    "cuisine": ["Continental", "Cafe", "Beverages", "Veg", "Non-veg"],
+    "budget": "₹₹₹",
+    "rating": 4.3,
+    "vibe": ["Vibrant", "Chill", "Outdoor Seating", "Party"],
+    "signature_dishes": ["Nachos", "Shakes", "Platters"],
+    "description": "A premium café well-loved by the younger crowd for its spacious setting and fun environment."
+  },
+  {
+    "name": "Bikanervala",
+    "location": "Gomti Nagar",
+    "cuisine": ["North Indian", "South Indian", "Sweets", "Veg"],
+    "budget": "₹₹",
+    "rating": 4.2,
+    "vibe": ["Family-friendly", "Premium", "Vegetarian-Friendly"],
+    "signature_dishes": ["Chole Bhature", "Raj Kachori", "Sweets"],
+    "description": "A pure vegetarian paradise with exhaustive choices ranging from street food to proper thalis."
+  },
+  {
+    "name": "Moti Mahal Delux",
+    "location": "Hazratganj",
+    "cuisine": ["North Indian", "Mughlai", "Veg", "Non-veg"],
+    "budget": "₹₹₹",
+    "rating": 4.4,
+    "vibe": ["Fine Dining", "Family", "Classic"],
+    "signature_dishes": ["Butter Chicken", "Dal Makhani", "Tandoori Chicken"],
+    "description": "The legendary chain that claims to have invented Butter Chicken. Perfect for family dinners."
+  },
+  {
+    "name": "Free Spirit",
+    "location": "Vikas Nagar",
+    "cuisine": ["Cafe", "Fast Food", "Veg", "Non-veg"],
+    "budget": "₹₹",
+    "rating": 4.5,
+    "vibe": ["Quirky", "Aesthetic", "Student friendly", "Chill"],
+    "signature_dishes": ["Burgers", "Fries", "Smoothies"],
+    "description": "A quirky themed cafe that resonates with college students for its decor and tasty snacks."
+  },
+  {
+    "name": "King of Chaat",
+    "location": "Hazratganj",
+    "cuisine": ["Street Food", "Veg"],
+    "budget": "₹",
+    "rating": 4.6,
+    "vibe": ["Street Food", "Spicy", "Quick Bite"],
+    "signature_dishes": ["Paani Puri", "Aloo Tikki"],
+    "description": "As the name suggests, it is legendary for its hygiene and mouth-watering paani puri."
+  },
+  {
+    "name": "1090 Food Street",
+    "location": "Gomti Nagar",
+    "cuisine": ["Street Food", "Fast Food", "Chinese", "Veg", "Non-veg"],
+    "budget": "₹",
+    "rating": 4.4,
+    "vibe": ["Lively", "Crowded", "Nightlife", "Budget"],
+    "signature_dishes": ["Momos", "Soya Chaap", "Tandoori Chai"],
+    "description": "An entire street dedicated to food stalls. Extremely popular among youths to hang out in the evening."
+  },
+  {
+    "name": "Netram Sweets",
+    "location": "Aminabad",
+    "cuisine": ["Sweets", "North Indian", "Veg"],
+    "budget": "₹",
+    "rating": 4.3,
+    "vibe": ["Traditional", "Breakfast"],
+    "signature_dishes": ["Kachori Sabzi", "Jalebi"],
+    "description": "Known for the most traditional and satisfying vegetarian breakfast in Lucknow."
+  },
+  {
+    "name": "Falak Numa",
+    "location": "Hotel Clarks Avadh",
+    "cuisine": ["Awadhi", "North Indian", "Veg", "Non-veg"],
+    "budget": "₹₹₹",
+    "rating": 4.6,
+    "vibe": ["Luxury", "Rooftop", "Romantic", "Fine Dining"],
+    "signature_dishes": ["Nawabi Thali", "Dum Pukht Biryani"],
+    "description": "A rooftop luxury dining experience overlooking the Gomti river, serving royal Awadhi delicacies."
+  },
+  {
+    "name": "Lalla Biryani",
+    "location": "Chowk",
+    "cuisine": ["Awadhi", "Non-veg"],
+    "budget": "₹",
+    "rating": 4.5,
+    "vibe": ["Street Food", "Iconic", "Spicy"],
+    "signature_dishes": ["Mutton Biryani"],
+    "description": "Rivals Idris when it comes to the title of 'Best Biryani in Lucknow'."
+  },
+  {
+    "name": "The Chocolate Room",
+    "location": "Gomti Nagar",
+    "cuisine": ["Dessert", "Cafe", "Veg"],
+    "budget": "₹₹",
+    "rating": 4.1,
+    "vibe": ["Sweet", "Cozy", "Chill"],
+    "signature_dishes": ["Chocolate Fondue", "Frappe", "Waffles"],
+    "description": "If you have a massive sweet tooth, this cafe offers incredible chocolate-based desserts."
+  },
+  {
+    "name": "Aryan's Family Delight",
+    "location": "Hazratganj",
+    "cuisine": ["North Indian", "Chinese", "Veg", "Non-veg"],
+    "budget": "₹₹",
+    "rating": 4.2,
+    "vibe": ["Family-friendly", "Casual Dining"],
+    "signature_dishes": ["Chilli Paneer", "Naan", "Dal Tadka"],
+    "description": "A dependable chain for a solid, multi-cuisine family dinner."
+  },
+  {
+    "name": "Cafe Coffee Day",
+    "location": "Phoenix Palassio",
+    "cuisine": ["Cafe", "Beverage", "Veg"],
+    "budget": "₹₹",
+    "rating": 3.9,
+    "vibe": ["Quiet", "Work Spot", "Chill"],
+    "signature_dishes": ["Cappuccino", "Brownie"],
+    "description": "Good place for a coffee meeting or to do some remote work inside the mall."
+  },
+  {
+    "name": "Starbucks",
+    "location": "Phoenix Palassio, Gomti Nagar",
+    "cuisine": ["Cafe", "Beverage", "Veg", "Non-veg"],
+    "budget": "₹₹₹",
+    "rating": 4.5,
+    "vibe": ["Premium", "Aesthetic", "Work Spot"],
+    "signature_dishes": ["Frappuccino", "Croissant"],
+    "description": "International coffee chain with a fantastic ambiance located inside Lucknow's premier mall."
+  },
+  {
+    "name": "Chhappan Bhog",
+    "location": "Cantonment",
+    "cuisine": ["Sweets", "Snacks", "Veg"],
+    "budget": "₹₹",
+    "rating": 4.8,
+    "vibe": ["Premium", "Clean", "Traditional"],
+    "signature_dishes": ["Meva Bite", "Chaat", "Rasgulla"],
+    "description": "Lucknow's most premium sweet shop offering immaculate quality chaat and Indian sweets."
+  },
+  {
+    "name": "Oudhyana",
+    "location": "Taj Mahal Hotel",
+    "cuisine": ["Awadhi", "Mughlai", "Veg", "Non-veg"],
+    "budget": "₹₹₹",
+    "rating": 4.7,
+    "vibe": ["Luxury", "Fine Dining", "Heritage"],
+    "signature_dishes": ["Galouti", "Nihari", "Sheermal"],
+    "description": "The absolute pinnacle of luxury dining for Awadhi food. Five-star experience at the Taj."
+  },
+  {
+    "name": "Wat-a-Burger",
+    "location": "Gomti Nagar",
+    "cuisine": ["Fast Food", "Veg", "Non-veg"],
+    "budget": "₹",
+    "rating": 4.0,
+    "vibe": ["Quick Bite", "Student friendly", "Budget"],
+    "signature_dishes": ["Maharaja Burger", "Peri Peri Fries"],
+    "description": "Very budget-friendly burger joint, highly favored by students stepping out of campus."
+  },
+  {
+    "name": "Giani's Ice Cream",
+    "location": "Gomti Nagar",
+    "cuisine": ["Dessert", "Veg"],
+    "budget": "₹",
+    "rating": 4.3,
+    "vibe": ["Family-friendly", "Sweet"],
+    "signature_dishes": ["Belgian Chocolate", "Rabri Faluda"],
+    "description": "Great dessert spot to visit after dinner in Gomti Nagar."
+  },
+  {
+    "name": "Barbeque Nation",
+    "location": "Gomti Nagar",
+    "cuisine": ["North Indian", "Buffet", "Veg", "Non-veg"],
+    "budget": "₹₹₹",
+    "rating": 4.5,
+    "vibe": ["Party", "Family", "Unlimited Food"],
+    "signature_dishes": ["Grills", "Buffet Spread", "Kulfi"],
+    "description": "The go-to place for team dinners, parties, and anyone who wants to eat an unlimited amount of grilled food."
+  },
+  {
+    "name": "Keventers",
+    "location": "Gomti Nagar",
+    "cuisine": ["Beverage", "Dessert", "Veg"],
+    "budget": "₹",
+    "rating": 4.2,
+    "vibe": ["Quick Bite", "Classic"],
+    "signature_dishes": ["Chocolate Hazelnut Shake", "Butterscotch Shake"],
+    "description": "Iconic thick milkshakes served in vintage glass bottles."
+  },
+  {
+    "name": "Domino's Pizza",
+    "location": "Multiple Locations (Gomti Nagar)",
+    "cuisine": ["Italian", "Fast Food", "Veg", "Non-veg"],
+    "budget": "₹₹",
+    "rating": 4.0,
+    "vibe": ["Casual", "Student friendly", "Quick"],
+    "signature_dishes": ["Cheese Burst Pizza", "Choco Lava Cake"],
+    "description": "Always a reliable option when you want pizza delivered quickly to your hostel."
+  }
+]

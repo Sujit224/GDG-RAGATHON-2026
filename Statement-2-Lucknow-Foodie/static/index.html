@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Guide — IIIT Lucknow's Culinary Concierge</title>
+    <meta name="description" content="AI-powered restaurant recommendation engine for IIIT Lucknow students. Discover Lucknow's best dining with smart RAG-based suggestions.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="aurora-bg">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+    </div>
+    <div class="grain-overlay"></div>
+
+    <!-- Main Layout -->
+    <div class="app-layout">
+
+        <!-- ════════ LEFT PANEL: CHAT ════════ -->
+        <aside class="chat-panel" id="chatPanel">
+
+            <!-- Panel Header -->
+            <div class="panel-header">
+                <div class="brand-logo">
+                    <div class="logo-gem">
+                        <i class="ph-fill ph-fork-knife"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">Gourmet Guide</span>
+                        <span class="brand-tagline">Lucknow Culinary AI</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span>RAG Active</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Filters -->
+            <div class="quick-filters">
+                <div class="filter-label"><i class="ph ph-funnel"></i> Quick Filters</div>
+                <div class="filter-chips" id="filterChips">
+                    <button class="fchip fchip-veg" onclick="setQuery('Show me pure vegetarian restaurants')">
+                        <span class="chip-dot"></span> Pure Veg
+                    </button>
+                    <button class="fchip fchip-budget" onclick="setQuery('Budget-friendly places under ₹200 for students')">
+                        <i class="ph ph-wallet"></i> Budget
+                    </button>
+                    <button class="fchip fchip-biryani" onclick="setQuery('Best Biryani in Lucknow')">
+                        🍚 Biryani
+                    </button>
+                    <button class="fchip fchip-vibe" onclick="setQuery('Aesthetic cafe for dates near IIIT Lucknow')">
+                        ✨ Date Spot
+                    </button>
+                    <button class="fchip fchip-party" onclick="setQuery('Best party places and pubs in Gomti Nagar')">
+                        🎉 Party
+                    </button>
+                    <button class="fchip fchip-street" onclick="setQuery('Best street food in Lucknow for students')">
+                        🥙 Street Food
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot-msg slide-up">
+                    <div class="bot-avatar">
+                        <i class="ph-fill ph-robot"></i>
+                    </div>
+                    <div class="message-bubble bot-bubble">
+                        <div class="bot-greeting">
+                            <p>Namaste! 🙏 I'm your personal <strong>Lucknow Culinary Concierge</strong>, powered by RAG technology.</p>
+                            <p>Ask me anything — from the best <em>Galauti Kebabs</em> in the old city to budget cafes near campus. I know every eatery in Lucknow worth visiting.</p>
+                            <div class="greeting-suggestions">
+                                <button class="mini-chip" onclick="setQuery('Best Awadhi food in Lucknow?')">Best Awadhi food?</button>
+                                <button class="mini-chip" onclick="setQuery('Cheap eats for students near IIIT Lucknow')">Cheap eats near campus?</button>
+                                <button class="mini-chip" onclick="setQuery('Where to find basket chaat in Lucknow?')">Basket Chaat spots?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator Template (hidden) -->
+            <template id="typingTemplate">
+                <div class="chat-message bot-msg typing-msg">
+                    <div class="bot-avatar"><i class="ph-fill ph-robot"></i></div>
+                    <div class="message-bubble bot-bubble">
+                        <div class="typing-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+                <div class="input-container" id="inputContainer">
+                    <i class="ph ph-magnifying-glass input-icon"></i>
+                    <input
+                        type="text"
+                        id="userInput"
+                        placeholder="Ask for a restaurant, dish, or vibe..."
+                        autocomplete="off"
+                        maxlength="300"
+                    >
+                    <button class="send-button" id="sendBtn" aria-label="Send message">
+                        <i class="ph-fill ph-paper-plane-tilt"></i>
+                    </button>
+                </div>
+                <div class="input-hint">
+                    Powered by Google Gemini + FAISS Vector Search
+                </div>
+            </div>
+        </aside>
+
+        <!-- ════════ RIGHT PANEL: HERO + SLIDER ════════ -->
+        <main class="hero-panel" id="heroPanel">
+
+            <!-- Hero Top Bar -->
+            <div class="hero-topbar">
+                <div class="hero-title-block">
+                    <h1 class="hero-title">Curated for <em>You</em></h1>
+                    <p class="hero-subtitle" id="heroSubtitle">Explore Lucknow's finest dining experiences</p>
+                </div>
+                <div class="slider-nav">
+                    <button class="nav-btn" id="prevBtn" aria-label="Previous"><i class="ph ph-caret-left"></i></button>
+                    <button class="nav-btn" id="nextBtn" aria-label="Next"><i class="ph ph-caret-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Restaurant Card Slider -->
+            <div class="cards-track-wrapper" id="cardsWrapper">
+                <div class="cards-track" id="cardsTrack">
+                    <!-- Default Showcase Cards -->
+                    <div class="restaurant-card default-card slide-up" data-idx="0" style="animation-delay:0s">
+                        <div class="card-img" style="background-image:url('/static/images/galauti_kebab.png')"></div>
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="card-tags">
+                                <span class="tag tag-nonveg">Non-Veg</span>
+                                <span class="tag tag-iconic">Iconic</span>
+                            </div>
+                            <h3 class="card-restaurant">Tunday Kababi</h3>
+                            <p class="card-dish">Galauti Kebab</p>
+                            <div class="card-meta">
+                                <span class="card-location"><i class="ph ph-map-pin"></i> Aminabad</span>
+                                <span class="card-rating">⭐ 4.8</span>
+                                <span class="card-budget">₹900+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-card default-card slide-up" data-idx="1" style="animation-delay:0.1s">
+                        <div class="card-img" style="background-image:url('/static/images/basket_chaat.png')"></div>
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="card-tags">
+                                <span class="tag tag-veg">Pure Veg</span>
+                                <span class="tag tag-iconic">Legendary</span>
+                            </div>
+                            <h3 class="card-restaurant">Royal Cafe</h3>
+                            <p class="card-dish">Basket Chaat</p>
+                            <div class="card-meta">
+                                <span class="card-location"><i class="ph ph-map-pin"></i> Hazratganj</span>
+                                <span class="card-rating">⭐ 4.6</span>
+                                <span class="card-budget">₹800+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-card default-card slide-up" data-idx="2" style="animation-delay:0.2s">
+                        <div class="card-img" style="background-image:url('/static/images/mutton_biryani.png')"></div>
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="card-tags">
+                                <span class="tag tag-nonveg">Non-Veg</span>
+                                <span class="tag tag-historic">Historic</span>
+                            </div>
+                            <h3 class="card-restaurant">Idris Ki Biryani</h3>
+                            <p class="card-dish">Mutton Dum Biryani</p>
+                            <div class="card-meta">
+                                <span class="card-location"><i class="ph ph-map-pin"></i> Chowk</span>
+                                <span class="card-rating">⭐ 4.6</span>
+                                <span class="card-budget">₹500+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-card default-card slide-up" data-idx="3" style="animation-delay:0.3s">
+                        <div class="card-img" style="background-image:url('/static/images/woodfired_pizza.png')"></div>
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="card-tags">
+                                <span class="tag tag-party">Party</span>
+                                <span class="tag tag-premium">Premium</span>
+                            </div>
+                            <h3 class="card-restaurant">Sky Glass Brewing</h3>
+                            <p class="card-dish">Woodfired Pizza + Craft Beer</p>
+                            <div class="card-meta">
+                                <span class="card-location"><i class="ph ph-map-pin"></i> Phoenix Palassio</span>
+                                <span class="card-rating">⭐ 4.5</span>
+                                <span class="card-budget">₹800+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-card default-card slide-up" data-idx="4" style="animation-delay:0.4s">
+                        <div class="card-img" style="background-image:url('/static/images/kulhad_chai.png')"></div>
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="card-tags">
+                                <span class="tag tag-veg">Veg</span>
+                                <span class="tag tag-student">Students Fav</span>
+                            </div>
+                            <h3 class="card-restaurant">Sharma Ji Ki Chai</h3>
+                            <p class="card-dish">Kulhad Chai & Samosa</p>
+                            <div class="card-meta">
+                                <span class="card-location"><i class="ph ph-map-pin"></i> Lalbagh</span>
+                                <span class="card-rating">⭐ 4.9</span>
+                                <span class="card-budget">₹200+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-card default-card slide-up" data-idx="5" style="animation-delay:0.5s">
+                        <div class="card-img" style="background-image:url('/static/images/kulfi_falooda.png')"></div>
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="card-tags">
+                                <span class="tag tag-veg">Dessert</span>
+                                <span class="tag tag-classic">Classic</span>
+                            </div>
+                            <h3 class="card-restaurant">Prakash Ki Kulfi</h3>
+                            <p class="card-dish">Kulfi Falooda</p>
+                            <div class="card-meta">
+                                <span class="card-location"><i class="ph ph-map-pin"></i> Aminabad</span>
+                                <span class="card-rating">⭐ 4.7</span>
+                                <span class="card-budget">₹200+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Card -->
+                    <div class="restaurant-card cta-card slide-up" style="animation-delay:0.6s">
+                        <div class="cta-inner">
+                            <div class="cta-icon"><i class="ph ph-chat-circle-dots"></i></div>
+                            <p>Ask me for personalized recommendations</p>
+                            <button onclick="document.getElementById('userInput').focus()">Start Chatting →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Info Bar -->
+            <div class="hero-info-bar">
+                <div class="info-stat">
+                    <span class="stat-num">30+</span>
+                    <span class="stat-label">Restaurants</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-stat">
+                    <span class="stat-num">RAG</span>
+                    <span class="stat-label">Powered</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-stat">
+                    <span class="stat-num">IIITL</span>
+                    <span class="stat-label">Campus Guide</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-stat">
+                    <span class="stat-num">Gemini</span>
+                    <span class="stat-label">AI Backend</span>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>

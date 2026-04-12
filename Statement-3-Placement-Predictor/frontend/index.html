@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlacementIQ — AI Predictor & Mentor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">PlacementIQ<span>✦</span></div>
+            <div class="actions">
+                <button id="upload-btn" class="secondary-btn">Upload Resume</button>
+                <input type="file" id="resume-input" hidden accept=".pdf,.docx">
+                <button id="reset-btn" class="icon-btn" title="Reset Session">↺</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="chat-section">
+                <div id="chat-window" class="chat-window">
+                    <div class="message assistant">
+                        Hi! I'm PlacementIQ. Let's get started. <strong>What's your current CGPA?</strong>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Type your response..." autocomplete="off">
+                    <button id="send-btn">Send</button>
+                </div>
+            </section>
+
+            <section class="results-section hidden" id="results-panel">
+                <div class="score-card glass">
+                    <h3>Readiness Score</h3>
+                    <div class="gauge-container">
+                        <div class="gauge">
+                            <div class="gauge-body">
+                                <div class="gauge-fill" id="score-fill"></div>
+                                <div class="gauge-cover" id="score-text">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="score-label">Based on your profile extraction</p>
+                </div>
+
+                <div class="experiences-container">
+                    <h3>Top Matched Senior Experiences</h3>
+                    <div id="experience-list" class="experience-list">
+                        <!-- Experience cards will be injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="loading" class="loading-overlay hidden">
+        <div class="loader"></div>
+        <p>Analyzing your path to success...</p>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
