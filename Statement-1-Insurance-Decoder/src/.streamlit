@@ -1,0 +1,15 @@
+# [theme]
+# The main accent color (used for the user's chat bubble, loading spinners, etc.)
+primaryColor = "#2563EB" 
+
+# The main background color of the app
+backgroundColor = "#0F172A" 
+
+# The background color for the sidebar and AI chat bubbles
+secondaryBackgroundColor = "#1E293B" 
+
+# The color of all the text
+textColor = "#F8FAFC" 
+
+# The font family (sans serif looks very modern for dashboards)
+font = "sans serif"
