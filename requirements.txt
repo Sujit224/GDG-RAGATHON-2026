@@ -1,0 +1,22 @@
+# Consolidated Requirements for GDG-RAGATHON-2026
+
+# Web Framework and UI
+streamlit
+
+# AI, RAG and Orchestration
+langchain
+openai
+faiss-cpu
+sentence-transformers
+PyPDF2
+
+# Data Science and Machine Learning
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+joblib
+
+# Utilities
+python-dotenv
