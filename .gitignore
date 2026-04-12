@@ -3,6 +3,7 @@
 **/venv_new/
 venv/
 venv_new/
+venv_311/
 
 # Ignore Python cache and sensitive files
 **/__pycache__/
@@ -11,6 +12,8 @@ venv_new/
 
 # Ignore heavy models and temp files (RAG specific)
 *.pkl
+!**/placement_model.pkl
 **/faiss_index/
 temp.pdf
 temp_user_resume.pdf
+temp_policy.pdf

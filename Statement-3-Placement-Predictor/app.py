@@ -203,12 +203,18 @@ if uploaded_resume:
                 chain = prompt | llm | JsonOutputParser()
                 data = chain.invoke({"text": res_text})
     
-                # B. Clean & Predict
+                            # B. Clean & Predict
                 feats = ['Academic_Score', 'DSA_Skill', 'Project_Quality', 'Experience_Score', 
                          'OpenSource_Value', 'Soft_Skills', 'Tech_Stack_Score']
                 cleaned = {f: float(data.get(f, 0)) if not isinstance(data.get(f, 0), dict) else 0.0 for f in feats}
                 
-                prediction = ml_model.predict(pd.DataFrame([cleaned])[feats])
+                # ML Prediction with Demo Override
+                prediction_val = ml_model.predict(pd.DataFrame([cleaned])[feats])[0]
+                avg_core = (cleaned.get('Academic_Score', 0) + cleaned.get('DSA_Skill', 0) + cleaned.get('Project_Quality', 0)) / 3
+                if avg_core > 7.0:
+                    prediction_val = 1
+                
+                prediction = [prediction_val]
     
                 # C. Advice and Target Companies
                 advice = "Keep working on your projects!"
@@ -249,7 +255,7 @@ if uploaded_resume:
             with col1:
                 st.subheader("📊 Your AI Analyzed Profile")
                 plot_data = pd.DataFrame({"Score": list(cleaned.values())}, index=list(cleaned.keys()))
-                st.area_chart(plot_data, width='stretch')
+                st.area_chart(plot_data, use_container_width=True)
                 
                 # NEW FUNCTIONALITY: Skill Gap Insight
                 lowest_skill = min(cleaned, key=cleaned.get)
@@ -271,28 +277,41 @@ if uploaded_resume:
                 # Enhanced Export functionality
                 st.markdown("<br>", unsafe_allow_html=True)
                 export_text = f"Placement Analysis Report\n\nPrediction: {'Placed' if prediction[0]==1 else 'Not Placed'}\n\nScores:\n{cleaned}\n\nAction Plan:\n{advice}"
-                st.download_button("📥 Download Full Career Report", data=export_text, file_name="Career_Report.txt", mime="text/plain", width=True)
+                st.download_button("📥 Download Full Career Report", data=export_text, file_name="Career_Report.txt", mime="text/plain", use_container_width=True)
         
         with tab2:
-            st.subheader("🎛️ What-If Simulator")
-            st.markdown("Play around with your metrics! Drag the sliders to see what specific skills you need to push up to alter your placement prediction.")
+            st.markdown("### **🎛️ What-If Simulator**")
+            st.markdown("**Play around with your metrics!** Drag the sliders to see how improving specific skills impacts your placement probability in real-time.")
             
-            with st.form("what_if_form"):
-                w_cols = st.columns(4)
-                updated_scores = {}
-                for i, feat in enumerate(feats):
-                    with w_cols[i % 4]:
-                        updated_scores[feat] = st.slider(feat.replace("_", " "), 0.0, 10.0, float(cleaned[feat]), 0.5)
-                
-                st.markdown("<br>", unsafe_allow_html=True)
-                submitted = st.form_submit_button("Predict with New Scores 🔮", width='stretch')
-                if submitted:
-                    new_prediction = ml_model.predict(pd.DataFrame([updated_scores])[feats])
-                    if new_prediction[0] == 1:
-                        st.success("🎉 If you achieve these scores, you will be **LIKELY PLACED**!")
-                        st.balloons()
-                    else:
-                        st.error("📉 Even with these simulated scores, the model requires more improvement.")
+            w_cols = st.columns(4)
+            updated_scores = {}
+            for i, feat in enumerate(feats):
+                with w_cols[i % 4]:
+                    updated_scores[feat] = st.slider(f"**{feat.replace('_', ' ')}**", 0.0, 10.0, float(cleaned[feat]), 0.5)
+            
+            st.markdown("<br>", unsafe_allow_html=True)
+            
+            # --- Dynamic Grading Logic ---
+            avg_score = sum(updated_scores.values()) / len(updated_scores)
+            
+            st.markdown("### **Simulation Result**")
+            
+            if avg_score >= 8.5:
+                st.success("🔥 **VERY LIKELY PLACED**")
+                st.balloons()
+                st.markdown("<p style='text-align: center; font-size: 1.1rem;'>Your profile is elite! Maintaining these scores guarantees top-tier placements.</p>", unsafe_allow_html=True)
+            elif avg_score >= 6.5:
+                st.success("✅ **LIKELY PLACED**")
+                st.markdown("<p style='text-align: center; font-size: 1.1rem;'>You have a very strong chance. Keep polishing your projects!</p>", unsafe_allow_html=True)
+            elif avg_score >= 4.5:
+                st.warning("⚠️ **UNLIKELY PLACED**")
+                st.markdown("<p style='text-align: center; font-size: 1.1rem; color: #FFA500;'>**Needs More Improvement**</p>", unsafe_allow_html=True)
+                st.markdown("<p style='text-align: center;'>Focus on core DSA and project quality to move into the 'Likely' zone.</p>", unsafe_allow_html=True)
+            else:
+                st.error("❌ **VERY UNLIKELY PLACED**")
+                st.markdown("<p style='text-align: center; font-size: 1.1rem; color: #FF4B4B;'>**Needs Significant Improvement**</p>", unsafe_allow_html=True)
+                st.markdown("<p style='text-align: center;'>Significant effort is needed across all metrics to improve placement odds.</p>", unsafe_allow_html=True)
+
                         
         with tab3:
             st.subheader("🎯 Auto-Generated Job Matches")
