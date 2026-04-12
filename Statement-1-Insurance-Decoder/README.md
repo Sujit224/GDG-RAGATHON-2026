@@ -12,13 +12,13 @@ The system operates on a locally hosted, heavily optimized RAG pipeline:
 5. **Generation:** A meticulously prompted `meta-llama/Llama-3.1-8B-Instruct` model (running via HuggingFace Endpoint at a strict `temperature=0.01`) processes the context and returns a strictly formatted answer citing the exact policy section.
 
 
-        """BONUS"""
+## BONUS
 -->> implemented MMR retrieval for diverse context
 -->> added caching to eliminate LLM and DB reload latency
 -->> applied strict zero-creativity temperature protocol.
 
 
-        """Creative Features"""
+## Creative Features
 -->>  💅 Custom UI/UX Theming: Bypassed default Streamlit styling by injecting custom CSS and a .streamlit/config.toml file to create a branded "Titan Secure" experience. This includes a corporate dark-mode palette, iOS-style rounded chat bubbles, floating shadows, and gradient-styled header typography.
 
 -->>  🛡️ Anti-Hallucination Prompt Engineering: Designed a rigid ChatPromptTemplate utilizing Few-Shot examples that forces the AI to reply in a highly specific, cited format (e.g., "40% penalty on the claim, per Section 2.2"), dropping all conversational AI filler.
