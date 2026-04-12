@@ -1,0 +1,18 @@
+{
+  "r2_score": 0.908,
+  "mae": 2.1903,
+  "rmse": 2.6413,
+  "cv_r2_mean": 0.9141,
+  "cv_r2_std": 0.0077,
+  "n_train": 800,
+  "n_test": 200,
+  "features": [
+    "Academic_Score",
+    "DSA_Skill",
+    "Project_Quality",
+    "Experience_Score",
+    "OpenSource_Value",
+    "Soft_Skills",
+    "Tech_Stack_Score"
+  ]
+}

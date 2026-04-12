@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan Secure - Policy Decoder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation / Logo -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <i class='bx bx-shield-plus logo-icon'></i>
+                <h1>TitanSecure</h1>
+            </div>
+            <p class="subtitle">AI Policy Decoder</p>
+            
+            <div class="filter-section">
+                <h3>Smart Filters</h3>
+                <ul class="filter-list">
+                    <li class="filter-item active" data-filter="all">
+                        <i class='bx bx-layer'></i> General Query
+                    </li>
+                    <li class="filter-item" data-filter="coverage">
+                        <i class='bx bx-check-shield'></i> Coverage check
+                    </li>
+                    <li class="filter-item" data-filter="exclusions">
+                        <i class='bx bx-block'></i> Exclusions
+                    </li>
+                    <li class="filter-item" data-filter="penalties">
+                        <i class='bx bx-error'></i> Penalties & Fees
+                    </li>
+                    <li class="filter-item" data-filter="claims">
+                        <i class='bx bx-file-find'></i> Claims Process
+                    </li>
+                </ul>
+            </div>
+            <div class="bonus-badge">
+                <i class='bx bx-award'></i> +5 Source Attribution Live
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <header class="top-nav">
+                <h2>Policy Assistant</h2>
+                <div class="theme-toggle">
+                    <i class='bx bx-moon'></i>
+                </div>
+            </header>
+
+            <div class="chat-container">
+                <div class="messages" id="chat-messages">
+                    <!-- Initial Bot Message -->
+                    <div class="message bot">
+                        <div class="avatar"><i class='bx bx-bot'></i></div>
+                        <div class="bubble">
+                            <p>Hi there! I'm your TitanSecure policy assistant.</p>
+                            <p>Ask me any question regarding your health insurance coverage, exclusions, or claims process, and I'll break it down for you. You can use the smart filters on the left to specialize the search.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <form id="chat-form">
+                        <input type="text" id="query-input" placeholder="e.g. Does this policy cover injuries from extreme sports?" required autocomplete="off">
+                        <button type="submit" id="send-btn">
+                            <i class='bx bx-send'></i>
+                        </button>
+                    </form>
+                    <p class="disclaimer">AI can make mistakes. Always verify with actual policy documents.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Results template hidden, utilized by JS -->
+    <template id="result-template">
+        <div class="message bot inference-result">
+            <div class="avatar"><i class='bx bx-bot'></i></div>
+            <div class="result-card">
+                <div class="result-status"></div>
+                <div class="result-direct">
+                    <h4>Direct Answer</h4>
+                    <p class="direct-text"></p>
+                </div>
+                <div class="result-eli5">
+                    <h4><i class='bx bxs-magic-wand'></i> ELI5 Summary</h4>
+                    <p class="eli5-text"></p>
+                </div>
+                <div class="result-citations">
+                    <h4><i class='bx bx-book-bookmark'></i> Official Sources</h4>
+                    <ul class="citation-list"></ul>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
