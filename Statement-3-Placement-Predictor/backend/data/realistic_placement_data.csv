@@ -1,0 +1,301 @@
+cgpa,projects,internships,communication,open_source,tech_stack,readiness_score
+5.93,1,0,5.4,0,Basic Python,19.98
+4.24,1,1,5.0,0,MS Office,26.29
+4.32,2,0,3.5,1,HTML/CSS|Basic Python|MS Office,33.02
+5.61,1,1,3.8,0,HTML/CSS,30.26
+5.39,2,0,5.3,0,HTML/CSS,26.65
+5.9,2,0,5.9,1,WordPress|HTML/CSS|MS Office,39.31
+5.95,2,0,3.9,0,MongoDB,20.49
+4.39,2,1,5.0,1,SQL|MongoDB,42.9
+4.81,2,0,3.9,0,HTML/CSS|WordPress,19.1
+4.32,2,0,2.9,0,Python,14.48
+5.09,0,1,4.8,0,SQL|Node.js|Python,25.92
+6.08,1,1,3.5,0,TypeScript|Vue.js|Node.js,27.16
+5.71,1,0,2.8,0,Python|Java|React,15.43
+5.97,2,1,4.8,0,MS Office,35.7
+5.15,1,1,2.6,0,Java,24.6
+5.67,1,0,4.3,0,Basic Python|MS Office,16.61
+5.59,1,1,4.2,0,Python,24.1
+4.08,1,0,2.9,0,SQL,11.39
+6.13,0,0,2.2,0,MS Office|Basic Python|HTML/CSS,8.36
+4.73,1,1,4.2,0,WordPress|MS Office,25.85
+5.66,1,0,5.3,0,Basic Python|HTML/CSS|WordPress,22.57
+4.06,0,0,4.9,0,WordPress|MS Office,5.0
+4.4,2,1,2.6,0,Basic Python,26.53
+5.12,0,0,3.2,0,WordPress|MS Office|Basic Python,9.74
+4.9,2,0,2.5,1,MS Office|HTML/CSS,28.09
+6.27,1,1,3.1,1,Vue.js|React|MongoDB,39.77
+5.95,0,1,3.8,0,WordPress,26.6
+4.24,1,1,3.8,0,HTML/CSS,24.16
+4.76,2,1,2.7,1,MS Office|Basic Python|WordPress,38.02
+5.9,1,1,3.7,0,WordPress|Basic Python,28.9
+5.46,0,1,2.3,0,SQL|Node.js|Python,28.33
+4.1,0,0,3.3,0,Basic Python|WordPress|MS Office,10.82
+4.26,0,1,2.7,1,WordPress|HTML/CSS,22.54
+5.45,1,0,4.4,0,SQL,13.3
+6.4,1,0,5.1,0,HTML/CSS|Basic Python|MS Office,28.23
+5.22,2,0,5.8,0,Basic Python,25.27
+5.18,2,0,3.3,0,HTML/CSS|Basic Python|MS Office,16.85
+5.1,0,0,5.3,1,TypeScript,24.7
+4.35,0,1,2.4,0,Java|Node.js,19.7
+4.7,0,1,4.9,0,HTML/CSS|WordPress|MS Office,21.53
+4.27,1,1,2.9,0,MS Office|HTML/CSS|WordPress,19.87
+5.39,1,0,5.3,0,WordPress|HTML/CSS,19.55
+4.79,0,1,3.2,0,Basic Python|MS Office|WordPress,17.72
+4.64,2,1,2.7,0,Firebase|TypeScript|React,30.44
+5.09,2,1,5.6,0,Basic Python,44.6
+6.23,0,1,4.1,0,MS Office|Basic Python|HTML/CSS,25.92
+5.93,1,1,3.5,0,HTML/CSS,28.48
+5.87,1,0,5.7,0,HTML/CSS,21.49
+4.31,0,1,2.6,0,React,16.7
+5.5,2,1,2.8,0,WordPress|HTML/CSS,29.69
+5.94,0,1,4.0,0,WordPress|HTML/CSS|MS Office,17.52
+4.03,0,0,2.5,0,TypeScript,5.0
+4.3,0,1,4.8,0,WordPress|MS Office|Basic Python,15.91
+4.5,2,1,4.9,0,Node.js|TypeScript,28.23
+4.33,1,0,5.7,0,Basic Python|HTML/CSS,15.66
+4.75,0,0,4.7,1,MS Office,21.17
+4.72,2,1,2.1,0,Vue.js,28.53
+5.58,2,0,2.6,0,WordPress|HTML/CSS,22.98
+6.42,0,1,5.7,0,HTML/CSS|WordPress,33.62
+5.17,1,1,2.1,0,MS Office,23.84
+6.07,0,1,2.9,0,WordPress|MS Office,20.09
+5.52,2,1,4.4,0,HTML/CSS|WordPress,35.25
+4.94,2,0,4.6,1,Vue.js,32.21
+5.13,1,0,2.9,0,SQL|Vue.js,12.63
+6.04,2,0,2.3,0,Java,22.64
+4.37,0,1,3.2,0,Node.js,19.66
+6.3,1,0,3.1,0,Basic Python|HTML/CSS|WordPress,14.84
+4.29,1,0,2.2,0,React|MongoDB|Node.js,9.36
+4.13,1,1,4.7,0,HTML/CSS,19.7
+4.79,2,1,5.5,1,MS Office|WordPress|HTML/CSS,48.17
+4.11,1,0,2.9,0,HTML/CSS|Basic Python|WordPress,10.16
+5.43,2,0,2.2,0,React|Python|MongoDB,20.61
+5.31,2,0,5.3,0,Basic Python|HTML/CSS|MS Office,28.61
+6.31,2,0,5.4,1,SQL,42.12
+6.45,0,1,5.1,0,TypeScript|Node.js,35.55
+5.95,2,0,4.1,0,TypeScript|React|SQL,30.88
+6.14,2,0,3.5,0,Basic Python|HTML/CSS|MS Office,26.53
+4.67,0,0,3.9,0,Basic Python,5.0
+4.58,1,0,3.5,0,Firebase,15.87
+4.95,0,1,3.2,1,React|Node.js|Python,30.99
+6.29,2,0,3.3,0,TypeScript|MongoDB|Firebase,29.43
+6.12,1,1,5.2,0,MS Office,34.55
+5.58,0,0,4.9,0,Java|Python,13.39
+5.74,1,1,2.5,0,Basic Python|WordPress|MS Office,20.78
+4.24,1,1,2.3,1,TypeScript,29.07
+4.34,2,1,5.2,0,Node.js|React,34.92
+5.96,2,1,5.8,0,SQL,45.33
+5.48,0,0,4.5,0,WordPress|Basic Python|MS Office,15.65
+5.41,0,1,3.9,0,HTML/CSS,19.31
+5.91,2,1,4.0,0,HTML/CSS|MS Office|WordPress,35.82
+8.36,4,0,5.4,0,SQL,51.03
+7.82,3,1,7.3,1,Python,62.17
+7.17,3,2,7.3,0,TypeScript,68.4
+7.23,3,0,5.5,0,Vue.js|MongoDB|TypeScript,41.84
+8.37,3,1,6.1,1,AI/ML,73.61
+7.61,4,2,7.3,0,Basic Python|MS Office|HTML/CSS,73.57
+7.25,3,2,7.2,1,TypeScript|Vue.js|Firebase,81.38
+6.74,2,2,6.9,0,MS Office|HTML/CSS,60.26
+7.68,1,2,5.0,0,Django+React|Rust,60.53
+8.15,2,0,6.4,0,DevOps,43.27
+7.1,3,2,7.3,0,WordPress,65.01
+8.49,1,2,5.9,1,SQL,70.03
+6.71,3,2,7.0,1,Vue.js|Python|Node.js,74.87
+6.68,3,2,5.1,0,MS Office|Basic Python,62.79
+6.79,4,2,5.6,1,Flutter|MERN,85.4
+7.81,4,0,5.0,0,Python|Vue.js,49.75
+7.71,4,2,5.7,1,TypeScript|Vue.js|SQL,88.86
+6.61,3,2,7.8,1,WordPress,77.04
+7.9,4,2,5.1,0,MS Office|WordPress|Basic Python,71.41
+6.75,3,1,7.2,1,Basic Python|WordPress|MS Office,61.32
+8.2,2,0,7.2,0,SQL,42.51
+7.04,1,2,7.9,1,Vue.js|Python|Java,68.36
+6.61,1,1,5.1,1,MongoDB|Java|Firebase,47.65
+7.92,2,0,5.3,0,MongoDB|SQL,42.09
+8.46,3,1,7.4,1,SQL,70.72
+7.64,2,0,7.8,0,Python|Firebase,40.41
+7.66,3,2,6.9,1,Java|Firebase|Vue.js,82.65
+6.8,2,1,6.2,0,Go|MERN|Rust,48.94
+6.74,4,0,5.8,0,Python|TypeScript|Vue.js,42.88
+7.36,4,1,6.9,0,Rust,63.42
+7.32,4,0,6.8,0,MongoDB,47.98
+6.57,2,1,6.4,0,WordPress,45.16
+7.64,2,1,7.1,1,Firebase,55.59
+7.8,3,0,7.4,0,Java|Vue.js|React,46.44
+7.36,3,1,6.1,0,Node.js,56.57
+7.97,3,2,7.8,0,AI/ML,73.34
+7.54,2,2,5.9,1,React|Firebase|Node.js,74.23
+7.49,1,0,5.2,1,Firebase,35.84
+6.61,1,0,6.0,0,Basic Python|MS Office,24.95
+7.13,1,2,5.0,1,React|Vue.js|Firebase,58.9
+8.21,2,1,5.5,1,Go|FastAPI,67.86
+6.74,3,1,7.9,1,SQL,63.52
+8.04,2,0,7.1,1,FastAPI|DevOps|Rust,56.83
+7.28,4,1,5.0,0,SQL|Java|MongoDB,58.35
+7.55,2,0,5.5,1,TypeScript|MongoDB|React,45.01
+8.48,4,1,7.5,1,MongoDB|Java|Node.js,77.94
+6.78,3,1,6.2,0,React|Firebase,51.77
+8.01,1,1,6.4,0,Vue.js,41.75
+6.86,1,2,5.1,0,Node.js|Vue.js|Java,56.1
+7.08,1,1,6.8,0,Basic Python|MS Office,42.1
+6.67,2,0,7.5,1,Spring Boot|Kubernetes,49.3
+7.8,2,2,7.3,0,FastAPI,59.81
+7.23,3,1,6.0,1,Firebase|Node.js,59.2
+7.47,3,2,7.6,0,Vue.js|MongoDB|React,74.23
+8.32,2,1,7.6,0,React,49.75
+7.5,4,1,5.3,0,HTML/CSS|WordPress,56.36
+8.33,3,1,5.5,0,Firebase,54.62
+6.88,2,0,7.8,0,WordPress|MS Office,38.46
+7.12,1,1,5.0,0,Python|Vue.js,38.17
+7.91,3,1,7.9,1,SQL|TypeScript,67.59
+7.46,4,2,7.7,1,React|Node.js|MongoDB,88.68
+8.43,3,2,7.6,0,Node.js,79.28
+7.96,4,1,6.7,1,DevOps,71.42
+8.44,1,2,5.9,1,Go|DevOps|Kubernetes,79.44
+8.0,3,1,5.4,0,Java,52.72
+8.05,4,1,8.0,0,Python|MongoDB,75.13
+8.46,1,1,7.4,0,TypeScript|MongoDB|Firebase,51.25
+7.61,3,2,7.8,1,Basic Python,75.02
+6.57,1,1,5.1,0,Vue.js|Java,38.3
+7.85,4,2,7.3,1,MS Office|HTML/CSS|WordPress,80.59
+7.98,2,2,5.1,0,MERN|Flutter|Django+React,70.5
+7.74,1,2,5.0,0,Python|TypeScript|SQL,59.47
+7.85,3,0,6.2,1,Vue.js,51.25
+7.84,2,0,7.6,0,AI/ML,37.28
+8.21,4,0,6.8,0,FastAPI|Go|AI/ML,62.52
+7.05,3,2,5.6,0,Basic Python|WordPress|MS Office,65.41
+7.18,2,2,7.4,1,SQL|Python|Vue.js,70.28
+7.09,4,1,5.4,1,SQL,63.02
+8.5,4,2,6.8,0,FastAPI,84.56
+8.33,1,1,5.4,0,Vue.js|Python|Node.js,50.43
+6.63,2,0,5.1,0,MongoDB|Firebase,34.9
+7.77,4,1,6.3,1,Python|SQL,75.41
+8.0,3,1,5.9,1,Rust|Spring Boot|Flutter,75.69
+6.97,3,0,7.7,0,TypeScript,42.77
+7.98,1,1,7.0,0,Firebase|Java,52.22
+6.98,2,0,5.5,1,Firebase|React|Vue.js,45.66
+7.07,1,1,7.4,1,MS Office|WordPress,48.09
+7.38,4,1,8.0,1,Python|Firebase,76.21
+8.13,3,2,7.4,0,Vue.js|Python,76.25
+7.62,2,0,7.0,1,SQL|React,47.38
+7.53,4,1,5.1,1,Java,63.99
+6.71,2,0,5.7,0,React|MongoDB|TypeScript,42.45
+7.41,2,1,5.9,0,SQL|React,49.9
+6.72,3,1,5.2,1,Rust,57.13
+6.91,4,0,6.2,0,SQL,47.99
+6.5,2,0,7.6,0,MS Office|WordPress|HTML/CSS,35.29
+7.52,2,1,6.0,0,Rust|Go|FastAPI,55.59
+8.06,2,2,5.8,0,Basic Python,67.17
+6.98,4,1,7.0,0,Python|MongoDB,57.21
+7.16,1,2,5.1,0,FastAPI|MERN,58.01
+7.92,1,0,5.1,0,FastAPI|MERN,38.86
+8.34,1,0,5.6,0,Node.js|MongoDB|TypeScript,39.59
+6.72,3,1,5.7,1,MERN|DevOps,62.1
+7.68,3,2,5.0,1,MS Office|Basic Python,71.72
+7.74,2,0,7.3,1,SQL|Vue.js,48.48
+7.01,1,2,6.4,1,Node.js|TypeScript|Vue.js,65.33
+8.47,1,1,7.4,0,SQL,48.9
+8.1,1,1,5.6,0,Java,48.32
+7.14,4,0,5.1,0,MS Office,39.29
+6.54,3,0,7.2,1,WordPress|MS Office,49.69
+7.98,4,0,7.7,1,Basic Python|WordPress,58.65
+6.75,4,0,7.1,0,DevOps,49.18
+7.51,1,2,5.0,0,Kubernetes|DevOps|AI/ML,58.55
+8.49,3,1,5.4,1,MS Office,69.11
+8.26,2,1,6.9,0,MERN,60.24
+6.6,2,1,5.9,1,Basic Python|MS Office,55.83
+8.17,1,0,6.8,0,Basic Python|WordPress|MS Office,32.59
+8.25,4,0,6.8,1,Spring Boot|FastAPI|Kubernetes,74.02
+7.29,4,2,7.2,1,WordPress,82.57
+8.02,3,2,6.3,0,Rust|Flutter|MERN,75.83
+6.52,1,2,6.6,0,Node.js|SQL|Firebase,55.73
+6.69,4,2,6.2,1,WordPress,79.17
+6.8,2,2,5.5,0,SQL|MongoDB,61.71
+8.22,4,2,5.6,0,FastAPI|MERN,83.5
+7.97,3,2,6.1,0,Python|React,69.45
+7.98,3,2,7.3,1,Python,81.57
+6.71,4,2,7.6,1,SQL|Vue.js,86.26
+6.7,1,0,7.2,0,Flutter|FastAPI|MERN,29.73
+8.46,4,1,7.2,1,TypeScript|Vue.js,77.39
+7.29,3,0,6.8,1,Spring Boot,50.99
+8.82,3,3,9.8,1,DevOps,95.11
+8.39,4,2,8.2,0,FastAPI|Kubernetes|Flutter,94.04
+8.33,4,3,8.0,1,MongoDB|SQL|Java,100.0
+8.49,3,1,9.3,1,MERN|Flutter,78.04
+8.56,5,1,7.6,1,DevOps|Go|Rust,90.59
+8.94,5,2,7.1,1,AI/ML|MERN|DevOps,100.0
+9.92,4,3,8.5,0,FastAPI,100.0
+8.5,3,2,9.3,1,Go|FastAPI|Rust,100.0
+9.8,3,4,9.9,1,AI/ML|FastAPI,100.0
+8.14,5,1,7.9,1,FastAPI,83.43
+8.19,7,4,8.9,1,DevOps|Spring Boot,100.0
+8.33,3,2,7.5,1,MERN,89.56
+9.17,5,3,7.9,1,Python|SQL,100.0
+8.81,3,4,9.3,0,Rust|FastAPI,92.59
+9.88,5,1,9.7,0,Spring Boot|FastAPI,92.96
+8.53,3,4,7.5,1,Spring Boot|AI/ML|FastAPI,95.32
+8.9,3,1,9.1,1,DevOps,81.31
+9.75,6,2,8.6,0,AI/ML,99.01
+8.49,4,1,9.8,1,Firebase|Vue.js|Java,86.33
+9.55,4,3,8.5,1,Go|FastAPI|Flutter,100.0
+9.07,7,2,7.4,0,Python|TypeScript|Vue.js,93.19
+9.9,3,2,9.9,0,Spring Boot,92.95
+9.11,7,1,7.8,0,Go,80.67
+8.24,3,4,8.0,1,Go|MERN|FastAPI,100.0
+8.93,7,2,8.6,0,Django+React|AI/ML,96.67
+9.98,3,4,9.2,1,Spring Boot|AI/ML,100.0
+8.31,7,4,8.0,0,FastAPI|Spring Boot|Flutter,100.0
+8.68,3,4,8.9,1,Rust,100.0
+9.59,7,1,9.8,1,MERN|AI/ML|Kubernetes,99.22
+9.28,6,1,10.0,1,MERN|FastAPI|Go,100.0
+8.12,4,2,7.4,0,Flutter,85.55
+9.26,5,2,9.8,1,Rust,100.0
+9.45,6,2,9.0,1,Go|DevOps,100.0
+8.95,6,4,8.0,0,Go|Kubernetes|Spring Boot,100.0
+9.36,7,4,7.1,1,Java|Firebase,100.0
+9.78,6,3,10.0,1,DevOps,100.0
+9.32,3,2,9.8,1,FastAPI|Rust,100.0
+9.48,4,2,8.7,1,Rust|Spring Boot,100.0
+9.02,6,4,8.3,1,Python|SQL,100.0
+8.68,6,2,8.3,0,Rust|FastAPI,98.99
+8.18,4,3,9.0,1,AI/ML,100.0
+8.04,7,2,7.6,1,DevOps,92.91
+9.72,6,1,9.0,0,Kubernetes|Rust,92.05
+8.55,6,1,7.9,1,Flutter|AI/ML,89.14
+9.82,6,1,8.6,1,Node.js|Firebase|Vue.js,98.66
+9.91,5,3,7.8,1,DevOps|Django+React,100.0
+8.64,6,4,8.2,1,SQL,100.0
+8.05,5,2,9.6,1,Go|MERN|Flutter,100.0
+8.89,3,4,9.6,1,Flutter|Django+React,100.0
+9.09,6,2,8.9,1,Rust,100.0
+8.49,5,4,9.8,1,Go|DevOps,100.0
+9.96,3,3,9.3,1,Python|SQL|Vue.js,100.0
+8.96,6,2,7.7,1,SQL|Python,97.0
+8.58,4,2,8.8,1,MERN|Go,93.55
+8.44,6,4,9.6,0,AI/ML,96.94
+8.02,3,2,9.4,1,Django+React|MERN|AI/ML,99.3
+8.28,6,4,7.3,1,TypeScript|Firebase|MongoDB,100.0
+10.0,4,1,7.5,1,Rust|AI/ML|Django+React,94.82
+9.24,7,4,9.9,0,Firebase,100.0
+8.28,5,4,7.8,1,Python|Java|React,100.0
+9.33,5,1,9.5,0,SQL|Vue.js,85.88
+8.85,5,3,8.5,1,Node.js,100.0
+9.31,3,4,10.0,1,MERN|Kubernetes,100.0
+8.19,6,3,9.9,1,MongoDB|Vue.js|Java,100.0
+8.92,3,2,7.2,1,Spring Boot|AI/ML|Go,92.13
+8.71,4,4,9.5,1,MERN|FastAPI|AI/ML,100.0
+8.83,4,2,9.2,1,Flutter|Django+React,100.0
+8.98,4,4,7.4,1,Java|Python,100.0
+8.19,4,1,8.6,0,Python|React|Node.js,74.87
+8.11,4,1,8.3,1,MERN,80.79
+8.07,4,3,9.5,0,MERN|DevOps,100.0
+8.29,3,4,9.5,1,Flutter|Kubernetes|Django+React,100.0
+9.64,3,1,8.2,1,Java,87.3
+8.51,4,4,8.5,1,Java|React|Vue.js,100.0
+8.93,4,2,7.7,0,Go|Flutter,92.8
+9.5,7,1,7.3,0,MongoDB,79.68
+8.35,3,4,8.2,1,MERN,98.09
+8.27,7,3,8.3,1,Go,100.0
+9.75,7,4,9.6,0,Python,100.0
+8.44,5,3,7.9,1,Node.js|MongoDB,100.0
