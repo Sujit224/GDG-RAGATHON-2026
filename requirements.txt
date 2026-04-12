@@ -1,0 +1,33 @@
+# Core Web Framework
+streamlit
+
+# AI & RAG Orchestration
+langchain
+langchain-community
+langchain-core
+langchain-groq
+langchain-huggingface
+langchain-text-splitters
+
+# Intelligence & Embeddings
+openai
+google-genai
+sentence-transformers
+huggingface_hub
+
+# Vector Database
+faiss-cpu
+
+# Data & Machine Learning
+pandas
+numpy
+scikit-learn
+pydantic
+
+# Utilities
+python-dotenv
+pypdf
+requests
+PyYAML
+tqdm
+rich
