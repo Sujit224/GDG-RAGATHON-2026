@@ -112,19 +112,23 @@ Once you have created your Pull Request on GitHub, you **must** submit the URL o
 |--------|------|---------------|
 | [@Phantom0299](https://github.com/Phantom0299) | **Devesh Kanukala** | Statement 1 – Insurance Decoder (RAG pipeline, ChromaDB indexing, Gemini LLM integration, Streamlit UI) · Statement 3 – Placement Predictor (Resume Parser, RAG engine, ML regression model, accuracy benchmarking) |
 | [@SAMEERSINGH213](https://github.com/SAMEERSINGH213) | **Sameer Singh** | Statement 1 – Insurance Decoder (app integration, PDF ingestion) · Statement 2 – Lucknow Foodie (dataset scraping, hybrid search logic) · Statement 3 – Placement Predictor (LLM mentor engine, frontend dashboard) |
+| [@rizzesh](https://github.com/rizzesh) | **Ritesh Suryawanshi** | Statement 1 – Insurance Decoder (UI/UX enhancement, data preprocessing) · Statement 2 – Lucknow Foodie (Backend optimization, search relevance) · Statement 3 – Placement Predictor (Dataset curation, model evaluation) |
 
 ### 📋 Contribution Breakdown by Statement
 
 #### 🧊 Statement 1 – Insurance Decoder (20 pts)
 - **Devesh Kanukala (@Phantom0299):** Architected the core RAG pipeline using ChromaDB as the vector store. Integrated Google Gemini LLM for policy Q&A. Built the Streamlit-based interactive UI for PDF upload and clause extraction.
 - **Sameer Singh (@SAMEERSINGH213):** Handled PDF ingestion and chunking logic, wired up the full app integration and `.env` configuration.
+- **Ritesh Suryawanshi (@rizzesh):** Led UI/UX enhancements and implemented robust data preprocessing for complex PDF structures.
 
 #### 🍕 Statement 2 – Lucknow Foodie (40 pts)
 - **Sameer Singh (@SAMEERSINGH213):** Led the dataset scraping pipeline, built the hybrid search system combining keyword and semantic search over restaurant data.
+- **Ritesh Suryawanshi (@rizzesh):** Optimized backend query performance and improved search relevance for Lucknow restaurant queries.
 
 #### 🎓 Statement 3 – Placement Predictor (70 pts)
 - **Devesh Kanukala (@Phantom0299):** Developed the resume parser module, the full RAG retrieval engine for job-profile matching, and the ML regression model for placement prediction. Ran accuracy benchmarks (`check_accuracy.py`) achieving high prediction precision.
 - **Sameer Singh (@SAMEERSINGH213):** Built the AI mentor LLM engine for interview advice generation and the full-stack Streamlit dashboard.
+- **Ritesh Suryawanshi (@rizzesh):** Curated the placement dataset and assisted in model evaluation and benchmarking.
 
 ---
 
