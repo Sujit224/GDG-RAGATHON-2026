@@ -22,6 +22,9 @@ The system follows a simple pipeline:
 Resume / User Input → Data Extraction → Feature Mapping → Scoring → Result
 ```
 
+## Bonus Attempted
+User can upload their resume pdf/docx to get the results
+
 ### 📊 Scoring Breakdown (Out of 100)
 
 | Factor      | Max Score |
