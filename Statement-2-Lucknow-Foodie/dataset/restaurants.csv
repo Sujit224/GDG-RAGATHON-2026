@@ -1,0 +1,36 @@
+name,location,cuisine,rating,price_for_two,signature_dish,veg_nonveg,vibe,hours,distance_from_iiit_km
+Tunday Kababi,Chowk,Mughlai,4.5,300,Gilauti Kebab,Non-Veg,Street,11:00-23:30,22.0
+Idris Biryani,Chowk,Biryani,4.6,250,Mutton Biryani,Non-Veg,Street,11:00-23:00,22.0
+Dastarkhwan,Gomti Nagar,Mughlai,4.4,500,Mutton Biryani,Non-Veg,Family,12:00-23:30,12.0
+Royal Cafe,Hazratganj,North Indian,4.2,600,Basket Chaat,Veg,Casual,10:00-23:00,18.0
+Moti Mahal,Hazratganj,North Indian,4.0,700,Butter Chicken,Non-Veg,Family,12:00-23:00,18.0
+Barbeque Nation,Gomti Nagar,Buffet,4.3,1200,Grill Buffet,Both,Premium,12:00-23:00,12.0
+The Urban Terrace,Gomti Nagar,Continental,4.1,800,Pasta,Both,Rooftop,12:00-23:30,12.0
+Cafe Repertwahr,Gomti Nagar,Cafe,4.2,500,Coffee,Veg,Cafe,11:00-22:30,12.0
+Sky Glass Brewing,Gomti Nagar,Brewery,4.3,1500,Craft Beer,Both,Premium,12:00-00:00,13.0
+The Hazelnut Factory,Gomti Nagar,Desserts,4.5,800,Pastries,Veg,Cafe,10:00-23:00,12.0
+Cherry Tree Cafe,Gomti Nagar,Cafe,4.2,700,Pancakes,Veg,Cafe,11:00-23:00,12.0
+Cappuccino Blast,Gomti Nagar,Cafe,4.0,600,Coffee,Veg,Cafe,10:00-22:30,12.0
+Pirates of Grill,Gomti Nagar,Buffet,4.2,1300,BBQ,Both,Premium,12:00-23:00,12.0
+Farzi Cafe,Gomti Nagar,Modern Indian,4.3,1500,Fusion Dishes,Both,Premium,12:00-00:00,13.0
+Oudhyana (Taj),Hazratganj,Mughlai,4.6,3000,Kebabs,Non-Veg,Luxury,19:00-23:30,18.0
+L-14 (Taj),Hazratganj,Multi-cuisine,4.5,2500,Buffet,Both,Luxury,07:00-23:00,18.0
+Sharma Tea,Chowk,Snacks,4.4,100,Bun Maska,Veg,Street,06:00-22:00,22.0
+Netram Kachori,Hazratganj,Snacks,4.5,150,Kachori,Veg,Street,07:00-21:00,18.0
+Jain Chat Bhandar,Hazratganj,Street Food,4.6,200,Chaat,Veg,Street,16:00-22:30,18.0
+Bombay Pav Bhaji,Indira Nagar,Street Food,4.2,250,Pav Bhaji,Veg,Street,12:00-22:30,16.0
+Spice Caves,Indira Nagar,Chinese,3.9,400,Noodles,Both,Casual,12:00-23:00,16.0
+Kalika Hut,Aliganj,North Indian,4.1,500,Kadhai Paneer,Veg,Family,12:00-23:00,17.0
+Capoor & Sons,Hazratganj,Cafe,4.3,900,Pizza,Both,Cafe,11:00-23:30,18.0
+Rolls Mania,Gomti Nagar,Fast Food,4.0,300,Rolls,Both,Casual,11:00-23:00,12.0
+Subway,Gomti Nagar,Healthy,4.0,350,Sandwich,Both,Casual,10:00-23:00,12.0
+Wow Momo,Gomti Nagar,Fast Food,4.2,300,Momos,Both,Casual,11:00-23:00,12.0
+Phoenix Palassio Food Court,Phoenix Palassio,Multi-cuisine,4.1,500,Quick Bites,Both,Casual,11:00-22:00,6.5
+PVR Director's Cut Cafe,Phoenix Palassio,Snacks,4.0,700,Nachos,Both,Casual,11:00-23:30,6.5
+Sky Dine Rooftop,Sushant Golf City,North Indian,4.1,900,Tandoori Platter,Both,Rooftop,12:00-23:30,5.5
+The Terrace (Golf City),Sushant Golf City,Continental,4.0,1000,Grilled Fish,Both,Rooftop,12:00-23:30,5.5
+Cafe 24 (Golf City),Sushant Golf City,Cafe,4.0,600,Cold Coffee,Veg,Cafe,08:00-23:00,5.5
+Biryani Blues (Palassio),Phoenix Palassio,Biryani,4.1,500,Chicken Biryani,Non-Veg,Casual,11:00-22:30,6.5
+Haldiram's (Palassio),Phoenix Palassio,Snacks,4.2,450,Chole Bhature,Veg,Casual,10:00-22:30,6.5
+KFC (Palassio),Phoenix Palassio,Fast Food,4.0,600,Fried Chicken,Non-Veg,Casual,10:00-23:00,6.5
+McDonald's (Palassio),Phoenix Palassio,Fast Food,4.0,500,Burgers,Both,Casual,10:00-23:00,6.5
