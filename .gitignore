@@ -1,0 +1,16 @@
+# Ignore all virtual environments in any folder
+**/venv/
+**/venv_new/
+venv/
+venv_new/
+
+# Ignore Python cache and sensitive files
+**/__pycache__/
+.env
+*.pyc
+
+# Ignore heavy models and temp files (RAG specific)
+*.pkl
+**/faiss_index/
+temp.pdf
+temp_user_resume.pdf
