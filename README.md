@@ -114,6 +114,7 @@ Once you have created your Pull Request on GitHub, you **must** submit the URL o
 | [@SAMEERSINGH213](https://github.com/SAMEERSINGH213) | **Sameer Singh** | Statement 1 – Insurance Decoder (app integration, PDF ingestion) · Statement 2 – Lucknow Foodie (dataset scraping, hybrid search logic) · Statement 3 – Placement Predictor (LLM mentor engine, frontend dashboard) |
 | [@rizzesh](https://github.com/rizzesh) | **Ritesh Suryawanshi** | Statement 1 – Insurance Decoder (UI/UX enhancement, data preprocessing) · Statement 2 – Lucknow Foodie (Backend optimization, search relevance) · Statement 3 – Placement Predictor (Dataset curation, model evaluation) |
 
+
 ### 📋 Contribution Breakdown by Statement
 
 #### 🧊 Statement 1 – Insurance Decoder (20 pts)
