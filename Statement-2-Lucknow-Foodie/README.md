@@ -12,14 +12,14 @@ This project utilizes an advanced dual-LLM Retrieval-Augmented Generation (RAG) 
 5. **Generation:** A second, higher-temperature (`0.4`) LLM processes the filtered context and generates a friendly, energetic, and highly personalized recommendation.
 
 
-### BONUS FEATURES
+## BONUS FEATURES
 
 -->> implemented caching for heavy components (Used @st.cache_resource to keep models loaded in memory, eliminating wait times between chat messages).
 
 -->>  implemented SelfQueryRetriever (Upgraded from hardcoded filters to an LLM-driven query parser that dynamically translates natural language into database constraints)
 
 
-### ✨ Creative Features
+## ✨ Creative Features
 1. 🎨 "Foodie" Themed Web UI
         Streamlit is used to create a beautiful ui, we kept ui clean, fully working, and a little foodie enviornment
 
