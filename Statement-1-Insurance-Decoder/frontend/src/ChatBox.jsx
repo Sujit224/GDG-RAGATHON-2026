@@ -109,25 +109,7 @@ export default function ChatBox() {
 
   return (
     <div className="chatbox-wrapper">
-      <div className="upload-zone">
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-          <h4 style={{marginBottom: '4px'}}>Insurance Policy Sync</h4>
-          <span className="upload-status">{uploadStatus || 'Select a PDF policy document to decode.'}</span>
-        </div>
-        <div>
-          <input
-            type="file"
-            accept=".pdf"
-            ref={fileInputRef}
-            onChange={handleFileUpload}
-            style={{ display: 'none' }}
-            id="pdf-upload"
-          />
-          <label htmlFor="pdf-upload" className={`upload-button ${isUploading ? 'loading' : ''}`}>
-            {isUploading ? '⌛ Processing...' : '📤 Upload PDF Policy'}
-          </label>
-        </div>
-      </div>
+
 
       <div className="centered-chat">
         <div className="chat-header">
@@ -182,18 +164,23 @@ export default function ChatBox() {
       </div>
       
       <div className="upload-zone">
-        <input
-          type="file"
-          accept=".pdf"
-          ref={fileInputRef}
-          onChange={handleFileUpload}
-          style={{ display: 'none' }}
-          id="pdf-upload"
-        />
-        <label htmlFor="pdf-upload" className={`upload-button ${isUploading ? 'loading' : ''}`}>
-          {isUploading ? '⏳ Processing...' : '📤 Upload PDF Policy'}
-        </label>
-        {uploadStatus && <span className="upload-status">{uploadStatus}</span>}
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+          <h4 style={{marginBottom: '4px'}}>Insurance Policy Sync</h4>
+          <span className="upload-status">{uploadStatus || 'Select a PDF policy document to decode.'}</span>
+        </div>
+        <div>
+          <input
+            type="file"
+            accept=".pdf"
+            ref={fileInputRef}
+            onChange={handleFileUpload}
+            style={{ display: 'none' }}
+            id="pdf-upload"
+          />
+          <label htmlFor="pdf-upload" className={`upload-button ${isUploading ? 'loading' : ''}`}>
+            {isUploading ? '⏳ Processing...' : '📤 Upload PDF Policy'}
+          </label>
+        </div>
       </div>
     </div>
   );
