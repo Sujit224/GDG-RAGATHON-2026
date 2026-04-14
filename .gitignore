@@ -1,0 +1,70 @@
+# ========================
+# OS & Editor Files
+# ========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ========================
+# Environment Variables
+# ========================
+.env
+.env.local
+.env.*.local
+
+# ========================
+# Python / Backend / AI
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# RAG specific (Vector DBs & Uploads)
+**/chroma_db/
+**/vector_store/
+**/embeddings/*.pkl
+**/models/*.pkl
+**/models/*.joblib
+
+# Note: You can uncomment the below line if you want to ignore user-uploaded PDFs
+# **/docs/*.pdf
+
+# ========================
+# Node.js / Frontend / Web
+# ========================
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Framework Builds (Vite, React, Next, etc.)
+dist/
+dist-ssr/
+out/
+.next/
+.nuxt/
+.vercel/
+
+# Logs
+logs
+*.log
+nohup.out
+.tmp/
